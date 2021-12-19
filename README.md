@@ -1,1 +1,1 @@
-# FirstStar Galaxy Inc.
+# FirstGalaxy Inc.
