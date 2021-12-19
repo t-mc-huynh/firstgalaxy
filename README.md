@@ -1,1 +1,1 @@
-# firststargalaxy
+# FirstStar Galaxy Inc.
