@@ -95,7 +95,7 @@ button:focus {
 /* ======= Navigation bar =============*/
 
 .divider-grey {
-    box-shadow: inset 0 -4px 0 var(--logo-red);
+    box-shadow: inset 0 -1px 0 var(--white);
 }
 
 .divider-grey a {
@@ -107,17 +107,24 @@ button:focus {
     box-shadow: inset 0 -4px 0 var(--logo-red);
 }
 
-nav ul ul {
-    position: relative;
-    display: none;
+nav {
+    overflow: hidden;
 }
 
-nav li:hover ul {
-    display: block;
-}
-
-nav ul li:last-child {
+nav ul li {
     float: right;
+}
+
+nav li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+@media screen and (max-width: 768px) {
+    nav li {
+        float: none;
+    }
 }
 
 
