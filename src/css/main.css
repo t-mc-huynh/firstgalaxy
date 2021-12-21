@@ -6,7 +6,7 @@
     --logo-red: #C82D35;
     --logo-blue: #1c71a4;
     --white: #fff;
-    --black: #1B1C1E;
+    --black-1: #1B1C1E;
     --font-family: Open Sans, -apple-system, BlinkMacSystemFont, system-ui, ubuntu, noto, "Segoe UI", Roboto, sans-serif;
     --hover-transition: all 150ms ease;
 }
@@ -48,15 +48,15 @@ img {
     background-color: var(--white);
 }
 
-.bg-black {
-    background-color: var(--black);
+.bg-black-1 {
+    background-color: var(--black-1);
 }
 
 
 /* ======= Navigation bar =============*/
 
 .divider-grey {
-    box-shadow: inset 0 -1px 0 var(--white);
+    box-shadow: inset 0 0 0 var(--white);
 }
 
 .divider-grey a {
@@ -65,14 +65,23 @@ img {
 
 .divider-grey ul a:hover,
 .divider-grey ul a:focus {
-    box-shadow: inset 0 -4px 0 var(--logo-red);
+    color: var(--white);
+    border-bottom: 2px solid var(--logo-red);
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--black-1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 
 /* =========== Footer ================= */
 
 .site-footer {
-    background-color: var(--black);
+    background-color: var(--black-1);
     padding: 45px 0 20px;
     font-size: 15px;
     line-height: 32px;

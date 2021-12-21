@@ -10,88 +10,143 @@
     <!-- description of the pg less than 150 characters -->
     <meta name="description" content="FirstGalaxy Incorporated real estate.">
 
-    <link href="src/css/main.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="src/css/main.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm bg-black fixed-top">
-            <div class="container-fluid">
-                <!-- LOGO LEFT OF NAV -->
+
+    <nav class="navbar navbar-expand-lg bg-black-1 fixed-md-top shadow-sm pb-0">
+        <div class="container-fluid center-md">
+            <!-- LOGO LEFT OF NAV -->
+            <div class="container-fluid mb-2 col-lg-4 col-md-12">
                 <a href="/firstgalaxy" class="navbar-brand">
-                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" style="width: 100%;" />
+                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" style="width: 125px;" />
                 </a>
 
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Buy</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Link 1</a></li>
-                            <li><a class="dropdown-item" href="#">Link 2</a></li>
-                            <li><a class="dropdown-item" href="#">Link 3</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sell</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Find An Agent</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Join Our Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign In</a>
-                    </li>
-                </ul>
+                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <i class="bi bi-list navbar-toggler-icon white pt-2"></i>
+                </button>
             </div>
-        </nav>
-    </header>
+
+            <div class="container-fluid col-lg-10">
+                <div class="collapse navbar-collapse row divider-grey ps-4 pb-2" id="collapsibleNavbar">
+                    <ul class="navbar-nav me-4 float-lg-end">
+                        <li class="nav-item col-md-1">
+                            <a class=" nav-link white " href="# ">About</a>
+                        </li>
+                        <li class="nav-item dropdown col-md-1">
+                            <a class="nav-link dropdown-toggle white" href="#" role="button" data-bs-toggle="dropdown">Buy</a>
+                            <ul class="dropdown-menu bg-black-1">
+                                <li><a class="dropdown-item white" href="#">All Homes</a></li>
+                                <li><a class="dropdown-item white" href="#">Active Listings</a></li>
+                                <li><a class="dropdown-item white" href="#">Coming Soon Listings</a></li>
+                                <li><a class="dropdown-item white" href="#">Off-Market Listings</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown col-md-1">
+                            <a class="nav-link dropdown-toggle white" href="#" role="button" data-bs-toggle="dropdown">Sell</a>
+                            <ul class="dropdown-menu bg-black-1">
+                                <li><a class="dropdown-item white" href="#">Home Valuation</a></li>
+                                <li><a class="dropdown-item white" href="#">Seller's Guide</a></li>
+                                <li><a class="dropdown-item white" href="#">Buy Before You Sell</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown col-md-3">
+                            <a class="nav-link dropdown-toggle white" href="#" role="button" data-bs-toggle="dropdown">Services & Resources</a>
+                            <ul class="dropdown-menu bg-black-1 white ps-3">
+                                <li>Services</li>
+                                <li><a class="dropdown-item white" href="#">Mortgage</a></li>
+                                <li><a class="dropdown-item white" href="#">Property Management</a></li>
+                                <li><a class="dropdown-item white" href="#">Sell Tax-Free</a></li>
+                                <li><a class="dropdown-item white" href="#">Down Payment Assistance</a></li>
+                                <li><a class="dropdown-item white" href="#">Instant Cash Offers</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>Resources</li>
+                                <li><a class="dropdown-item white" href="#">Financing</a></li>
+                                <li><a class="dropdown-item white" href="#">SneakPreview</a></li>
+                                <li><a class="dropdown-item white" href="#">Market Insights</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item col-md-1">
+                            <a class=" nav-link white " href="# ">Agents</a>
+                        </li>
+                        <li class="nav-item dropdown col-md-2">
+                            <a class="nav-link dropdown-toggle white" href="#" role="button" data-bs-toggle="dropdown">Join Our Team</a>
+                            <ul class="dropdown-menu bg-black-1">
+                                <li><a class="dropdown-item white" href="#">Get Your Real Estate License</a></li>
+                                <li><a class="dropdown-item white" href="#">Technology</a></li>
+                                <li><a class="dropdown-item white" href="#">Training</a></li>
+                                <li><a class="dropdown-item white" href="#">Real Estate Manual</a></li>
+                                <li><a class="dropdown-item white" href="#">FAQs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item col-md-2">
+                            <a class=" nav-link white " href="# ">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
 
     <main>
+        <div class="container-fluid p-5 bg-light text-black">
+            <h1>Welcome to FirstGalaxy</h1>
+            <h3>This is a subtitle</h3>
+        </div>
+        <div class="container-fluid p-5 bg-light text-black ">
+            <h2>Subsection Title</h2>
+            <h4>Subsection text</h4>
+            <p>4iosafjk oi fweiojfolksjfoeiw fjklsa fjoiewfj lksfjowi</p>
+        </div>
 
     </main>
 
 
     <!--FOOTER-->
-    <footer class="site-footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
+    <footer class="site-footer ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-4 col-md-3 col-xs-6">
                     <h6>Buy</h6>
-                    <ul class="footer-links">
-                        <li><a href="/firstgalaxy">Home</a></li>
-                        <li><a href="/firstgalaxy">About</a></li>
-                        <li><a href="/firstgalaxy">Portfolio</a></li>
-                        <li><a href="/firstgalaxy">Resume</a></li>
-                        <li><a href="/firstgalaxy">Contact</a></li>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Home</a></li>
+                        <li><a href="/firstgalaxy ">About</a></li>
+                        <li><a href="/firstgalaxy ">Portfolio</a></li>
+                        <li><a href="/firstgalaxy ">Resume</a></li>
+                        <li><a href="/firstgalaxy ">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="col-xs-6 col-md-3">
+                <div class="col-lg-4 col-md-3 col-xs-6">
                     <h6>Sell</h6>
-                    <ul class="footer-links">
-                        <li><a href="/firstgalaxy">Upcoming Projects</a></li>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Upcoming Projects</a></li>
                     </ul>
                 </div>
 
-                <div class="col-xs-6 col-md-3">
+                <div class="col-lg-4 col-md-3 col-xs-8">
                     <h6>Contact Us</h6>
-                    <ul class="footer-links">
-                        <li><a href="/firstgalaxy">Find An Agent</a></li>
-                        <li><a href="/firstgalaxy">Join Our Team</a></li>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Find An Agent</a></li>
+                        <li><a href="/firstgalaxy ">Join Our Team</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">
-                        Copyright &copy; 2021 All Rights Reserved by <a href="/firstgalaxy" style="text-decoration: underline;">FirstGalaxy inc.</a><i class="bi bi-star-fill vanish"></i>
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-8">
+                    <p class="copyright-text ">
+                        Copyright &copy; 2021 All Rights Reserved by
+                        <a href="/firstgalaxy " style="text-decoration: underline;">FirstGalaxy inc.</a>
                     </p>
                 </div>
             </div>
