@@ -8,7 +8,7 @@
     --white: #fff;
     --black-1: #1B1C1E;
     --font-family: Open Sans, -apple-system, BlinkMacSystemFont, system-ui, ubuntu, noto, "Segoe UI", Roboto, sans-serif;
-    --hover-transition: all 150ms ease;
+    --hover-transition: all 500ms ease;
 }
 
 body {
@@ -55,26 +55,29 @@ img {
 
 /* ======= Navigation bar =============*/
 
-.divider-grey {
-    box-shadow: inset 0 0 0 var(--white);
-}
-
-.divider-grey a {
-    transition: var(--hover-transition);
-}
-
-.divider-grey ul a:hover,
-.divider-grey ul a:focus {
+.nav-item a:hover,
+.nav-item a:focus {
+    box-shadow: 0 3px 0 0 var(--logo-blue);
     color: var(--white);
-    border-bottom: 2px solid var(--logo-red);
-}
-
-.dropdown-menu a:hover {
     background-color: var(--black-1);
 }
 
 .navbar-toggler:focus {
     box-shadow: none;
+}
+
+.nav-item,
+.nav-item a,
+.dropdown-item {
+    margin: 5px 10px;
+    width: fit-content;
+    transition: var(--hover-transition);
+}
+
+.nav-item i {
+    font-size: 14px;
+    margin-left: 20px;
+    color: var(--white);
 }
 
 
