@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>First Galaxy Inc. Sign In</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- description of the pg less than 150 characters -->
+    <meta name="description" content="Sign into your account with First Galaxy Inc. to save your search history and send your favorite properties to your agent.">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="src/css/main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-black-1 fixed-md-top shadow-sm pb-0">
+        <div class="container-fluid center-md">
+            <!-- LOGO LEFT OF NAV -->
+            <div class="container-fluid mb-2 col-lg-3 col-md-12">
+                <a href="/firstgalaxy" class="navbar-brand">
+                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" style="width: 150px;" />
+                </a>
+
+                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <i class="bi bi-list navbar-toggler-icon white pt-2"></i>
+                </button>
+            </div>
+
+            <div class="container-fluid col-lg-10">
+                <div class="collapse navbar-collapse row ps-4 pb-2" id="collapsibleNavbar">
+                    <ul class="navbar-nav me-4 float-lg-end">
+                        <li class="nav-item col-md-1">
+                            <a class=" nav-link white " href="# ">About</a>
+                        </li>
+                        <li class="nav-item dropdown col-md-1">
+                            <a class="nav-link white" href="#" role="button" data-bs-toggle="dropdown">Buy<i class="bi bi-caret-down-fill"></i></a>
+                            <ul class="dropdown-menu bg-black-1">
+                                <li><a class="dropdown-item white" href="#">All Homes</a></li>
+                                <li><a class="dropdown-item white" href="#">Active Listings</a></li>
+                                <li><a class="dropdown-item white" href="#">Coming Soon Listings</a></li>
+                                <li><a class="dropdown-item white" href="#">Off-Market Listings</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown col-lg-1">
+                            <a class="nav-link white" href="#" role="button" data-bs-toggle="dropdown">Sell<i class="bi bi-caret-down-fill"></i></a>
+                            <ul class="dropdown-menu bg-black-1">
+                                <li><a class="dropdown-item white" href="#">Home Valuation</a></li>
+                                <li><a class="dropdown-item white" href="#">Seller's Guide</a></li>
+                                <li><a class="dropdown-item white" href="#">Buy Before You Sell</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown col-lg-3">
+                            <a class="nav-link white" href="#" role="button" data-bs-toggle="dropdown">Services & Resources<i class="bi bi-caret-down-fill"></i></a>
+                            <ul class="dropdown-menu bg-black-1 white ps-3">
+                                <li>Services</li>
+                                <li><a class="dropdown-item white" href="#">Mortgage</a></li>
+                                <li><a class="dropdown-item white" href="#">Property Management</a></li>
+                                <li><a class="dropdown-item white" href="#">Sell Tax-Free</a></li>
+                                <li><a class="dropdown-item white" href="#">Down Payment Assistance</a></li>
+                                <li><a class="dropdown-item white" href="#">Instant Cash Offers</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>Resources</li>
+                                <li><a class="dropdown-item white" href="#">Financing</a></li>
+                                <li><a class="dropdown-item white" href="#">SneakPreview</a></li>
+                                <li><a class="dropdown-item white" href="#">Market Insights</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item col-lg-1">
+                            <a class=" nav-link white " href="# ">Agents</a>
+                        </li>
+                        <li class="nav-item dropdown col-lg-2">
+                            <a class="nav-link white" href="#" role="button" data-bs-toggle="dropdown">Join Our Team<i class="bi bi-caret-down-fill"></i></a>
+                            <ul class="dropdown-menu bg-black-1">
+                                <li><a class="dropdown-item white" href="#">Get Your Real Estate License</a></li>
+                                <li><a class="dropdown-item white" href="#">Technology</a></li>
+                                <li><a class="dropdown-item white" href="#">Training</a></li>
+                                <li><a class="dropdown-item white" href="#">Real Estate Manual</a></li>
+                                <li><a class="dropdown-item white" href="#">FAQs</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item col-lg-2">
+                            <a class=" nav-link white " href="# ">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="text-center form-signin">
+        <form>
+            <img class="mt-5" src="src/images/logo-transparent.png" alt="" width="250">
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 mb-3 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <a href="/firstgalaxy">Create an account</a>
+            <p class="mt-3 mb-5 text-muted">&copy; 2021</p>
+        </form>
+    </main>
+
+
+    <!--FOOTER-->
+    <footer class="site-footer ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-4 col-md-3 col-sm-4 col-xs-6">
+                    <h6>Buy</h6>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">All Homes</a></li>
+                        <li><a href="/firstgalaxy ">Active Listings</a></li>
+                        <li><a href="/firstgalaxy ">Coming Soon Listings</a></li>
+                        <li><a href="/firstgalaxy ">Off-Market Listings</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-3 col-sm-4 col-xs-6">
+                    <h6>Sell</h6>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Home Valuation</a></li>
+                        <li><a href="/firstgalaxy ">Seller's Guide</a></li>
+                        <li><a href="/firstgalaxy ">Buy Before You Sell</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-3 col-sm-4">
+                    <h6>Contact Us</h6>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Agents</a></li>
+                        <li><a href="/firstgalaxy ">Sign In</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-3 col-sm-4 col-xs-6">
+                    <h6>Services</h6>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Mortgage</a></li>
+                        <li><a href="/firstgalaxy ">Property Management</a></li>
+                        <li><a href="/firstgalaxy ">Sell Tax-Free</a></li>
+                        <li><a href="/firstgalaxy ">Down Payment Assistance</a></li>
+                        <li><a href="/firstgalaxy ">Instant Cash Offers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-3 col-sm-4 col-xs-6">
+                    <h6>Resources</h6>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Financing</a></li>
+                        <li><a href="/firstgalaxy ">SneakPreview</a></li>
+                        <li><a href="/firstgalaxy ">Market Insights</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-3 col-sm-5">
+                    <h6>Join Our Team</h6>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy ">Get Your Real Estate License</a></li>
+                        <li><a href="/firstgalaxy ">Technology</a></li>
+                        <li><a href="/firstgalaxy ">Training</a></li>
+                        <li><a href="/firstgalaxy ">Real Estate Manual</a></li>
+                        <li><a href="/firstgalaxy ">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container ">
+            <div class="row ">
+                <div class="col-sm-8">
+                    <p class="copyright-text ">
+                        Copyright &copy; 2021 All Rights Reserved by
+                        <a href="/firstgalaxy " style="text-decoration: underline;">FirstGalaxy inc.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--END OF FOOTER-->
+</body>
+
+</html>
