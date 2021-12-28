@@ -69,7 +69,7 @@ img {
 .nav-item,
 .nav-item a,
 .dropdown-item {
-    min-width: fit-content;
+    max-width: max-content;
     transition: var(--hover-transition);
 }
 
