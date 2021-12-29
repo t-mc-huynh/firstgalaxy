@@ -157,11 +157,6 @@ black1 {
 
 /* =========== Features ================= */
 
-.bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-}
-
 .icon-square {
     display: inline-flex;
     align-items: center;
@@ -173,21 +168,39 @@ black1 {
 }
 
 
-/* =========== Sign In Page ================= */
+/* =========== Carousel ================= */
 
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
+.carousel {
+    max-width: calc(100% - 125px);
+    margin: 50px auto;
 }
 
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+.card {
+    padding: 10px;
+}
+
+.card-img-top,
+.card-img-bottom {
+    height: 200px;
+    object-fit: cover;
+}
+
+@media (max-width: 420px) {
+    .carousel {
+        max-width: calc(100% - 50px);
+        margin: 30px auto;
     }
 }
+
+@media (min-width: 1024px) {
+    .card-img-top,
+    .card-img-bottom {
+        height: 275px;
+    }
+}
+
+
+/* =========== Sign In Page ================= */
 
 .form-signin {
     width: 100%;
