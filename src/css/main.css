@@ -6,7 +6,7 @@
     --logo-blue: #1c71a4;
     --white: #fff;
     --black-1: #1B1C1E;
-    --font-family: Open Sans, -apple-system, BlinkMacSystemFont, system-ui, ubuntu, noto, "Segoe UI", Roboto, sans-serif;
+    --font-family: Playfair Display, Fira Sans;
     --hover-transition: all 500ms ease;
 }
 
@@ -27,12 +27,24 @@ img {
     max-width: 100%;
 }
 
-.logo-red {
+.logo-red,
+red {
     color: var(--logo-red);
 }
 
-.logo-blue {
+.logo-blue,
+blue {
     color: var(--logo-red);
+}
+
+.white,
+white {
+    color: var(--white);
+}
+
+.black-1,
+black1 {
+    color: var(--black-1);
 }
 
 .bg-red {
