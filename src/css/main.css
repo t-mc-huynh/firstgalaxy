@@ -80,6 +80,7 @@ black1 {
 .nav-item,
 .nav-item a,
 .dropdown-item {
+    color: var(--white);
     max-width: max-content;
     transition: var(--hover-transition);
 }
