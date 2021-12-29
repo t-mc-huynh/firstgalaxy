@@ -155,6 +155,24 @@ black1 {
 }
 
 
+/* =========== Features ================= */
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+}
+
+
 /* =========== Sign In Page ================= */
 
 .bd-placeholder-img {
