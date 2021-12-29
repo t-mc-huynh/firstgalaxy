@@ -200,6 +200,15 @@ black1 {
 }
 
 
+/* =========== Interactive Map ================= */
+
+#map {
+    height: 500px;
+    margin: 25px;
+    border: 2px solid var(--black-1);
+}
+
+
 /* =========== Sign In Page ================= */
 
 .form-signin {
