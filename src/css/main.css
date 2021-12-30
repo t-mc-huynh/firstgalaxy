@@ -203,6 +203,7 @@ black1 {
 /* =========== Interactive Map ================= */
 
 #map {
+    position: relative;
     height: 500px;
     margin: 25px;
     border: 2px solid var(--black-1);
