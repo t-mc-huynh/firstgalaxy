@@ -98,35 +98,39 @@
     <main>
         <div class="container p-5 row g-3">
             <form>
+                <label class="form-label">Input the address of the property:</label>
+                <div class="form-check">
+                    <input type="text" id="address">
+                </div>
                 <label class="form-label">What are you interested in?</label>
                 <div class="row row-cols-md-4 row-cols-1">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
+                        <input class="form-check-input" type="checkbox" name="interest" value="buying" id="buying">
+                        <label class="form-check-label" for="buying">
                             Buying property
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" name="interest" value="selling" id="selling">
+                        <label class="form-check-label" for="selling">
                             Selling property
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" name="interest" value="joining" id="joining">
+                        <label class="form-check-label" for="joining">
                             Joining the team
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
+                        <input class="form-check-input" type="checkbox" name="interest" value="other" id="other">
+                        <label class="form-check-label" for="other">
                             Other - indicate in comments
                         </label>
                     </div>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary mb-3"><a href="mailto:tinahuynh9898@gmail.com"></a>Submit</button>
+                    <button id="btn" type="submit" class="btn btn-primary mb-3"></a>Submit</button>
                 </div>
             </form>
         </div>
