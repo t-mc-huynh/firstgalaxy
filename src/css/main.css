@@ -1,6 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
-@import url("https://use.typekit.net/iev0zyb.css");
 :root {
     scroll-behavior: smooth;
     --logo-red: #c82021;
@@ -84,11 +83,14 @@ black1 {
 }
 
 .nav-item,
-.nav-item a,
-.dropdown-item {
+.nav-item a {
     color: var(--white);
     max-width: max-content;
     transition: var(--hover-transition);
+}
+
+.dropdown-menu a {
+    max-width: 100%;
 }
 
 .nav-item i {
