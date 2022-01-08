@@ -10,6 +10,15 @@ $(document).ready(function() {
         swipeToSlide: true,
         waitForAnimate: false,
         responsive: [{
+                breakpoint: 2400,
+                settings: {
+                    infinite: true,
+                    arrows: false,
+                    slidesToShow: 5,
+                    slidesToScroll: 1
+                }
+            },
+            {
                 breakpoint: 1281,
                 settings: {
                     slidesToShow: 3,
