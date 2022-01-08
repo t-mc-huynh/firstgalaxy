@@ -66,8 +66,8 @@ black1 {
 
 /* ======= Navigation bar =============*/
 
-.navbar {
-    overflow: hidden;
+.navbar .container .container-fluid {
+    min-height: fit-content + 55px;
 }
 
 .nav-item a:hover,
