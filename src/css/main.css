@@ -1,10 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+@import url("https://use.typekit.net/iev0zyb.css");
 :root {
     scroll-behavior: smooth;
-    --logo-red: #C82D35;
-    --logo-blue: #1c71a4;
+    --logo-red: #c82021;
+    --logo-blue: #0d6efd;
     --white: #fff;
+    --grey1: #a9a3a2;
     --black-1: #1B1C1E;
     --font-family: Oswald, Source Sans Pro;
     --hover-transition: all 500ms ease;
@@ -169,6 +171,45 @@ black1 {
     height: 3rem;
     font-size: 1.5rem;
     border-radius: .75rem;
+}
+
+
+/* =========== Section Titles ================= */
+
+.section-title {
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: var(--black-1);
+}
+
+.section-title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 125px;
+    height: 1px;
+    background: var(--grey1);
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--logo-red);
+    bottom: 0;
+    left: calc(50% - 20px);
 }
 
 
