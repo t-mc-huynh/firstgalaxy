@@ -66,6 +66,10 @@ black1 {
 
 /* ======= Navigation bar =============*/
 
+.navbar {
+    overflow: hidden;
+}
+
 .nav-item a:hover,
 .nav-item a:focus {
     box-shadow: 0 3px 0 0 var(--logo-blue);
