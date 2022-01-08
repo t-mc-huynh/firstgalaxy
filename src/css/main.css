@@ -97,82 +97,6 @@ black1 {
 }
 
 
-/* =========== Footer ================= */
-
-.site-footer {
-    background-color: var(--black-1);
-    padding: 45px 0 20px;
-    font-size: 15px;
-    line-height: 32px;
-    color: var(--white);
-}
-
-.site-footer h6 {
-    /*category names*/
-    color: var(--logo-red);
-    text-transform: uppercase;
-    font-size: 16px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    letter-spacing: 10px;
-}
-
-.footer-links {
-    /* ul element itself */
-    padding-left: 0;
-    list-style: none;
-}
-
-.footer-links li {
-    /* list elements */
-    display: block;
-}
-
-.site-footer a {
-    /*the hyperlinks*/
-    color: var(--white);
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.site-footer a:hover {
-    color: var(--logo-blue);
-}
-
-.site-footer .copyright-text {
-    /* small text to left of icons */
-    margin: 0;
-}
-
-@media only screen and (max-width: 991px) {
-    .site-footer [class^="col-"] {
-        margin-bottom: 10px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .site-footer {
-        padding-bottom: 0;
-    }
-    .site-footer .copyright-text {
-        text-align: center;
-    }
-}
-
-
-/* =========== Features ================= */
-
-.icon-square {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    border-radius: .75rem;
-}
-
-
 /* =========== Section Titles ================= */
 
 .section-title {
@@ -212,6 +136,19 @@ black1 {
 }
 
 
+/* =========== Features ================= */
+
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+}
+
+
 /* =========== Carousel ================= */
 
 .carousel {
@@ -229,6 +166,12 @@ black1 {
     object-fit: cover;
 }
 
+.card:focus,
+.card:active {
+    border: none;
+    outline: none;
+}
+
 @media (max-width: 420px) {
     .carousel {
         max-width: calc(100% - 50px);
@@ -244,24 +187,14 @@ black1 {
 }
 
 
-/* =========== Interactive Map ================= */
-
-#map {
-    position: relative;
-    height: 500px;
-    margin: 25px;
-    border: 2px solid var(--black-1);
-}
-
-
 /* =========== Agents ================= */
 
-.header {
+.agent-header {
     background-image: url("https://img.wallpapersafari.com/desktop/1680/1050/26/17/WuMmtk.jpg");
     min-width: 100%;
 }
 
-.display-5.fw-bold {
+.agent-text {
     color: var(--white);
 }
 
@@ -411,31 +344,64 @@ black1 {
 }
 
 
-/* =========== Sign In Page ================= */
+/* =========== Footer ================= */
 
-.form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
+.site-footer {
+    background-color: var(--black-1);
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 32px;
+    color: var(--white);
 }
 
-.form-signin .checkbox {
-    font-weight: 400;
+.site-footer h6 {
+    /*category names*/
+    color: var(--logo-red);
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    letter-spacing: 10px;
 }
 
-.form-signin .form-floating:focus-within {
-    z-index: 2;
+.footer-links {
+    /* ul element itself */
+    padding-left: 0;
+    list-style: none;
 }
 
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.footer-links li {
+    /* list elements */
+    display: block;
 }
 
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.site-footer a {
+    /*the hyperlinks*/
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.site-footer a:hover {
+    color: var(--logo-blue);
+}
+
+.site-footer .copyright-text {
+    /* small text to left of icons */
+    margin: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .site-footer [class^="col-"] {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .site-footer {
+        padding-bottom: 0;
+    }
+    .site-footer .copyright-text {
+        text-align: center;
+    }
 }
