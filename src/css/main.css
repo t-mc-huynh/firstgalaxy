@@ -136,6 +136,17 @@ black1 {
 }
 
 
+/* =========== Home Page ================= */
+
+.home-header {
+    background-image: url("https://www.bostonmagazine.com/wp-content/uploads/sites/2/2019/06/moving-season-guide.jpg");
+}
+
+.home-text {
+    color: var(--white);
+}
+
+
 /* =========== Features ================= */
 
 .icon-square {
@@ -146,44 +157,6 @@ black1 {
     height: 3rem;
     font-size: 1.5rem;
     border-radius: .75rem;
-}
-
-
-/* =========== Carousel ================= */
-
-.carousel {
-    max-width: calc(100% - 125px);
-    margin: 50px auto;
-}
-
-.card {
-    padding: 10px;
-}
-
-.card-img-top,
-.card-img-bottom {
-    height: 200px;
-    object-fit: cover;
-}
-
-.card:focus,
-.card:active {
-    border: none;
-    outline: none;
-}
-
-@media (max-width: 420px) {
-    .carousel {
-        max-width: calc(100% - 50px);
-        margin: 30px auto;
-    }
-}
-
-@media (min-width: 1024px) {
-    .card-img-top,
-    .card-img-bottom {
-        height: 275px;
-    }
 }
 
 
