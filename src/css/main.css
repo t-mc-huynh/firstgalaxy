@@ -67,10 +67,6 @@ black1 {
 
 /* ======= Navigation bar =============*/
 
-.navbar .container .container-fluid {
-    min-height: fit-content + 55px;
-}
-
 .nav-item a:hover,
 .nav-item a:focus {
     box-shadow: 0 3px 0 0 var(--logo-blue);
@@ -83,7 +79,8 @@ black1 {
 }
 
 .nav-item,
-.nav-item a {
+.nav-item a,
+.dropdown-item {
     color: var(--white);
     max-width: max-content;
     transition: var(--hover-transition);
