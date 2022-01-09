@@ -139,11 +139,18 @@ black1 {
 /* =========== Home Page ================= */
 
 .home-header {
-    background-image: url("https://www.bostonmagazine.com/wp-content/uploads/sites/2/2019/06/moving-season-guide.jpg");
+    background-image: url("https://image.freepik.com/free-photo/top-view-messy-full-moving-boxes-room_329181-18268.jpg");
+    min-width: 100%;
+}
+
+@media (min-width: 992px) {
+    .home-header {
+        background-image: url("https://as2.ftcdn.net/v2/jpg/01/62/18/65/1000_F_162186518_eqdh8UqR0NYKCO2uTUKmFxAWhn5B9cBd.jpg");
+    }
 }
 
 .home-text {
-    color: var(--white);
+    color: var(--black-1);
 }
 
 
@@ -163,12 +170,12 @@ black1 {
 /* =========== Agents ================= */
 
 .agent-header {
-    background-image: url("https://img.wallpapersafari.com/desktop/1680/1050/26/17/WuMmtk.jpg");
+    background-image: url("https://as1.ftcdn.net/v2/jpg/02/78/63/40/1000_F_278634068_sVBLEFIDqxOZit8baDaq48erEkvdsZZa.jpg");
     min-width: 100%;
 }
 
 .agent-text {
-    color: var(--white);
+    color: var(--black-1);
 }
 
 .agents {
@@ -362,6 +369,10 @@ black1 {
 .site-footer .copyright-text {
     /* small text to left of icons */
     margin: 0;
+}
+
+.site-footer .copyright-text a {
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 991px) {
