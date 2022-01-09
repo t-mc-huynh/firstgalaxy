@@ -312,7 +312,7 @@ black1 {
     display: block;
 }
 
-.dropdown2 .dropdown a:hover {
+.dropdown2 .dropdown-content a:hover {
     background-color: #ddd;
 }
 
