@@ -208,13 +208,6 @@ black1 {
     }
 }
 
-.snip1336 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-}
-
 .snip1336 img {
     width: 450px;
     height: 200px;
