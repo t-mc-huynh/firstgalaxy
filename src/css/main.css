@@ -376,6 +376,14 @@ black1 {
     width: 50%;
 }
 
+#contact-decor {
+    height: 55px;
+    object-fit: cover;
+    min-width: 250px;
+    max-width: 500px;
+    width: 50%;
+}
+
 
 /* =========== Footer ================= */
 
