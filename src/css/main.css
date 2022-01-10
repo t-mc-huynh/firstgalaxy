@@ -368,6 +368,15 @@ black1 {
 }
 
 
+/* =========== Contact ================= */
+
+#contact-img {
+    min-width: 200px;
+    max-width: 450px;
+    width: 50%;
+}
+
+
 /* =========== Footer ================= */
 
 .site-footer {
