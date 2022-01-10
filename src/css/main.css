@@ -198,7 +198,7 @@ black1 {
     border: 1px solid var(--black-1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .agents {
         margin: 0px;
     }
@@ -248,7 +248,7 @@ black1 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .snip1336 figcaption:before {
         border-width: 55px 0 0 450px;
     }
