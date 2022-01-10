@@ -180,7 +180,7 @@ black1 {
 
 .agents {
     justify-content: center;
-    margin: 0px;
+    margin: 10px;
     padding: 0px;
 }
 
@@ -188,8 +188,7 @@ black1 {
     position: relative;
     overflow: hidden;
     min-width: 230px;
-    max-width: 315px;
-    width: 100%;
+    max-width: 350px;
     color: var(--black-1);
     text-align: left;
     line-height: 1.5rem;
@@ -199,12 +198,13 @@ black1 {
     border: 1px solid var(--black-1);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 768px) {
     .agents {
-        margin: 5px;
+        margin: 0px;
     }
     .snip1336 {
-        margin: 20px 5px;
+        margin: 20px 20px;
+        max-width: 425px;
     }
 }
 
@@ -243,26 +243,37 @@ black1 {
     bottom: 100%;
     left: 25px;
     z-index: 1;
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 110px;
+    max-height: 110px;
     opacity: 1;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .snip1336 figcaption:before {
+        border-width: 55px 0 0 450px;
+    }
+    .snip1336 .profile {
+        max-width: 125px;
+        max-height: 125px;
+    }
 }
 
 .snip1336 h2 {
     margin: 0 0 5px;
     font-weight: 300;
+    font-size: 2rem;
 }
 
 .snip1336 h2 span {
     display: block;
-    font-size: 0.5em;
+    font-size: 1.3rem;
     color: var(--logo-red);
 }
 
 .snip1336 p {
     margin: 0 0 0px;
-    font-size: 0.8em;
+    font-size: 1rem;
     color: var(--black-1);
     letter-spacing: .5px;
     opacity: 0.8;
@@ -273,7 +284,7 @@ black1 {
     margin-bottom: 5px;
     margin-right: 5px;
     padding-right: 0px;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
 .dropdown2 {
