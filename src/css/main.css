@@ -14,14 +14,14 @@
 body {
     font-size: 18px;
     font-family: var(--font-family);
-    line-height: 1.5;
+    line-height: 27px;
     font-weight: 400;
     background-color: var(--white);
 }
 
 p {
     margin-bottom: 18px;
-    max-width: 32rem;
+    max-width: 576px;
 }
 
 img {
@@ -160,10 +160,10 @@ black1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    border-radius: .75rem;
+    width: 54px;
+    height: 54px;
+    font-size: 27px;
+    border-radius: 14px;
 }
 
 
@@ -191,7 +191,7 @@ black1 {
     max-width: 350px;
     color: var(--black-1);
     text-align: left;
-    line-height: 1.5rem;
+    line-height: 27px;
     background-color: var(--white);
     margin: 20px 20px;
     padding: 0px;
@@ -212,7 +212,6 @@ black1 {
     width: 450px;
     height: 200px;
     vertical-align: top;
-    opacity: 0.85;
 }
 
 .snip1336 figcaption {
@@ -298,7 +297,7 @@ black1 {
     margin-bottom: 5px;
     margin-right: 5px;
     padding-right: 0px;
-    font-size: 0.8rem;
+    font-size: 14px;
 }
 
 .dropdown2 {
