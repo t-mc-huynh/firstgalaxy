@@ -6,7 +6,7 @@
     --logo-blue: #0d6efd;
     --white: #fff;
     --grey1: #a9a3a2;
-    --black-1: #1B1C1E;
+    --black-1: #1a1a1a;
     --font-family: Oswald, Source Sans Pro;
     --hover-transition: all 500ms ease;
 }
@@ -269,6 +269,15 @@ black1 {
     display: block;
     font-size: 1.3rem;
     color: var(--logo-red);
+}
+
+.snip1336 a {
+    margin: 0 0 0px;
+    font-size: 1rem;
+    color: var(--logo-blue);
+    text-decoration: none;
+    letter-spacing: .5px;
+    opacity: 0.8;
 }
 
 .snip1336 p {
