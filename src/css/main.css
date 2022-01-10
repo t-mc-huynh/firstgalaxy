@@ -318,7 +318,7 @@ black1 {
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    min-width: 150px;
+    min-width: max-content;
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 99;
