@@ -198,7 +198,7 @@ black1 {
     border: 1px solid var(--black-1);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .agents {
         margin: 0px;
     }
@@ -212,6 +212,15 @@ black1 {
     width: 450px;
     height: 200px;
     vertical-align: top;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .snip1336 {
+        max-width: 525px;
+    }
+    .snip1336 img {
+        width: 550px;
+    }
 }
 
 .snip1336 figcaption {
@@ -258,6 +267,12 @@ black1 {
     }
 }
 
+@media (min-width: 769px) and (max-width: 992px) {
+    .snip1336 figcaption:before {
+        border-width: 55px 0 0 550px;
+    }
+}
+
 .snip1336 h2 {
     margin: 0 0 5px;
     font-weight: 300;
@@ -298,6 +313,24 @@ black1 {
     margin-right: 5px;
     padding-right: 0px;
     font-size: 14px;
+}
+
+@media (max-width: 992px) {
+    .snip1336 h2 span {
+        font-size: 24px;
+    }
+    .snip1336 a {
+        font-size: 22px;
+    }
+    .snip1336 p {
+        font-size: 22px;
+    }
+    .snip1336 code {
+        font-size: 22px;
+    }
+    .snip1336 small {
+        font-size: 20px;
+    }
 }
 
 .dropdown2 {
