@@ -166,10 +166,12 @@ black1 {
 .agent-header {
     background-image: url("https://image.shutterstock.com/image-vector/house-vector-icon-home-symbol-260nw-1636571392.jpg");
     min-width: 100%;
+    max-height: 255px;
 }
 
 .agent-text {
     color: var(--black-1);
+    background-color: white;
 }
 
 .agents {
@@ -331,6 +333,12 @@ black1 {
     float: left;
     margin-left: 70px;
     position: relative;
+}
+
+@media (max-width: 768px) {
+    .dropdown2 {
+        margin-left: 15px;
+    }
 }
 
 .dropdown2 .dropbtn {

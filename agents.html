@@ -71,153 +71,157 @@
 
 
     <main>
-        <div class="agent-header bg-dark text-secondary px-4 py-5 text-center">
-            <div class="py-5">
-                <h1 class="agent-text display-5 fw-bold">Find An Agent Who's Right For YOU!</h1>
+        <div class="container-fluid">
+            <div class="agent-header bg-dark text-secondary px-4 py-5 text-center">
+                <div class="py-5">
+                    <h1 class="agent-text display-5 fw-bold">Find An Agent Who's Right For YOU!</h1>
+                </div>
             </div>
         </div>
 
         <div class="container-fluid">
-            <div class="agents row">
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Sam Huynh<span>Owner & Real Estate Broker</span></h2>
-                        <a href="tel:7149435648">714-000-0000</a>
-                        <p>example@test.com</p>
-                        <code>Irvine, CA</code><br>
-                        <small>LIC# 00200000</small>
-                    </figcaption>
-                </figure>
-            </div>
-            <hr>
-            <div class="dropdown2">
-                <button onclick="myFunction()" class="btn dropbtn dropdown-toggle" type="button">Filter</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a onclick="sortListAZ()">Sort First Name (A-Z)</a>
-                    <a onclick="sortListZA()">Sort First Name (Z-A)</a>
-                    <a onclick="sortListCity()">Sort by City</a>
+            <div>
+                <div class="agents row row-cols-1">
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Sam Huynh<span>Owner & Real Estate Broker</span></h2>
+                            <a href="tel:7149435648">714-000-0000</a>
+                            <p>example@test.com</p>
+                            <code>Irvine, CA</code><br>
+                            <small>LIC# 00200000</small>
+                        </figcaption>
+                    </figure>
                 </div>
-            </div>
-            <div id="card" class="agents row row-cols-1 row-cols-lg-3">
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Joen Thuy Bui<span>Real Estate Agent</span></h2>
-                        <code>Westminster, CA</code><br>
-                        <small>LIC# 05000600</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Linh Lam<span>Real Estate Agent</span></h2>
-                        <code>Irvine, CA</code><br>
-                        <small>LIC# 00020060</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Luan Ngoc Le<span>Real Estate Agent</span></h2>
-                        <code>Orange, CA</code><br>
-                        <small>LIC# 70000300</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Huong Lo<span>Real Estate Agent</span></h2>
-                        <code>Fountain Valley, CA</code><br>
-                        <small>LIC# 03004000</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Betty Han Mach<span>Real Estate Broker</span></h2>
-                        <code>Westminster, CA</code><br>
-                        <small>LIC# 00100000</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Antonio Nguyen<span>Real Estate Agent</span></h2>
-                        <code>Irvine, CA</code><br>
-                        <small>LIC# 00001080</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Bryan Nguyen<span>Real Estate Agent</span></h2>
-                        <code>Corona, CA</code><br>
-                        <small>LIC# 00200060</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Gloria Nguyen<span>Real Estate Agent</span></h2>
-                        <code>Garden Grove, CA</code><br>
-                        <small>LIC# 20040000</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Larry Nguyen<span>Real Estate Agent</span></h2>
-                        <code>Yorba Linda, CA</code><br>
-                        <small>LIC# 00030000</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Kara Thuy Pham<span>Real Estate Broker</span></h2>
-                        <code>Garden Grove, CA</code><br>
-                        <small>LIC# 00200040</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Trang Anh Pham<span>Real Estate Broker</span></h2>
-                        <code>Long Beach, CA</code><br>
-                        <small>LIC# 00070000</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Mai Tran<span>Real Estate Agent</span></h2>
-                        <code>Fullerton, CA</code><br>
-                        <small>LIC# 00007400</small>
-                    </figcaption>
-                </figure>
-                <figure class="snip1336 col">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                    <figcaption id="info">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                        <h2>Byron Valencia<span>Real Estate Agent</span></h2>
-                        <code>Chino Hills, CA</code><br>
-                        <small>LIC# 05600870</small>
-                    </figcaption>
-                </figure>
+                <hr>
+                <div class="dropdown2">
+                    <button onclick="myFunction()" class="btn dropbtn dropdown-toggle" type="button">Filter</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a onclick="sortListAZ()">Sort First Name (A-Z)</a>
+                        <a onclick="sortListZA()">Sort First Name (Z-A)</a>
+                        <a onclick="sortListCity()">Sort by City</a>
+                    </div>
+                </div>
+                <div id="card" class="agents row row-cols-1 row-cols-md-12 row-cols-lg-4">
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Joen Thuy Bui<span>Real Estate Agent</span></h2>
+                            <code>Westminster, CA</code><br>
+                            <small>LIC# 05000600</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Linh Lam<span>Real Estate Agent</span></h2>
+                            <code>Irvine, CA</code><br>
+                            <small>LIC# 00020060</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Luan Ngoc Le<span>Real Estate Agent</span></h2>
+                            <code>Orange, CA</code><br>
+                            <small>LIC# 70000300</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Huong Lo<span>Real Estate Agent</span></h2>
+                            <code>Fountain Valley, CA</code><br>
+                            <small>LIC# 03004000</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Betty Han Mach<span>Real Estate Broker</span></h2>
+                            <code>Westminster, CA</code><br>
+                            <small>LIC# 00100000</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Antonio Nguyen<span>Real Estate Agent</span></h2>
+                            <code>Irvine, CA</code><br>
+                            <small>LIC# 00001080</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Bryan Nguyen<span>Real Estate Agent</span></h2>
+                            <code>Corona, CA</code><br>
+                            <small>LIC# 00200060</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Gloria Nguyen<span>Real Estate Agent</span></h2>
+                            <code>Garden Grove, CA</code><br>
+                            <small>LIC# 20040000</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Larry Nguyen<span>Real Estate Agent</span></h2>
+                            <code>Yorba Linda, CA</code><br>
+                            <small>LIC# 00030000</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Kara Thuy Pham<span>Real Estate Broker</span></h2>
+                            <code>Garden Grove, CA</code><br>
+                            <small>LIC# 00200040</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Trang Anh Pham<span>Real Estate Broker</span></h2>
+                            <code>Long Beach, CA</code><br>
+                            <small>LIC# 00070000</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Mai Tran<span>Real Estate Agent</span></h2>
+                            <code>Fullerton, CA</code><br>
+                            <small>LIC# 00007400</small>
+                        </figcaption>
+                    </figure>
+                    <figure class="snip1336 col">
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
+                        <figcaption id="info">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
+                            <h2>Byron Valencia<span>Real Estate Agent</span></h2>
+                            <code>Chino Hills, CA</code><br>
+                            <small>LIC# 05600870</small>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </div>
     </main>
