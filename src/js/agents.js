@@ -48,6 +48,7 @@ function sortListAZ() {
             }
         }
     }
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function sortListZA() {
@@ -100,6 +101,7 @@ function sortListZA() {
             }
         }
     }
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function sortListCity() {
@@ -152,6 +154,7 @@ function sortListCity() {
             }
         }
     }
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function myFunction() {
