@@ -41,23 +41,17 @@
                         <li class="nav-item">
                             <a class="nav-link white" href="/firstgalaxy/">Sell</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link white" href="#" role="button" data-bs-toggle="dropdown">Services & Resources<i class="bi bi-caret-down-fill"></i></a>
-                            <ul class="dropdown-menu bg-black-1 white ps-3">
-                                <li>Services</li>
-                                <li><a class="dropdown-item white" href="/firstgalaxy/">Property Management</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li>Resources</li>
-                                <li><a class="dropdown-item white" href="/firstgalaxy/">Market Insights</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link white" href="/firstgalaxy/">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link white" href="/firstgalaxy/">Resources</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link white" href="/firstgalaxy/agents.html">Agents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Contact Us</a>
+                            <a class="nav-link white" data-bs-toggle="modal" data-bs-target="#contactModal" href="/firstgalaxy/">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link white" href="/firstgalaxy/">Join Our Team</a>
@@ -123,6 +117,28 @@
         </div>
     </main>
 
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog .modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">How Can We Help?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Whether you have a question about buying, selling, property management, investment, or joining our team, our team is ready to answer all your questions.</p>
+                    <div class="d-flex row row-cols-1 row-cols-md-2">
+                        <h4 class="col"><i class="bi-telephone-fill"></i> Give us a call:<br><a href="tel:7149435648"> (714) 943 - 5648</a></h4>
+                        <h4 class="col"><i class="bi-envelope-fill"></i> Send us an email:<br><a href="mailto:9435648@gmail.com"> 9435648@gmail.com</a></h4>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi-telephone-fill"></i> Call</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i class="bi-envelope-fill"></i> Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--FOOTER-->
     <footer class="site-footer">
@@ -177,6 +193,9 @@
     <!--END OF FOOTER-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="src/js/nav.js"></script>
+
 </body>
 
 </html>

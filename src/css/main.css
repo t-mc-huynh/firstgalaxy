@@ -161,6 +161,29 @@ black1 {
 }
 
 
+/* =========== Contact Modal ================= */
+
+#contactModal {
+    top: 35%;
+    left: 13%;
+    max-width: 75%;
+}
+
+.modal-title {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.modal-body {
+    margin: 10px;
+}
+
+.modal-body h4 {
+    line-height: 36px;
+}
+
+
 /* =========== Agents ================= */
 
 .agent-header {
