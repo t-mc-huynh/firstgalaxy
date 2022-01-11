@@ -51,7 +51,7 @@
                             <a class="nav-link white" href="/firstgalaxy/agents.html">Agents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" data-bs-toggle="modal" data-bs-target="#contactModal" href="/firstgalaxy/">Contact Us</a>
+                            <a class="nav-link white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" href="/firstgalaxy/">Contact Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link white" href="/firstgalaxy/">Join Our Team</a>
@@ -117,24 +117,16 @@
         </div>
     </main>
 
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog .modal-fullscreen-md-down">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalLabel">How Can We Help?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Whether you have a question about buying, selling, property management, investment, or joining our team, our team is ready to answer all your questions.</p>
-                    <div class="d-flex row row-cols-1 row-cols-md-2">
-                        <h4 class="col"><i class="bi-telephone-fill"></i> Give us a call:<br><a href="tel:7149435648"> (714) 943 - 5648</a></h4>
-                        <h4 class="col"><i class="bi-envelope-fill"></i> Send us an email:<br><a href="mailto:9435648@gmail.com"> 9435648@gmail.com</a></h4>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi-telephone-fill"></i> Call</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i class="bi-envelope-fill"></i> Email</button>
-                </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">How Can We Help?</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Whether you have a question about buying, selling, property management, investment, or joining our team, our team is ready to answer all your questions.</p>
+            <div class="d-flex row row-cols-1">
+                <h5 class="col"><i class="bi-telephone-fill"></i> Give us a call:<br><a href="tel:7149435648"> (714) 943 - 5648</a></h5>
+                <h5 class="col"><i class="bi-envelope-fill"></i> Send us an email:<br><a href="mailto:9435648@gmail.com"> 9435648@gmail.com</a></h5>
             </div>
         </div>
     </div>

@@ -163,23 +163,17 @@ black1 {
 
 /* =========== Contact Modal ================= */
 
-#contactModal {
-    top: 35%;
-    left: 13%;
-    max-width: 75%;
-}
-
-.modal-title {
+.offcanvas-title {
     margin-left: 10px;
     font-weight: bold;
     font-size: 24px;
 }
 
-.modal-body {
-    margin: 10px;
+.offcanvas-body {
+    margin: 0px 10px;
 }
 
-.modal-body h4 {
+.offcanvas-body h5 {
     line-height: 36px;
 }
 
