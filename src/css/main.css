@@ -178,6 +178,26 @@ black1 {
 }
 
 
+/* =========== Join Carousel ================= */
+
+.carousel-inner img {
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .carousel-inner img {
+        height: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-inner img {
+        height: 450px;
+    }
+}
+
+
 /* =========== Agents ================= */
 
 .agent-header {
