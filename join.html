@@ -15,84 +15,103 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-black-1 fixed-md-top shadow-sm pb-0">
-        <div class="container-fluid row">
+    <header id="navigation" style="background-image: url('https://www.ronenbekerman.com/wp-content/uploads/2019/09/City-View.jpg')">
+        <nav class="navbar navbar-expand-lg fixed-md-top pb-0">
+            <div class="container-fluid row">
 
-            <div class="container mb-2 col-md-2">
-                <a href="/firstgalaxy/" class="navbar-brand">
-                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" style="width: 150px;" />
-                </a>
+                <div class="container mb-2 col-md-2">
+                    <a href="/firstgalaxy/" class="navbar-brand">
+                        <img src="src/images/logo-transparent.png" alt="FirstGalaxy" />
+                    </a>
 
-                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#collapsibleNavbar">
                     <i class="bi bi-list navbar-toggler-icon white pt-3"></i>
                 </button>
-            </div>
+                </div>
 
-            <div class="container col-lg-8 col-md-10">
-                <div class="collapse navbar-collapse row ps-4 pb-2" id="collapsibleNavbar">
+                <div class="container col-lg-8 col-md-4">
+                    <div class="collapse navbar-collapse row  ps-4 pb-2">
+                        <ul class="navbar-nav me-4 float-lg-end justify-content-between" autoClose="true">
+                            <li class="nav-item col">
+                                <a class=" nav-link white" href="/firstgalaxy/">About</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Buy</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Sell</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Services</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Resources</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/agents.html">Agents</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Contact Us</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Join Our Team</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="collapsibleNavbar" aria-labelledby="offcanvasWithBackdropLabel">
+            <div class="offcanvas-header p-0">
+                <a href="/firstgalaxy/" class="navbar-brand text-center">
+                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" />
+                </a>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <hr>
+            <div class="offcanvas-body">
+                <div class="row ps-4 pb-2">
                     <ul class="navbar-nav me-4 float-lg-end justify-content-between" autoClose="true">
                         <li class="nav-item">
-                            <a class=" nav-link white" href="/firstgalaxy/">About</a>
+                            <a class=" nav-link text-black" href="/firstgalaxy/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Buy</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Buy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Sell</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Sell</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Services</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Resources</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Resources</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/agents.html">Agents</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/agents.html">Agents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" href="/firstgalaxy/">Contact Us</a>
+                            <a class="nav-link text-black" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" href="/firstgalaxy/">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Join Our Team</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Join Our Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Sign In</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Sign In</a>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
-    </nav>
+    </header>
 
 
     <main>
-        <div id="carouselExampleIndicators" class="container-fluid carousel slide p-0" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://web-static.wrike.com/blog/content/uploads/2019/09/The-Most-Overlooked-Item-in-a-Project-Proposal-Outline-1.jpg?av=657b951131dd7cb1bc2342e015149291" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://media.istockphoto.com/photos/business-meeting-in-office-picture-id1156037664?k=20&m=1156037664&s=612x612&w=0&h=mDKQ8IEh4Z9608tdS1HWYIEv0ThdEuiKenVutpYu__4=" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://marketing.prowritingaid.com/shutterstock_548132329.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/firstgalaxy/">Home</a></li>
@@ -100,88 +119,170 @@
             </ol>
         </nav>
 
-        <!-- ======= F.A.Q Section ======= -->
-        <section id="faq" class="faq">
-            <div class="container">
+        <!-- ======= Tabs Section ======= -->
+        <section id="tabs" class="tabs">
+            <div class="container-fluid px-5" data-aos="fade-up">
 
-                <div class="section-title" data-aos="fade-up">
-                    <h2>F.A.Q</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
-                        quidem hic quas.</p>
-                </div>
-
-                <div class="faq-list">
-                    <ul>
-                        <li data-aos="fade-up">
-                            <div class="question">
-                                <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            </div>
-                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                                <p>
-                                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                                </p>
-                            </div>
+                <nav class="nav">
+                    <ul class="nav nav-tabs fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" data-bs-toggle="tab" data-bs-target="#tab-1">Active</a>
                         </li>
-
-                        <li data-aos="fade-up" data-aos-delay="100">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                    cursus turpis massa tincidunt dui.
-                                </p>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">Link</a>
                         </li>
-
-                        <li data-aos="fade-up" data-aos-delay="200">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
-                                    molestie at elementum eu facilisis sed odio morbi quis
-                                </p>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">Link</a>
                         </li>
-
-                        <li data-aos="fade-up" data-aos-delay="300">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                                </p>
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">Disabled</a>
                         </li>
-
-                        <li data-aos="fade-up" data-aos-delay="400">
-                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                                <p>
-                                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                                </p>
-                            </div>
-                        </li>
-
                     </ul>
+                </nav>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab-1">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                                <p class="fst-italic">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                                </ul>
+                                <p>
+                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                    id est laborum
+                                </p>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                                <img src="src/images/fancyhouse.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-2">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>
+                                <p>
+                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                    id est laborum
+                                </p>
+                                <p class="fst-italic">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                    <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img src="src/images/modernhome.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-3">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
+                                <p>
+                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                    id est laborum
+                                </p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                    <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                                </ul>
+                                <p class="fst-italic">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img src="src/images/modernhouse.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab-4">
+                        <div class="row">
+                            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
+                                <p>
+                                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                    id est laborum
+                                </p>
+                                <p class="fst-italic">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                    <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                    <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                <img src="src/images/fancyhouse.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </section>
+        <!-- End Tabs Section -->
+
+        <!-- ======= F.A.Q Section ======= -->
+        <section>
+            <div class="section-title">
+                <span>FAQ</span>
+                <h2>Accordian</h2>
+            </div>
+
+            <div class="accordian">
+                <ul>
+                    <li>
+                        <h3>
+                            <span class="arrow"></span> Fugit Diamlorem
+                        </h3>
+                        <ul>
+                            <li>
+                                <p>Fugit diamlorem. Aut magni, laboriosam congue lobortis exercitation, repellat, dolor, consequatur, nobis sociosqu, culpa voluptas consectetur excepturi aptent.</p>
+                                <p>Perferendis amet! Dis, ullamcorper proin aspernatur! Posuere consequat. Senectus orci turpis augue laoreet corrupti possimus, fugiat molestiae elit, ipsa sapien euismod quod! Diamlorem felis. Enim. Quibusdam rerum ipsa
+                                    dis incididunt. Minus nostra.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span class="arrow"></span> Perferendis
+                        </h3>
+                        <ul>
+                            <li>
+                                <p>Fugit diamlorem. Aut magni, laboriosam congue lobortis exercitation, repellat, dolor, consequatur, nobis sociosqu, culpa voluptas consectetur excepturi aptent.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            <span class="arrow"></span> Ullamcorper Proin Aspernatur
+                        </h3>
+                        <ul>
+                            <li>
+                                <p>Fugit diamlorem. Aut magni, laboriosam congue lobortis exercitation, repellat, dolor, consequatur, nobis sociosqu, culpa voluptas consectetur excepturi aptent.</p>
+                                <p>Perferendis amet! Dis, ullamcorper proin aspernatur! Posuere consequat. Senectus orci turpis augue laoreet corrupti possimus, fugiat molestiae elit, ipsa sapien euismod quod! Diamlorem felis. Enim. Quibusdam rerum ipsa
+                                    dis incididunt. Minus nostra.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <!-- End F.A.Q Section -->
-
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">How Can We Help?</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <p>Whether you have a question about buying, selling, property management, investment, or joining our team, our team is ready to answer all your questions.</p>
-                <div class="d-flex row row-cols-1">
-                    <h5 class="col"><i class="bi-telephone-fill"></i> Give us a call:<br><a href="tel:7149435648"> (714) 943 - 5648</a></h5>
-                    <h5 class="col"><i class="bi-envelope-fill"></i> Send us an email:<br><a href="mailto:9435648@gmail.com"> 9435648@gmail.com</a></h5>
-                </div>
-            </div>
-        </div>
     </main>
 
 
@@ -232,8 +333,9 @@
     </footer>
     <!--END OF FOOTER-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="src/js/faq.js"></script>
     <script src="src/js/nav.js"></script>
 </body>
 
