@@ -15,66 +15,103 @@
 </head>
 
 <body>
+    <header id="navigation">
+        <nav class="navbar navbar-expand-lg fixed-md-top pb-0">
+            <div class="container-fluid row">
 
-    <nav class="navbar navbar-expand-lg bg-black-1 fixed-md-top shadow-sm pb-0">
-        <div class="container-fluid row">
+                <div class="container mb-2 col-md-2">
+                    <a href="/firstgalaxy/" class="navbar-brand">
+                        <img src="src/images/logo-transparent.png" alt="FirstGalaxy" />
+                    </a>
 
-            <div class="container mb-2 col-md-2">
-                <a href="/firstgalaxy/" class="navbar-brand">
-                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" style="width: 150px;" />
-                </a>
-
-                <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#collapsibleNavbar">
                     <i class="bi bi-list navbar-toggler-icon white pt-3"></i>
                 </button>
-            </div>
+                </div>
 
-            <div class="container col-lg-8 col-md-10">
-                <div class="collapse navbar-collapse row ps-4 pb-2" id="collapsibleNavbar">
+                <div class="container col-lg-8 col-md-4">
+                    <div class="collapse navbar-collapse row  ps-4 pb-2">
+                        <ul class="navbar-nav me-4 float-lg-end justify-content-between" autoClose="true">
+                            <li class="nav-item col">
+                                <a class=" nav-link white" href="/firstgalaxy/">About</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Buy</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Sell</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Services</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Resources</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/agents.html">Agents</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Contact Us</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Join Our Team</a>
+                            </li>
+                            <li class="nav-item col">
+                                <a class="nav-link white" href="/firstgalaxy/">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="collapsibleNavbar" aria-labelledby="offcanvasWithBackdropLabel">
+            <div class="offcanvas-header p-0">
+                <a href="/firstgalaxy/" class="navbar-brand text-center">
+                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" />
+                </a>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <hr>
+            <div class="offcanvas-body">
+                <div class="row ps-4 pb-2">
                     <ul class="navbar-nav me-4 float-lg-end justify-content-between" autoClose="true">
                         <li class="nav-item">
-                            <a class=" nav-link white" href="/firstgalaxy/">About</a>
+                            <a class=" nav-link text-black" href="/firstgalaxy/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Buy</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Buy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Sell</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Sell</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Services</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Resources</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Resources</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/agents.html">Agents</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/agents.html">Agents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" href="/firstgalaxy/">Contact Us</a>
+                            <a class="nav-link text-black" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop" href="/firstgalaxy/">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Join Our Team</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Join Our Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link white" href="/firstgalaxy/">Sign In</a>
+                            <a class="nav-link text-black" href="/firstgalaxy/">Sign In</a>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
-    </nav>
+    </header>
 
 
     <main>
-        <div class="container-fluid p-0">
-            <div class="agent-header bg-dark text-secondary px-4 py-5 text-center">
-                <div class="py-5">
-                    <h1 class="agent-text display-5 fw-bold">Find An Agent Who's Right For YOU!</h1>
-                </div>
-            </div>
-        </div>
-
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/firstgalaxy/">Home</a></li>
@@ -224,20 +261,6 @@
                             <small>LIC# 05600870</small>
                         </figcaption>
                     </figure>
-                </div>
-            </div>
-        </div>
-
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">How Can We Help?</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <p>Whether you have a question about buying, selling, property management, investment, or joining our team, our team is ready to answer all your questions.</p>
-                <div class="d-flex row row-cols-1">
-                    <h5 class="col"><i class="bi-telephone-fill"></i> Give us a call:<br><a href="tel:7149435648"> (714) 943 - 5648</a></h5>
-                    <h5 class="col"><i class="bi-envelope-fill"></i> Send us an email:<br><a href="mailto:9435648@gmail.com"> 9435648@gmail.com</a></h5>
                 </div>
             </div>
         </div>
