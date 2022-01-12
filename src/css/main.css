@@ -819,6 +819,95 @@ section {
 }
 
 
+/* =========== Glossary Section ================= */
+
+.glossary-container {
+    margin: 0;
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.glossary-container .glossary-quick-links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.glossary-container .glossary-quick-links li {
+    margin: 2px;
+}
+
+.glossary-container .glossary-quick-links a {
+    display: inline-block;
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: 2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2.25em;
+    color: #1c1c1c;
+    background: #fff;
+    border: 1px solid #989898;
+    margin-bottom: .25em;
+    text-decoration: none;
+}
+
+.glossary-container .glossary-key-header {
+    border-bottom: 2px solid #e6e7e8;
+    margin-bottom: 60px;
+}
+
+.glossary-container .glossary-key-header span {
+    display: inline-block;
+    background: #fff;
+    font-size: 40px;
+    width: 2em;
+    height: 2em;
+    line-height: 1.7em;
+    border-radius: 2em;
+    border: 4px solid #e6e7e8;
+    text-align: center;
+    color: #847252;
+    position: relative;
+    top: 1em;
+    z-index: 1;
+}
+
+.glossary-container ul {
+    display: block;
+    list-style: none;
+    text-align: left;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding: 0;
+}
+
+.glossary-container .modal {
+    top: 40%;
+    left: auto;
+    max-width: 90%;
+}
+
+.glossary-container .glossary-term-container {
+    padding: 0 18px;
+}
+
+
 /* =========== Footer ================= */
 
 .site-footer {
