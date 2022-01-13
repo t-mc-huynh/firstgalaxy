@@ -1495,7 +1495,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="src/js/nav.js"></script>
-    <script src="src/js/glossary.js"></script>
     <script rel="text/javascript">
         //Get the button:
         var mybutton = document.getElementById("backToTop");
@@ -1515,11 +1514,16 @@
 
         // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            document.documentElement.style.transitionDuration = "all 5s";
             document.documentElement.style.scrollBehavior = "smooth";
             document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            document.body.style.transitionDuration = "all 5s";
+            document.body.style.scrollBehavior = "smooth";
+
         }
     </script>
+    <script src="src/js/glossary.js"></script>
 </body>
 
 </html>
