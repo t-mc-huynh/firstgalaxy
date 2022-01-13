@@ -182,22 +182,26 @@
                         </div>
                         <ul class="glossary-term-container justify-content-between d-flex row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-5">
                             <li class="col">
-                                <a data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">ABATEMENT OF NUISANCE</a>
+                                <a id="TERM" onclick="switchTxT(this)" data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">Abstract of title</a>
+                                <p class="d-none">This is the condensed history of the title of a property, consisting of a summary of the original grant and all subsequent conveyances and encumbrances affecting the property and a certification that the history is complete
+                                    and accurate.</p>
                             </li>
                             <li class="col">
-                                <a data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">ABSOLUTE OWNERSHIP</a>
+                                <a id="TERM1" onclick="switchTxT(this)" data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">Accelerated cost recovery system</a>
+                                <p class="d-none">The system for figuring depreciation (cost recovery) for depreciable real property acquired and placed into service after january 1, 1981. (acrs)</p>
                             </li>
                             <li class="col">
-                                <a data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">ACCELERATED COST RECOVERY SYSTEM</a>
+                                <a id="TERM2" onclick="switchTxT(this)" data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">Accelerated depreciation</a>
                             </li>
                             <li class="col">
-                                <a data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">ACCELERATED DEPRECIATION</a>
+                                <a id="TERM3" onclick="switchTxT(this)" data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">Acceleration clause</a>
                             </li>
                             <li class="col">
-                                <a data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">ACCELERATION CLAUSE</a>
+                                <a id="TERM4" onclick="switchTxT(this)" data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">Access right</a>
+                                <p class="d-none">The right of an owner to have ingress and egress to and from owner’s property over adjoining property.)</p>
                             </li>
                             <li class="col">
-                                <a data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">ACCRETION</a>
+                                <a id="TERM5" onclick="switchTxT(this)" data-bs-toggle="modal" data-bs-target="#DEFINITION_MODAL">Acknowledgment</a>
                             </li>
                         </ul>
 
@@ -335,7 +339,7 @@
                                     <h5 class="modal-title" id="DEFINITION_MODAL_LABEL">Modal title</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body" id="DEFINITION_MODAL_BODY">
                                     ...
                                 </div>
                                 <div class="modal-footer">
@@ -345,6 +349,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <div id="element"></div>
 
                 </div>
 
@@ -402,8 +408,9 @@
     <!--END OF FOOTER-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="src/js/nav.js"></script>
+    <script src="src/js/glossary.js"></script>
 </body>
 
 </html>
