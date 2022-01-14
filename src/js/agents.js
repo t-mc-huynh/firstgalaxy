@@ -176,3 +176,23 @@ function filterFunction() {
         }
     }
 }
+
+document.addEventListener("click", (evt) => {
+    const flyoutElement = document.getElementById("myDropdown");
+    const flyoutElement2 = document.getElementById("filterBtn");
+    let targetElement = evt.target; // clicked element
+
+    do {
+        if (targetElement == flyoutElement || targetElement == flyoutElement2) {
+            // This is a click inside. Do nothing, just return.
+            return;
+        }
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+    } while (targetElement);
+
+    // This is a click outside.
+    if (flyoutElement.classList.contains("show")) {
+        flyoutElement.classList.toggle("show");
+    }
+});
