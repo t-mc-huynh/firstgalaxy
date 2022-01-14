@@ -1,6 +1,5 @@
 function switchTxT(x) {
     let term, def, a, t_el, t_id, t, d;
-    a = document.getElementById("DEFINITION_MODAL");
     term = document.getElementById("DEFINITION_MODAL_LABEL");
     def = document.getElementById("DEFINITION_MODAL_BODY");
 
@@ -13,6 +12,7 @@ function switchTxT(x) {
     console.log(t);
     console.log(d);
 
+    term.style.fontWeight = "bold";
     term.innerHTML = t;
     def.innerHTML = d;
 }
