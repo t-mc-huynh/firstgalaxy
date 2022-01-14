@@ -25,7 +25,6 @@ body {
 
 p {
     margin-bottom: 1rem;
-    max-width: 32rem;
 }
 
 img {
@@ -211,7 +210,8 @@ section {
 
 .section-title {
     text-align: center;
-    padding: 1.7rem 0;
+    padding: 1.75rem 0;
+    margin: auto;
     position: relative;
 }
 
@@ -243,6 +243,8 @@ section {
     margin-bottom: 0;
     position: relative;
     z-index: 2;
+    max-width: 75%;
+    margin: auto;
 }
 
 @media (max-width: 575px) {
@@ -838,8 +840,8 @@ section {
     background: #ccc;
     overflow: visible;
     z-index: 1;
-    clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
-    margin-right: -50%;
+    clip-path: polygon(0 0, 50% 0, 80% 100%, 0 100%);
+    margin-right: -55%;
 }
 
 .slanted-container div {
@@ -849,7 +851,7 @@ section {
 .slanted-container-next {
     color: #fff;
     background: #222;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 50% 100%);
 }
 
 .slanted-container-next div {
@@ -858,7 +860,7 @@ section {
     text-align: right;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .slanted-container,
     .slanted-container-next {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -869,6 +871,13 @@ section {
     .slanted-container div,
     .slanted-container-next div {
         max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .slanted-container div p,
+    .slanted-container-next div p {
+        max-width: unset;
     }
 }
 
