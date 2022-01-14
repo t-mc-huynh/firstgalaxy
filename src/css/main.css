@@ -93,9 +93,9 @@ black1 {
     background-color: var(--logo-red);
     color: white;
     cursor: pointer;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 #backToTop:hover {
@@ -129,8 +129,7 @@ black1 {
 
 #navigation {
     width: 100%;
-    height: 50vh;
-    background-size: cover;
+    border-bottom: 1px solid grey;
 }
 
 #navigation nav {
@@ -146,10 +145,15 @@ black1 {
     box-shadow: none;
 }
 
+#navigation .navbar-toggler i {
+    font-size: 2rem;
+}
+
 #navigation .nav-item,
 #navigation .nav-item a,
 #navigation .dropdown-item {
-    color: var(--white);
+    font-size: 1.2rem;
+    color: var(--black-1);
     max-width: max-content;
     transition: var(--hover-transition);
 }
@@ -158,24 +162,21 @@ black1 {
     max-width: 100%;
 }
 
-#navigation .nav-item i {
-    font-size: 0.75rem;
-    margin-left: 1.2rem;
-    color: var(--white);
-}
-
 #navigation .offcanvas {
     width: max-content;
     max-width: 75%;
 }
 
 #navigation .offcanvas-header img {
-    width: 75%;
+    width: 100%;
+    padding: 0 2rem;
     max-width: 36rem;
 }
 
 #navigation .offcanvas-header .btn-close {
-    margin-right: 1.3rem;
+    font-size: 1rem;
+    margin-left: 1.3rem;
+    box-shadow: none;
 }
 
 #navigation .offcanvas-title {
@@ -196,7 +197,7 @@ black1 {
     #navigation .nav-item a:hover,
     #navigation .nav-item a:focus {
         box-shadow: 0 0.2rem 0 0 var(--logo-blue);
-        color: var(--white);
+        color: var(--black-1);
     }
 }
 
