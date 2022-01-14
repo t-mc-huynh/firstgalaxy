@@ -134,68 +134,68 @@ black1 {
     background-size: cover;
 }
 
-nav {
+#navigation nav {
     width: 100%;
     line-height: 3rem;
 }
 
-nav .navbar-brand img {
+#navigation nav .navbar-brand img {
     width: 8.5rem;
 }
 
-.navbar-toggler:focus {
+#navigation .navbar-toggler:focus {
     box-shadow: none;
 }
 
-.nav-item,
-.nav-item a,
-.dropdown-item {
+#navigation .nav-item,
+#navigation .nav-item a,
+#navigation .dropdown-item {
     color: var(--white);
     max-width: max-content;
     transition: var(--hover-transition);
 }
 
-.dropdown-menu a {
+#navigation .dropdown-menu a {
     max-width: 100%;
 }
 
-.nav-item i {
+#navigation .nav-item i {
     font-size: 0.75rem;
     margin-left: 1.2rem;
     color: var(--white);
 }
 
-.offcanvas {
+#navigation .offcanvas {
     width: max-content;
     max-width: 75%;
 }
 
-.offcanvas-header img {
+#navigation .offcanvas-header img {
     width: 75%;
     max-width: 36rem;
 }
 
-.offcanvas-header .btn-close {
+#navigation .offcanvas-header .btn-close {
     margin-right: 1.3rem;
 }
 
-.offcanvas-title {
+#navigation .offcanvas-title {
     margin-left: 0.6rem;
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-.offcanvas-body {
+#navigation .offcanvas-body {
     margin: 0rem 0.6rem;
 }
 
-.offcanvas-body h5 {
+#navigation .offcanvas-body h5 {
     line-height: 2rem;
 }
 
 @media (min-width: 992px) {
-    .nav-item a:hover,
-    .nav-item a:focus {
+    #navigation .nav-item a:hover,
+    #navigation .nav-item a:focus {
         box-shadow: 0 0.2rem 0 0 var(--logo-blue);
         color: var(--white);
     }
@@ -314,7 +314,6 @@ section {
 /* =========== Tabs Section ================= */
 
 .tabs .nav-item {
-    border-width: 0.05px;
     border-style: outset;
 }
 
