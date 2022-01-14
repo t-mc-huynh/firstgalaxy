@@ -88,18 +88,11 @@ black1 {
     bottom: 2rem;
     right: 2.5rem;
     z-index: 99;
-    border: none;
     outline: none;
-    background-color: var(--logo-red);
-    color: white;
     cursor: pointer;
     padding: 1rem;
     border-radius: 1rem;
     font-size: 1.5rem;
-}
-
-#backToTop:hover {
-    background-color: #555;
 }
 
 
@@ -788,19 +781,6 @@ section {
     .dropdown2 {
         margin-left: 0.8rem;
     }
-}
-
-.dropdown2 .dropbtn {
-    background-color: var(--logo-blue);
-    color: var(--white);
-    padding: 0.8rem;
-    font-size: 0.8rem;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown2 .dropbtn:hover {
-    color: var(--white);
 }
 
 .dropdown2 .dropdown-content {
