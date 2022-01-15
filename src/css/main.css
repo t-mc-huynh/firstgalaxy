@@ -343,7 +343,6 @@ form#search-form {
     text-align: center;
 }
 
-form#search-form select,
 form#search-form input,
 form#search-form button {
     width: 100%;
@@ -355,11 +354,6 @@ form#search-form button {
     outline: none;
 }
 
-form#search-form select.form-select:focus {
-    box-shadow: none;
-}
-
-form#search-form select.form-select,
 form#search-form input.searchText {
     padding: 0 1.5rem;
 }
@@ -397,7 +391,6 @@ form#search-form button i {
     form#search-form button.main-button {
         padding: 0 1.5rem;
     }
-    form#search-form select,
     form#search-form input,
     form#search-form button {
         height: 4rem;
@@ -405,7 +398,6 @@ form#search-form button i {
 }
 
 @media (max-width: 992px) {
-    form#search-form select,
     form#search-form input {
         border: 1px solid #8d99af;
         border-radius: 0.5rem;

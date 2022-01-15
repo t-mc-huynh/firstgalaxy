@@ -122,58 +122,14 @@
                     <div class="col-lg-12">
                         <div class="top-text header-text">
                             <h6>Over 36,500+ Active Listings</h6>
-                            <h2>Find Nearby Places &amp; Things</h2>
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <form id="search-form" name="gs" method="submit" role="search" action="#">
+                        <form id="search-form" name="gs" method="post" role="search" action="src/php/user_input.php">
                             <div class="row m-0">
-                                <div class="col-lg-3 align-self-center">
+                                <div class="col-lg-9 align-self-center">
                                     <fieldset>
-                                        <select name="area" class="form-select" aria-label="Area" id="chooseCategory" onchange="this.form.click()">
-                                  <option selected>All Areas</option>
-                                  <option value="Orange County">Orange County, CA</option>
-                                  <option value="Chino Hills">Chino Hills, CA</option>
-                                  <option value="Cerritos">Cerritos, CA</option>
-                                  <option value="Diamond Bar">Diamond Bar, CA</option>
-                              </select>
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-3 align-self-center">
-                                    <fieldset>
-                                        <input type="address" name="address" class="searchText" placeholder="Enter a location" autocomplete="on" required>
-                                    </fieldset>
-                                </div>
-                                <div class="col-lg-3 align-self-center">
-                                    <fieldset>
-                                        <select name="price" class="form-select" aria-label="Default select example" id="chooseCategory" onchange="this.form.click()">
-                                  <option selected>Price Range</option>
-                                  <option value="ANY">Any</option>
-                                  <option value="100000">under $100,000</option>
-                                  <option value="200000">under $200,000</option>
-                                  <option value="250000">under $250,000</option>
-                                  <option value="300000">under $300,000</option>
-                                  <option value="350000">under $350,000</option>
-                                  <option value="400000">under $400,000</option>
-                                  <option value="450000">under $450,000</option>
-                                  <option value="500000">under $500,000</option>
-                                  <option value="550000">under $550,000</option>
-                                  <option value="600000">under $600,000</option>
-                                  <option value="650000">under $650,000</option>
-                                  <option value="700000">under $700,000</option>
-                                  <option value="750000">under $750,000</option>
-                                  <option value="800000">under $800,000</option>
-                                  <option value="850000">under $850,000</option>
-                                  <option value="900000">under $900,000</option>
-                                  <option value="950000">under $950,000</option>
-                                  <option value="1000000">under $1,000,000</option>
-                                  <option value="1250000">under $1,250,000</option>
-                                  <option value="1500000">under $1,500,000</option>
-                                  <option value="1750000">under $1,750,000</option>
-                                  <option value="2000000">under $2,000,000</option>
-                                  <option value="2500000">under $2,500,000</option>
-                                  <option value="3000000">under $3,000,000</option>
-                              </select>
+                                        <input type="text" name="user-input" class="searchText" placeholder="City, Address, School, Zip" required>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-3 p-lg-0">
@@ -538,6 +494,8 @@
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
     </script>
+
+    <script src="src/js/search.js"></script>
 </body>
 
 </html>
