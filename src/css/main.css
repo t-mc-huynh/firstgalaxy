@@ -1327,7 +1327,10 @@ section {
 }
 
 .member-details>div {
-    background-color: #fff;
+    background-color: var(--fg-lgrey);
+    border-style: double;
+    border-width: .45rem;
+    border-color: var(--fg-black);
     margin: .25rem;
 }
 
