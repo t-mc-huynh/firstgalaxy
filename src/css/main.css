@@ -1143,8 +1143,8 @@ form#search-form button i {
 
 .site-footer {
     background-color: var(--fg-black);
-    padding: 45px 0 1.1rem;
-    font-size: 0.8rem;
+    padding: 2.5rem 0 1rem;
+    font-size: 1rem;
     line-height: 1.8rem;
     color: var(--fg-white);
 }
@@ -1153,10 +1153,10 @@ form#search-form button i {
     /*category names*/
     color: var(--fg-red);
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     margin-top: .25rem;
     margin-bottom: 0.8rem;
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.5rem;
 }
 
 .footer-links {
@@ -1174,7 +1174,7 @@ form#search-form button i {
     /*the hyperlinks*/
     color: var(--fg-white);
     text-decoration: none;
-    margin-right: 0.6rem;
+    margin-right: 0.5rem;
 }
 
 .site-footer a:hover {
@@ -1190,16 +1190,7 @@ form#search-form button i {
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 991px) {
-    .site-footer [class^="col-"] {
-        margin-bottom: 0.6rem;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .site-footer {
-        padding-bottom: 0;
-    }
+@media (max-width: 767px) {
     .site-footer .copyright-text {
         text-align: center;
     }
