@@ -107,7 +107,7 @@ function searchDistrict(input) {
 
 function getFileData() {
     /* set up XMLHttpRequest */
-    var url = "src/data/CDESchoolDirectoryExport.xlsx";
+    var url = "src/data/datasets.xlsx";
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url, true);
     oReq.responseType = "arraybuffer";
