@@ -1,4 +1,6 @@
 var found = false;
+const result = new Set();
+console.log(result);
 
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
@@ -13,7 +15,7 @@ function runSearches(e) {
         // User still typing
         console.log(e.which);
 
-        getFileData();
+
 
         if (e.which == 13 || e.which == 1) {
             // User pressed enter 
@@ -38,6 +40,7 @@ function runSearches(e) {
                 console.log("User input was not found in our data");
             }
         }
+
     }
 
 }
@@ -105,7 +108,7 @@ function searchDistrict(input) {
     }
 }
 
-function getFileData() {
+window.onload = function() {
     /* set up XMLHttpRequest */
     var url = "src/data/datasets.xlsx";
     var oReq = new XMLHttpRequest();
@@ -118,16 +121,12 @@ function getFileData() {
         var data = new Uint8Array(arraybuffer);
 
         var workbook = XLSX.read(data, { type: 'array' });
-        console.log(workbook);
-
-        var result = [];
-        result.push(workbook.SheetNames);
+        result.add(workbook.SheetNames);
         workbook.SheetNames.forEach(function(SheetNames) {
             var roa = XLSX.utils.sheet_to_json(workbook.Sheets[SheetNames], { header: 1 });
-            result.push(roa);
+            result.add(roa);
         });
         console.log(result);
     }
-
     oReq.send();
-}
+};
