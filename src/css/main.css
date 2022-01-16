@@ -291,46 +291,76 @@ section {
     margin-bottom: 45px;
 }
 
+.main-banner ul.status,
 .main-banner ul.categories {
     width: 100%;
-    margin-top: 60px;
     text-align: center;
     display: flex;
+    background-color: #fff;
+    border: 1px solid #1a1a1a;
+    border-radius: 0.5rem;
 }
 
+.main-banner ul.categories {
+    background-color: var(--fg-lgrey);
+    border: 1px solid var(--fg-grey);
+    margin: 1rem 0;
+    width: 95%;
+}
+
+.main-banner ul.status li,
 .main-banner ul.categories li {
     list-style: none;
     text-align: center;
-    margin: 0 .5rem;
+}
+
+.main-banner ul.status li a,
+.main-banner ul.categories li a {
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    text-decoration: none;
 }
 
 .main-banner ul.categories li a {
-    color: #fff;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.main-banner ul.status li .icon,
+.main-banner ul.categories li .icon {
+    display: block;
+    margin: 0.5rem auto;
+    width: 75px;
+    height: 75px;
     text-align: center;
-    font-size: 15px;
-    margin-top: 1rem;
+    line-height: 3.5rem;
+    color: #1a1a1a;
+    transition: all .5s;
 }
 
 .main-banner ul.categories li .icon {
-    display: block;
-    margin: 12px auto;
     width: 66px;
     height: 66px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 62px;
     color: #8d99af;
     background-color: #fff;
-    transition: all .5s;
 }
 
 .main-banner ul.categories li a:hover .icon {
     background-color: #2b2d42;
 }
 
+.main-banner ul.status li .icon i,
 .main-banner ul.categories li .icon i {
     margin-top: 1.2rem;
     max-block-size: 1.5rem;
+    font-size: 4rem;
+}
+
+.main-banner ul.categories li .icon i {
     font-size: 1.5rem;
 }
 
@@ -412,11 +442,14 @@ form#search-form button i {
 }
 
 @media (max-width: 767px) {
-    .main-banner ul.categories li a {
-        color: transparent;
-    }
     form#search-form {
         padding: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-banner ul.categories li a {
+        text-transform: capitalize;
     }
 }
 
