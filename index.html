@@ -128,7 +128,7 @@
                             <div class="row m-0">
                                 <div class="col-lg-9 align-self-center">
                                     <fieldset>
-                                        <input type="text" name="user-input" class="searchText" placeholder="City, Address, School, Zip" required>
+                                        <input type="text" name="user-input" class="searchText" onkeypress="runSearches(event)" placeholder="City, Address, School, Zip" required>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-3 p-lg-0">
@@ -139,7 +139,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-9 pt-5 pe-0">
+                    <div class="d-none col-md-9 col-sm-12 pt-3 pe-lg-0">
                         <ul class="status row row-cols-2 row-cols-md-4 p-0 m-0 justify-content-center">
                             <li class="col"><a href="#"><span class="icon"><i class="fas fa-home"></i></span>Coming Soon</a></li>
                             <li class="col"><a href="#"><span class="icon"><i class="fas fa-home"></i></span>Condo</a></li>
