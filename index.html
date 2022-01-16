@@ -128,12 +128,12 @@
                             <div class="row m-0">
                                 <div class="col-lg-9 align-self-center">
                                     <fieldset>
-                                        <input type="text" name="user-input" class="searchText" onkeypress="runSearches(event)" placeholder="City, Address, School, Zip" required>
+                                        <input type="text" name="user-input" class="searchText" onkeypress="runSearches(event)" placeholder="Search Cities, Addresses, Schools, School Districts, Zip Codes" required>
                                     </fieldset>
                                 </div>
                                 <div class="col-lg-3 p-lg-0">
                                     <fieldset>
-                                        <button type="button" onclick="runSearches()" class="main-button"><i class="fa fa-search"></i>Search</button>
+                                        <button type="button" onclick="runSearches(event)" class="main-button"><i class="fa fa-search"></i>Search</button>
                                     </fieldset>
                                 </div>
                             </div>
@@ -499,6 +499,11 @@
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
     </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js" integrity="sha512-xQBQYt9UcgblF6aCMrwU1NkVA7HCXaSN2oq0so80KO+y68M+n64FOcqgav4igHe6D5ObBLIf68DWv+gfBowczg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js" integrity="sha512-BMIFH0QGwPdinbGu7AraCzG9T4hKEkcsbbr+Uqv8IY3G5+JTzs7ycfGbz7Xh85ONQsnHYrxZSXgS1Pdo9r7B6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="src/js/search.js"></script>
 </body>
 
