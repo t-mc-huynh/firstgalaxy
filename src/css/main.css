@@ -266,7 +266,7 @@ section {
     background-position: center center;
     background-size: cover;
     background-image: url(../images/banner-bg.jpg);
-    padding: 290px 0px 180px 0px;
+    padding: 10rem 0 5rem 0;
     position: relative;
     overflow: hidden;
 }
