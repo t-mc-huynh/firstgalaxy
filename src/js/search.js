@@ -1,5 +1,22 @@
-function runSearches() {
-    searchCity();
+// Prevents form submission for debugging purposes
+var form = document.getElementById("search-form");
+
+function handleForm(evt) {
+    evt.preventDefault();
+}
+form.addEventListener("submit", handleForm);
+
+function runSearches(e) {
+    if (window.event) {
+        // User still typing
+        console.log(e.keyCode);
+        console.log(e.which);
+        if (e.keyCode == 13) {
+            // User pressed enter 
+            searchCity();
+        }
+    }
+
 }
 
 function searchCity() {
