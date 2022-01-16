@@ -1,3 +1,5 @@
+var found = false;
+
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
 
@@ -9,11 +11,12 @@ form.addEventListener("submit", handleForm);
 function runSearches(e) {
     if (window.event) {
         // User still typing
-        console.log(e.keyCode);
         console.log(e.which);
-        if (e.keyCode == 13) {
-            // User pressed enter 
 
+        getFileData();
+
+        if (e.which == 13 || e.which == 1) {
+            // User pressed enter 
             var input;
             input = document.querySelector(".searchText").value;
             console.log(input);
@@ -27,7 +30,13 @@ function runSearches(e) {
             }
 
             searchCity(input);
-            searchSchool(input);
+            searchDistrict(input);
+
+
+            // Done running all the searches 
+            if (found == false) {
+                console.log("User input was not found in our data");
+            }
         }
     }
 
@@ -42,36 +51,83 @@ function searchCity(input) {
 
     if (LAOCcities.includes(input)) {
         console.log("City found in LA or OC county");
-    } else {
-        console.log("City is outside LA or OC county or input invalid");
+        found = true;
     }
 }
 
-function searchSchool(input) {
-    const LA_Public_Districts = ["ABC Unified  ", " Acton-Agua Dulce Unified  ", " Alhambra Unified  ", " Antelope Valley Union High  ", " Arcadia Unified  ", " Azusa Unified  ", " Baldwin Park Unified  ", " Bassett Unified  ", " Bellflower Unified  ", " Beverly Hills Unified  ", " Bonita Unified  ", " Burbank Unified  ", " Castaic Union  ", " Centinela Valley Union High  ", " Charter Oak Unified  ", " Claremont Unified  ", " Compton Unified  ", " Covina-Valley Unified  ", " Culver City Unified  ", " Downey Unified  ", " Duarte Unified  ", " East Whittier City  ", " Eastside Union  ", " El Monte City  ", " El Monte Union High  ", " El Rancho Unified  ", " El Segundo Unified  ", " Garvey  ", " Glendale Unified  ", " Glendora Unified  ", " Gorman Joint  ", " Hacienda La Puente Unified  ", " Hawthorne  ", " Hermosa Beach City  ", " Hughes-Elizabeth Lakes Union  ", " Inglewood Unified  ", " Keppel Union  ", " La Canada Unified  ", " Lancaster  ", " Las Virgenes Unified  ", " Lawndale Elementary  ", " Lennox  ", " Little Lake City  ", " Long Beach Unified  ", " Los Angeles Unified  ", " Los Nietos  ", " Lowell Joint  ", " Lynwood Unified  ", " Manhattan Beach Unified  ", " Monrovia Unified  ", " Montebello Unified  ", " Mountain View  ", " Newhall  ", " Norwalk-La Mirada Unified  ", " Palmdale  ", " Palos Verdes Peninsula Unified  ", " Paramount Unified  ", " Pasadena Unified  ", " Pomona Unified  ", " Redondo Beach Unified  ", " Rosemead  ", " Rowland Unified  ", " San Gabriel Unified  ", " San Marino Unified  ", " Santa Monica-Malibu Unified  ", " Saugus Union  ", " South Pasadena Unified  ", " South Whittier  ", " Sulphur Springs Union  ", " Temple City Unified  ", " Torrance Unified  ", " Valle Lindo  ", " Walnut Valley Unified  ", " West Covina Unified  ", " Westside Union  ", " Whittier City  ", " Whittier Union High  ", " William S. Hart Union High  ", " Wilsona  ", " Wiseburn Unified  "];
+function searchDistrict(input) {
+    const LA_County_Districts = [" ABC Unified ", " Acton-Agua Dulce Unified ", " Alhambra Unified ", " Antelope Valley ROP ", " Antelope Valley Union High ", " Arcadia Unified ", " Azusa Unified ", " Baldwin Park Unified ", " Bassett Unified ", " Bellflower Unified ", " Beverly Hills Unified ", " Bonita Unified ", " Burbank Unified ", " California Advancing Pathways for Students in Los Angeles County ROC/P ", " Castaic Union ", " Centinela Valley Union High ", " Charter Oak Unified ", " Claremont Unified ", " Compton Unified ", " Compton Unified ROP ", " Covina-Valley Unified ", " Culver City Unified ", " Downey Unified ", " Duarte Unified ", " East Whittier City Elementary ", " Eastside Union Elementary ", " El Monte City ", " El Monte Union High ", " El Rancho Unified ", " El Segundo Unified ", " Garvey Elementary ", " Glendale Unified ", " Glendora Unified ", " Gorman Joint ", " Hacienda la Puente Unified ", " Hart ROP ", " Hawthorne ", " Hermosa Beach City Elementary ", " Hughes-Elizabeth Lakes Union Elementary ", " Inglewood Unified ", " Keppel Union Elementary ", " La Canada Unified ", " Lancaster Elementary ", " Las Virgenes Unified ", " Lawndale Elementary ", " Lennox ", " Little Lake City Elementary ", " Long Beach Unified ", " Long Beach Unified ROP ", " Los Angeles County Office of Education ", " Los Angeles County ROP ", " Los Angeles Unified ", " Los Angeles Unified ROCP ", " Los Nietos ", " Lynwood Unified ", " Manhattan Beach Unified ", " Monrovia Unified ", " Montebello Unified ", " Mountain View Elementary ", " Newhall ", " Norwalk-La Mirada Unified ", " Palmdale Elementary ", " Palos Verdes Peninsula Unified ", " Paramount Unified ", " Pasadena Unified ", " Pomona Unified ", " Redondo Beach Unified ", " Rosemead Elementary ", " Rowland Unified ", " San Antonio ROP ", " San Gabriel Unified ", " San Gabriel Valley Regional Occupational Program ", " San Marino Unified ", " Santa Monica-Malibu Unified ", " Saugus Union ", " SBE - Academia Avance Charter ", " SBE - Eagle Collegiate Academy ", " SBE - Los Angeles College Prep Academy ", " SBE - New West Charter ", " South Pasadena Unified ", " South Whittier Elementary ", " Southern California ROC ", " Sulphur Springs Union ", " Temple City Unified ", " Torrance Unified ", " Tri-Cities ROP ", " Valle Lindo Elementary ", " Walnut Valley Unified ", " West Covina Unified ", " Westside Union Elementary ", " Whittier City Elementary ", " Whittier Union High ", " William S. Hart Union High ", " Wilsona Elementary ", " Wiseburn Unified "];
 
-    for (i = 0; i < LA_Public_Districts.length; i++) {
-        LA_Public_Districts[i] = LA_Public_Districts[i].trim();
-        LA_Public_Districts[i] = LA_Public_Districts[i].toLowerCase();
-
+    for (i = 0; i < LA_County_Districts.length; i++) {
+        LA_County_Districts[i] = LA_County_Districts[i].trim();
+        LA_County_Districts[i] = LA_County_Districts[i].toLowerCase();
     }
 
-    if (LA_Public_Districts.includes(input)) {
-        console.log("District found in LA Public Schools");
-    } else {
-        console.log("District is outside LA Public Schools or input invalid");
+    if (LA_County_Districts.includes(input)) {
+        console.log("Input found in LA County Districts List");
+        found = true;
     }
 
-    const OC_Public_Districts = [" Anaheim City  ", " Anaheim Union High  ", " Brea-Olinda Unified  ", " Buena Park  ", " Capistrano Unified  ", " Centralia Elementary  ", " Cypress  ", " Fountain Valley  ", " Fullerton Joint Union High  ", " Fullerton  ", " Garden Grove Unified  ", " Huntington Beach City  ", " Huntington Beach Union High  ", " Irvine Unified  ", " La Habra City  ", " Laguna Beach Unified  ", " Los Alamitos Unified  ", " Magnolia  ", " Newport-Mesa Unified  ", " Ocean View  ", " Orange County Department of Education ", " Orange Unified  ", " Placentia-Yorba Linda Unified  ", " Saddleback Valley Unified  ", " Santa Ana Unified  ", " Savanna  ", " Tustin Unified  ", " Westminster  "];
+    const Orange_County_Districts = [" Anaheim Elementary ", " Anaheim Union High ", " Brea-Olinda Unified ", " Buena Park Elementary ", " Capistrano Unified ", " Central Orange County CTE Partnership (CTEp) ", " Centralia Elementary ", " Coastline ROP ", " College and Career Advantage ", " Cypress Elementary ", " Fountain Valley Elementary ", " Fullerton Elementary ", " Fullerton Joint Union High ", " Garden Grove Unified ", " Huntington Beach City Elementary ", " Huntington Beach Union High ", " Irvine Unified ", " La Habra City Elementary ", " Laguna Beach Unified ", " Los Alamitos Unified ", " Lowell Joint ", " Magnolia Elementary ", " Newport-Mesa Unified ", " North Orange County ROP-Adult ", " Ocean View ", " Orange County Department of Education ", " Orange Unified ", " Placentia-Yorba Linda Unified ", " Saddleback Valley Unified ", " Santa Ana Unified ", " Savanna Elementary ", " SBE - Magnolia Science Academy Santa Ana ", " Tustin Unified ", " Westminster "];
 
-    for (i = 0; i < OC_Public_Districts.length; i++) {
-        OC_Public_Districts[i] = OC_Public_Districts[i].trim();
-        OC_Public_Districts[i] = OC_Public_Districts[i].toLowerCase();
+    for (i = 0; i < Orange_County_Districts.length; i++) {
+        Orange_County_Districts[i] = Orange_County_Districts[i].trim();
+        Orange_County_Districts[i] = Orange_County_Districts[i].toLowerCase();
     }
 
-    if (OC_Public_Districts.includes(input)) {
-        console.log("District found in OC Public Schools");
-    } else {
-        console.log("District is outside OC Public Schools or input invalid");
+    if (Orange_County_Districts.includes(input)) {
+        console.log("Input found in Orange County Districts List");
+        found = true;
     }
+
+    const Riverside_County_Districts = [" Alvord Unified ", " Banning Unified ", " Beaumont Unified ", " California School for the Deaf-Riverside (State Special Schl) ", " Coachella Valley Unified ", " Corona-Norco Unified ", " Desert Center Unified ", " Desert Sands Unified ", " Hemet Unified ", " Jurupa Unified ", " Lake Elsinore Unified ", " Menifee Union Elementary ", " Moreno Valley Unified ", " Murrieta Valley Unified ", " Nuview Union ", " Palm Springs Unified ", " Palo Verde Unified ", " Perris Elementary ", " Perris Union High ", " Riverside County Office of Education ", " Riverside County Office Of Education ROP ", " Riverside Unified ", " Romoland Elementary ", " San Jacinto Unified ", " Temecula Valley Unified ", " Val Verde Unified "];
+
+    for (i = 0; i < Riverside_County_Districts.length; i++) {
+        Riverside_County_Districts[i] = Riverside_County_Districts[i].trim();
+        Riverside_County_Districts[i] = Riverside_County_Districts[i].toLowerCase();
+    }
+
+    if (Riverside_County_Districts.includes(input)) {
+        console.log("Input found in Riverside Districts List");
+        found = true;
+    }
+
+    const SD_County_Districts = [" Alpine Union Elementary ", " Bonsall Unified ", " Borrego Springs Unified ", " Cajon Valley Union ", " Cardiff Elementary ", " Carlsbad Unified ", " Chula Vista Elementary ", " Coronado Unified ", " Dehesa Elementary ", " Del Mar Union Elementary ", " Encinitas Union Elementary ", " Escondido Union ", " Escondido Union High ", " Fallbrook Union Elementary ", " Fallbrook Union High ", " Grossmont Union High ", " Jamul-Dulzura Union Elementary ", " Julian Union Elementary ", " Julian Union High ", " La Mesa-Spring Valley ", " Lakeside Union Elementary ", " Lemon Grove ", " Mountain Empire Unified ", " National Elementary ", " Oceanside Unified ", " Poway Unified ", " Ramona City Unified ", " Rancho Santa Fe Elementary ", " San Diego Community College ", " San Diego County Office of Education ", " San Diego County ROP ", " San Diego Unified ", " San Dieguito Union High ", " San Marcos Unified ", " San Pasqual Union Elementary ", " San Ysidro Elementary ", " Santee ", " SBC - High Tech High ", " SBE - Baypoint Preparatory Academy San Diego ", " SBE - College Preparatory Middle ", " SBE - Grossmont Secondary ", " SBE - Sweetwater Secondary ", " SBE - Vista Springs Charter ", " Solana Beach Elementary ", " South Bay Union ", " Spencer Valley Elementary ", " Sweetwater Union High ", " Vallecitos Elementary ", " Valley Center-Pauma Unified ", " Vista Unified ", " Warner Unified "];
+
+    for (i = 0; i < SD_County_Districts.length; i++) {
+        SD_County_Districts[i] = SD_County_Districts[i].trim();
+        SD_County_Districts[i] = SD_County_Districts[i].toLowerCase();
+    }
+
+    if (SD_County_Districts.includes(input)) {
+        console.log("Input found in Orange County Districts List");
+        found = true;
+    }
+}
+
+function getFileData() {
+    /* set up XMLHttpRequest */
+    var url = "src/data/CDESchoolDirectoryExport.xlsx";
+    var oReq = new XMLHttpRequest();
+    oReq.open("GET", url, true);
+    oReq.responseType = "arraybuffer";
+
+    oReq.onload = function(e) {
+        var arraybuffer = oReq.response;
+
+        var data = new Uint8Array(arraybuffer);
+
+        var workbook = XLSX.read(data, { type: 'array' });
+        console.log(workbook);
+
+        var result = [];
+        result.push(workbook.SheetNames);
+        workbook.SheetNames.forEach(function(SheetNames) {
+            var roa = XLSX.utils.sheet_to_json(workbook.Sheets[SheetNames], { header: 1 });
+            result.push(roa);
+        });
+        console.log(result);
+    }
+
+    oReq.send();
 }
