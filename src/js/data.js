@@ -1,6 +1,7 @@
 const result = new Array();
 const school = new Array();
 const glossary = new Array();
+const cities = new Array();
 //console.log(result);
 //console.log(school);
 //console.log(glossary);
@@ -27,17 +28,46 @@ window.onload = function() {
             i++;
         });
 
-        for (var h = 0; h < result[0][1].length; h++) {
+        for (let h = 0; h < result[0][1].length; h++) {
             school.push(result[0][1][h]);
         }
 
-        for (var k = 0; k < result[1][1].length; k++) {
+        for (let k = 0; k < result[1][1].length; k++) {
             glossary.push(result[1][1][k]);
         }
+
+        for (let m = 0; m < result[2][1].length; m++) {
+            cities.push(result[2][1][m]);
+        }
+
 
         //console.log(result);
     }
     oReq.send();
 };
 
-export { result, school, glossary };
+$(function() {
+    var headers = document.querySelectorAll(".glossary-key-header");
+    var letter = document.querySelectorAll(".glossary-key-header span");
+    //headers.forEach(function() {
+    //sortTerms(letter)
+    //}, false);
+
+    function createList() {
+        var list = document.createElement("li");
+        list.classList.add("col");
+    }
+
+    function sortTerms(letter) {
+        for (let i = 1; i < glossary.length; i++) {
+            if (glossary[i][0].charAt(0) == letter) {
+
+            }
+        }
+    }
+
+});
+
+
+
+export { result, school, glossary, cities };
