@@ -146,6 +146,7 @@ fg-black {
 }
 
 #navigation .navbar-toggler i {
+    color: var(--fg-black);
     font-size: 2rem;
 }
 
