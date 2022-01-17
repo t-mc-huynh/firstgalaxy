@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const result = new Array();
 const school = new Array();
