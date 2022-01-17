@@ -4,7 +4,11 @@ const result = new Array();
 const school = new Array();
 const glossary = new Array();
 const cities = new Array();
-let glossary_container = document.getElementById("parent-container");
+var glossary_container;
+$.get('glossary.html', null, function(div) {
+    glossary_container = $(div).find('#parent-container')[0];
+});
+
 //console.log(result);
 //console.log(school);
 //console.log(glossary);
