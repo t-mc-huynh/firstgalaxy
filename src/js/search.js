@@ -1,4 +1,7 @@
 import { school, cities } from "./data.js";
+
+"use strict";
+
 var found = false;
 //console.log(school);
 

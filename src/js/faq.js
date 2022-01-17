@@ -1,3 +1,5 @@
+"use strict";
+
 $(function() {
     $('.accordian li').on('click', function() {
         if ($(this).find('ul').hasClass('open')) {

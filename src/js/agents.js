@@ -1,3 +1,5 @@
+"use strict";
+
 function sortListAZ() {
     var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
     list = document.getElementById("card");

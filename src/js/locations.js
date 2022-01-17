@@ -1,5 +1,7 @@
 import { TOKEN } from './app-env.js';
 
+"use strict";
+
 $.ajax({
     url: "https://data.muni.org/resource/r3di-nq2j.json?state=CA&appraisalyear=2020",
     type: "GET",
