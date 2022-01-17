@@ -6,7 +6,8 @@ const cities = new Array();
 //console.log(school);
 //console.log(glossary);
 
-window.onload = function() {
+
+$(function() {
     /* set up XMLHttpRequest */
     var url = "src/data/datasets.xlsx";
     var oReq = new XMLHttpRequest();
@@ -40,33 +41,53 @@ window.onload = function() {
             cities.push(result[2][1][m]);
         }
 
-
+        sortTerms(container);
         //console.log(result);
     }
     oReq.send();
-};
+});
 
-$(function() {
-    var headers = document.querySelectorAll(".glossary-key-header");
-    var letter = document.querySelectorAll(".glossary-key-header span");
-    //headers.forEach(function() {
-    //sortTerms(letter)
-    //}, false);
 
-    function createList() {
-        var list = document.createElement("li");
-        list.classList.add("col");
-    }
 
-    function sortTerms(letter) {
-        for (let i = 1; i < glossary.length; i++) {
-            if (glossary[i][0].charAt(0) == letter) {
 
+var container = document.getElementById("parent-container");
+
+function createList(term) {
+    var list = document.createElement("li");
+    list.classList.add("col");
+    var link = document.createElement("a");
+    var toggle = document.createAttribute("data-bs-toggle");
+    toggle.value = "modal";
+    var target = document.createAttribute("data-bs-target");
+    target.value = "#DEFINITION_MODAL";
+    link.innerHTML = term;
+    link.setAttributeNode(toggle);
+    link.setAttributeNode(target);
+    link.addEventListener("click", function() { infoModal(link) }, false);
+    list.appendChild(link);
+    return list;
+}
+
+function sortTerms(container) {
+    var children = container.children;
+    for (var j = 0; j < children.length; j++) {
+        if (children[j].classList.contains("glossary-key-header")) {
+            for (var k = 1; k < glossary.length; k++) {
+                if (glossary[k][0].toString().charAt(0) == children[j].firstElementChild.innerHTML) {
+                    children[j + 1].appendChild(createList(glossary[k][0]));
+                }
             }
+        } else if (children[j].classList.contains("glossary-term-container")) {
+
         }
     }
+}
 
-});
+function infoModal(e) {
+    console.log(e);
+}
+
+
 
 
 
