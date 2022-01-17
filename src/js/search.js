@@ -3,9 +3,7 @@ import { school, cities } from "./data.js";
 "use strict";
 
 var found = false;
-//console.log(school);
-
-//console.log(cities);
+var input;
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
 var submitBtn = document.querySelector(".main-button");
@@ -23,26 +21,28 @@ function runSearches(e) {
         // User still typing
         console.log(e.which);
 
-        if (e.which == 13 || e.which == 1) {
-            // User pressed enter 
-            var input;
-            input = document.querySelector(".searchText").value;
-            console.log("Input: " + input);
-            input = input.toLowerCase();
-            input = input.trim();
+        input = document.querySelector(".searchText").value;
 
-            if (input.includes("school district")) {
-                input = input.replace("school district", "");
+        if (input > 0) {
+            if (e.which == 13 || e.which == 1) {
+                // User pressed enter or hit submit
+                console.log("Input: " + input);
+                input = input.toLowerCase();
                 input = input.trim();
-                console.log(input);
-            }
 
-            searchCity(input);
-            searchSchoolData(input);
+                if (input.includes("school district")) {
+                    input = input.replace("school district", "");
+                    input = input.trim();
+                    console.log(input);
+                }
 
-            // Done running all the searches 
-            if (found == false) {
-                console.log("User input was not found in our data");
+                searchCity(input);
+                searchSchoolData(input);
+
+                // Done running all the searches 
+                if (found == false) {
+                    console.log("User input was not found in our data");
+                }
             }
         }
 
