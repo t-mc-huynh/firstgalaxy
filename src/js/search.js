@@ -1,6 +1,10 @@
 var found = false;
-const result = new Set();
+const result = new Array();
+const school = new Array();
+const glossary = new Array();
 console.log(result);
+console.log(school);
+console.log(glossary);
 
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
@@ -14,8 +18,6 @@ function runSearches(e) {
     if (window.event) {
         // User still typing
         console.log(e.which);
-
-
 
         if (e.which == 13 || e.which == 1) {
             // User pressed enter 
@@ -33,7 +35,6 @@ function runSearches(e) {
 
             searchCity(input);
             searchDistrict(input);
-
 
             // Done running all the searches 
             if (found == false) {
@@ -121,12 +122,24 @@ window.onload = function() {
         var data = new Uint8Array(arraybuffer);
 
         var workbook = XLSX.read(data, { type: 'array' });
-        result.add(workbook.SheetNames);
+        //result.push(workbook.SheetNames);
+        let i = 0;
         workbook.SheetNames.forEach(function(SheetNames) {
             var roa = XLSX.utils.sheet_to_json(workbook.Sheets[SheetNames], { header: 1 });
-            result.add(roa);
+            // result.push(roa);
+            result.push([workbook.SheetNames[i], roa]);
+            i++;
         });
-        console.log(result);
+
+        for (var h = 0; h < result[0][1].length; h++) {
+            school.push(result[0][1][h]);
+        }
+
+        for (var k = 0; k < result[1][1].length; k++) {
+            glossary.push(result[1][1][k]);
+        }
+
+        //console.log(result);
     }
     oReq.send();
 };
