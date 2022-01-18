@@ -43,6 +43,8 @@ function runSearches(e) {
     data_found = [
         ["City", "School", "District"]
     ];
+    removeAllChildNodes(searching_results);
+
     if (e.which == 8 && icon_section.classList.contains("d-none") == false) {
         icon_section.classList.add("d-none");
     }
@@ -119,6 +121,57 @@ function uniq(a) {
     });
 }
 
-function populateSearchResults(input) {
+function populateSearchResults(data_array) {
+    let max = 5;
+    let header = document.createElement("div");
+    header.classList.add("search-header");
+    let icon = document.createElement("i");
+    let header_label = document.createElement("span");
+    if (data_array == data_found[1]) {
+        // console.log("city found");
+        icon.classList.add("bi-house");
+        header_label.innerHTML = "City";
+    } else if (data_array == data_found[2]) {
+        // console.log("School found");
+        icon.classList.add("bi-bell");
+        header_label.innerHTML = "Schools";
+    } else {
+        // console.log("district found");
+        icon.classList.add("bi-building");
+        header_label.innerHTML = "School Districts";
+    }
+    header.appendChild(icon);
+    header.appendChild(header_label);
+    let list = document.createElement("ul");
+    list.classList.add("result");
+    list.classList.add("p-1");
+    list.classList.add("m-0");
+    list.classList.add("text-start");
+    list.classList.add("list-unstyled");
 
+    if (data_array.length < 5) {
+        max = data_array.length;
+    }
+
+    for (let i = 0; i < max; i++) {
+        let list_element = document.createElement("li");
+        let link = document.createElement("a");
+        link.classList.add("text-decoration-none");
+        link.classList.add("text-black");
+        link.innerHTML = data_array[i];
+        let hyperlink = document.createAttribute("href");
+        hyperlink.value = "#";
+        link.setAttributeNode(hyperlink);
+        list_element.appendChild(link);
+        list.appendChild(list_element);
+    }
+
+    searching_results.appendChild(header);
+    searching_results.appendChild(list);
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
