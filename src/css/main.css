@@ -1009,6 +1009,13 @@ form#search-form button i {
 
 /* =========== Agents Page ================= */
 
+.agent-head-bg {
+    z-index: 2;
+    padding: 100px 0;
+    background: linear-gradient(95deg, #f0abab, var(--fg-dred));
+    position: relative;
+}
+
 .agent-header {
     background-image: url("https://image.shutterstock.com/image-vector/house-vector-icon-home-symbol-260nw-1636571392.jpg");
     min-width: 100%;
