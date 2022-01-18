@@ -23,9 +23,6 @@ inputField.onkeyup = function() {
         user_typing = user_typing.trim();
     }
 };
-inputField.addEventListener("keyup", function() {
-
-});
 
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
