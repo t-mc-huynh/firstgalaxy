@@ -1016,6 +1016,26 @@ form#search-form button i {
     position: relative;
 }
 
+.agent {
+    display: flex;
+    border: 1px solid #1a1a1a;
+    height: 240px;
+    border-radius: .5rem;
+    padding: 0;
+    margin: 0.25rem;
+    max-width: 90%;
+}
+
+.agent img {
+    max-width: 45%;
+    object-fit: cover;
+}
+
+.agent .agent-information {
+    margin-left: 1rem;
+    align-self: center;
+}
+
 .agent-header {
     background-image: url("https://image.shutterstock.com/image-vector/house-vector-icon-home-symbol-260nw-1636571392.jpg");
     min-width: 100%;
