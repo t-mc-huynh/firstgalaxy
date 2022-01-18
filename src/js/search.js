@@ -4,8 +4,6 @@ import { school, cities } from "./data.js";
 
 var found = false;
 
-
-
 var tooltip = document.querySelector(".tooltip");
 var icon_section = document.querySelector("#sub-section-links");
 var searching_results = document.querySelector("#searching-links");
