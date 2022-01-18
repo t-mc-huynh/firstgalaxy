@@ -7,6 +7,12 @@ var found = false;
 var tooltip = document.querySelector(".tooltip");
 var icon_section = document.querySelector("#sub-section-links");
 var searching_results = document.querySelector("#searching-links");
+var inputField = document.querySelector(".searchText");
+var user_typing;
+inputField.addEventListener("keyup", function() {
+    user_typing = inputField.value;
+});
+
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
 var submitBtn = document.querySelector(".main-button");
@@ -21,6 +27,7 @@ function handleForm(evt) {
 form.addEventListener("submit", handleForm);
 
 form.addEventListener("keydown", runSearches, true);
+
 submitBtn.addEventListener("click", runSearches, true);
 
 function runSearches(e) {
@@ -33,12 +40,11 @@ function runSearches(e) {
     tooltip.classList.remove("show");
     if (window.event) {
         // User still typing
-        console.log(e.which);
+        console.log(e.key);
         var input = document.querySelector(".searchText").value;
 
-        // 
-
         if (e.which == 13 || e.which == 1) {
+            console.log(user_typing);
             if (input.length > 0) {
                 // User pressed enter or hit submit
                 input = input.toLowerCase();
