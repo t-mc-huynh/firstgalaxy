@@ -8,9 +8,18 @@ var tooltip = document.querySelector(".tooltip");
 var icon_section = document.querySelector("#sub-section-links");
 var searching_results = document.querySelector("#searching-links");
 var inputField = document.querySelector(".searchText");
-var user_typing;
+var user_typing = "";
 inputField.addEventListener("keyup", function() {
-    user_typing = inputField.value;
+    user_typing = inputField.value.toLowerCase().trim();
+
+    if (user_typing.includes("school district")) {
+        user_typing = user_typing.replace("school district", "");
+        user_typing = user_typing.trim();
+    } else if (user_typing.includes(",")) {
+        let temp = user_typing.split(",");
+        user_typing = temp[0];
+        user_typing = user_typing.trim();
+    }
 });
 
 // Prevents form submission for debugging purposes
@@ -31,48 +40,42 @@ form.addEventListener("keydown", runSearches, true);
 submitBtn.addEventListener("click", runSearches, true);
 
 function runSearches(e) {
-    console.log(data_found);
+    data_found = [
+        ["City", "School", "District"]
+    ];
     if (e.which == 8 && icon_section.classList.contains("d-none") == false) {
         icon_section.classList.add("d-none");
-    } else {
-        // Need to update links
+    }
+    if (user_typing.length == 0) {
+        searching_results.classList.add("d-none");
     }
     tooltip.classList.remove("show");
     if (window.event) {
-        // User still typing
-        console.log(e.key);
-        var input = document.querySelector(".searchText").value;
+        if (user_typing.length > 0) {
 
-        if (e.which == 13 || e.which == 1) {
+            searchCity(user_typing);
+            searchSchoolData(user_typing);
             console.log(user_typing);
-            if (input.length > 0) {
-                // User pressed enter or hit submit
-                input = input.toLowerCase();
-                input = input.trim();
-                if (input.includes("school district")) {
-                    input = input.replace("school district", "");
-                    input = input.trim();
-                } else if (input.includes(",")) {
-                    let temp = input.split(",");
-                    input = temp[0];
-                    input = input.trim();
-                }
-                searchCity(input);
-                searchSchoolData(input);
+            console.log(data_found);
 
-                // Done running all the searches 
-                if (found == false) {
-                    console.log("User input was not found in our data");
-                } else {
-                    // Input found
-                    // icon_section.classList.remove("d-none");
-                    console.log(input);
-                    console.log(data_found);
-                    populateSearchResults(input);
-                    // and update links to correct info
+            for (let i = 1; i < data_found.length; i++) {
+                if (data_found[i].length > 0) {
+                    // User searching
+                    populateSearchResults(data_found[i]);
+                    searching_results.classList.remove("d-none");
                 }
-            } else {
-                tooltip.classList.add("show");
+            }
+
+            if (e.which == 13 || e.which == 1) {
+                // User submitted intentionally
+                for (let i = 0; i < data_found[1].length; i++) {
+                    if (data_found[1][i].toLowerCase().includes(user_typing)) {
+                        // need to pull info from that city for icon_section
+                        searching_results.classList.add("d-none");
+                        icon_section.classList.remove("d-none");
+                        console.log("found");
+                    }
+                }
             }
         }
     }
@@ -82,7 +85,6 @@ function searchCity(input) {
     var found_cities = [];
     for (let i = 0; i < cities.length; i++) {
         if (cities[i][0].toLowerCase().startsWith(input)) {
-            console.log("City found in LA or OC county");
             found_cities.push(cities[i][0]);
             found = true;
         }
@@ -98,12 +100,9 @@ function searchSchoolData(input) {
     for (let i = 1; i < school.length; i++) {
         if (school[i][5].toLowerCase().startsWith(input) || school[i][6].toLowerCase().startsWith(input)) {
             found = true;
-            //console.log("Input found is district or school list");
             if (school[i][6].toLowerCase().startsWith(input)) {
-                // prints the district of the school
                 found_schools.push(school[i][6]);
             } else if (school[i][5].toLowerCase().startsWith(input)) {
-                // prints all schools in that district with the type of school it is
                 found_districts.push(school[i][5]);
             }
         }
