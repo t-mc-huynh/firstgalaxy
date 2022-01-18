@@ -4,12 +4,14 @@ import { school, cities } from "./data.js";
 
 var found = false;
 
+
+
 var tooltip = document.querySelector(".tooltip");
 var icon_section = document.querySelector("#sub-section-links");
 var searching_results = document.querySelector("#searching-links");
 var inputField = document.querySelector(".searchText");
 var user_typing = "";
-inputField.addEventListener("keyup", function() {
+inputField.onkeyup = function() {
     user_typing = inputField.value.toLowerCase().trim();
 
     if (user_typing.includes("school district")) {
@@ -20,6 +22,9 @@ inputField.addEventListener("keyup", function() {
         user_typing = temp[0];
         user_typing = user_typing.trim();
     }
+};
+inputField.addEventListener("keyup", function() {
+
 });
 
 // Prevents form submission for debugging purposes
@@ -45,10 +50,10 @@ function runSearches(e) {
     ];
     removeAllChildNodes(searching_results);
 
-    if (e.which == 8 && icon_section.classList.contains("d-none") == false) {
+    if (e.which == 8) {
         icon_section.classList.add("d-none");
     }
-    if (user_typing.length == 0) {
+    if (user_typing.length == 0 || found == false || icon_section.classList.contains("d-none") == false) {
         searching_results.classList.add("d-none");
     }
     tooltip.classList.remove("show");
@@ -66,16 +71,21 @@ function runSearches(e) {
                     populateSearchResults(data_found[i]);
                     searching_results.classList.remove("d-none");
                 }
+                found = false;
             }
 
             if (e.which == 13 || e.which == 1) {
                 // User submitted intentionally
-                for (let i = 0; i < data_found[1].length; i++) {
-                    if (data_found[1][i].toLowerCase().includes(user_typing)) {
-                        // need to pull info from that city for icon_section
-                        searching_results.classList.add("d-none");
-                        icon_section.classList.remove("d-none");
-                        console.log("found");
+                if (data_found.length > 1) {
+                    // User was looking for a city
+                    for (let i = 0; i < data_found[1].length; i++) {
+                        if (data_found[1][i].toLowerCase().includes(user_typing)) {
+                            // need to pull info from that city for icon_section
+                            searching_results.classList.add("d-none");
+                            icon_section.classList.remove("d-none");
+                            console.log("found");
+                        }
+                        found = false;
                     }
                 }
             }
