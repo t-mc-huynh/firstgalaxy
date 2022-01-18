@@ -453,6 +453,31 @@ form#search-form button i {
     }
 }
 
+.tooltip {
+    position: relative;
+    display: flex;
+}
+
+.tooltip .tooltiptext {
+    background-color: #fff;
+    color: var(--fg-black);
+    text-align: center;
+    padding: 9px 18px;
+    border-radius: 6px;
+    border: 1px solid red;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    width: 150px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .show {
+    visibility: visible;
+}
+
 
 /* =========== Features Section ================= */
 
