@@ -11,6 +11,10 @@ var searching_results = document.querySelector("#searching-links");
 var form = document.getElementById("search-form");
 var submitBtn = document.querySelector(".main-button");
 
+var data_found = [
+    ["City", "School", "District"]
+];
+
 function handleForm(evt) {
     evt.preventDefault();
 }
@@ -20,6 +24,7 @@ form.addEventListener("keydown", runSearches, true);
 submitBtn.addEventListener("click", runSearches, true);
 
 function runSearches(e) {
+    console.log(data_found);
     if (e.which == 8 && icon_section.classList.contains("d-none") == false) {
         icon_section.classList.add("d-none");
     } else {
@@ -55,6 +60,9 @@ function runSearches(e) {
                 } else {
                     // Input found
                     // icon_section.classList.remove("d-none");
+                    console.log(input);
+                    console.log(data_found);
+                    populateSearchResults(input);
                     // and update links to correct info
                 }
             } else {
@@ -65,27 +73,47 @@ function runSearches(e) {
 }
 
 function searchCity(input) {
+    var found_cities = [];
     for (let i = 0; i < cities.length; i++) {
-        if (cities[i][0].toLowerCase().includes(input)) {
+        if (cities[i][0].toLowerCase().startsWith(input)) {
             console.log("City found in LA or OC county");
+            found_cities.push(cities[i][0]);
             found = true;
         }
+    }
+    if (found == true) {
+        data_found.push(uniq(found_cities));
     }
 }
 
 function searchSchoolData(input) {
+    var found_districts = [];
+    var found_schools = [];
     for (let i = 1; i < school.length; i++) {
-        if (school[i][5].toLowerCase().includes(input) || input == school[i][6].toLowerCase().includes(input)) {
+        if (school[i][5].toLowerCase().startsWith(input) || school[i][6].toLowerCase().startsWith(input)) {
             found = true;
             //console.log("Input found is district or school list");
-            if (school[i][6].toLowerCase().includes(input)) {
+            if (school[i][6].toLowerCase().startsWith(input)) {
                 // prints the district of the school
-                console.log(school[i][5] + " is the district of the inputted school");
-                break;
-            } else {
+                found_schools.push(school[i][6]);
+            } else if (school[i][5].toLowerCase().startsWith(input)) {
                 // prints all schools in that district with the type of school it is
-                console.log(school[i][6] + " - " + school[i][14]);
+                found_districts.push(school[i][5]);
             }
         }
     }
+    if (found == true) {
+        data_found.push(uniq(found_schools));
+        data_found.push(uniq(found_districts));
+    }
+}
+
+function uniq(a) {
+    return a.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
+}
+
+function populateSearchResults(input) {
+
 }
