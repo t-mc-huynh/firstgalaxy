@@ -291,6 +291,38 @@ section {
     margin-bottom: 36px;
 }
 
+#searching-links {
+    background-color: #fff;
+    border: 1px solid #1a1a1a;
+    border-radius: 0.5rem;
+    padding: 0;
+    padding-top: 1rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    max-width: 97%;
+}
+
+#searching-links .search-header span {
+    text-transform: uppercase;
+}
+
+#searching-links .result li a {
+    margin: 0 1.5rem;
+}
+
+#searching-links .result .search-header i {
+    margin-right: 9px;
+}
+
+#searching-links .result li:not(:last-child) {
+    border-bottom: 1px solid #222;
+}
+
+#searching-links .result li:hover {
+    background-color: #ececec;
+}
+
 .main-banner ul.status,
 .main-banner ul.categories {
     width: 100%;
