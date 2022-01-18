@@ -5,7 +5,8 @@ import { school, cities } from "./data.js";
 var found = false;
 
 var tooltip = document.querySelector(".tooltip");
-var search_links = document.querySelector("#sub-section-links");
+var icon_section = document.querySelector("#sub-section-links");
+var searching_results = document.querySelector("#searching-links");
 // Prevents form submission for debugging purposes
 var form = document.getElementById("search-form");
 var submitBtn = document.querySelector(".main-button");
@@ -19,8 +20,8 @@ form.addEventListener("keydown", runSearches, true);
 submitBtn.addEventListener("click", runSearches, true);
 
 function runSearches(e) {
-    if (e.which == 8) {
-        search_links.classList.add("d-none");
+    if (e.which == 8 && icon_section.classList.contains("d-none") == false) {
+        icon_section.classList.add("d-none");
     } else {
         // Need to update links
     }
@@ -29,6 +30,8 @@ function runSearches(e) {
         // User still typing
         console.log(e.which);
         var input = document.querySelector(".searchText").value;
+
+        // 
 
         if (e.which == 13 || e.which == 1) {
             if (input.length > 0) {
@@ -51,7 +54,7 @@ function runSearches(e) {
                     console.log("User input was not found in our data");
                 } else {
                     // Input found
-                    search_links.classList.remove("d-none");
+                    // icon_section.classList.remove("d-none");
                     // and update links to correct info
                 }
             } else {
