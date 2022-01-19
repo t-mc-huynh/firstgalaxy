@@ -4,6 +4,7 @@ const result = new Array();
 const school = new Array();
 const glossary = new Array();
 const cities = new Array();
+const agents = new Array();
 
 //console.log(result);
 //console.log(school);
@@ -43,9 +44,13 @@ $(function() {
         for (let m = 0; m < result[2][1].length; m++) {
             cities.push(result[2][1][m]);
         }
+
+        for (let j = 0; j < result[3][1].length; j++) {
+            agents.push(result[3][1][j]);
+        }
         //console.log(result);
     }
     oReq.send();
 });
 
-export { result, school, glossary, cities };
+export { result, school, glossary, cities, agents };
