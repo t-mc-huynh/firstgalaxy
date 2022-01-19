@@ -143,57 +143,33 @@
                         you!
                     </p>
                 </div>
-                <div class="agents row row-cols-1">
-                    <figure class="snip1336 col">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample69.jpg" alt="sample69" />
-                        <figcaption id="info">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample5.jpg" alt="profile-sample5" class="profile" />
-                            <h2>Sam Huynh<span>Owner & Real Estate Broker</span></h2>
-                            <a href="tel:7149435648">714-000-0000</a>
-                            <p>example@test.com</p>
-                            <code>Irvine, CA</code><br>
-                            <small>LIC# 00200000</small>
-                        </figcaption>
-                    </figure>
+                <div class="row row-cols-1 container py-2 px-0 justify-content-center">
+                    <li class="col agent">
+                        <img src="src/images/fancyhouse.jpg" class="float-start agent-picture">
+                        <div class="agent-information float-end">
+                            <h2>Sam Huynh</h2>
+                            <p>Broker / Owner</p>
+                            <p style="margin: 0px;" href="tel:7149435648">
+                                <i class="bi-telephone-fill"></i> (714) 943 - 5648
+                            </p>
+                            <p href="mailto:9435648@gmail.com">
+                                <i class="bi-inbox-fill"></i> 9435648@gmail.com
+                            </p>
+                            <small>BRE #: 01402750</small>
+                        </div>
+                    </li>
                 </div>
                 <hr>
                 <div class="dropdown2">
-                    <button onclick="myFunction()" id="filterBtn" class="btn dropbtn dropdown-toggle" type="button">Filter</button>
+                    <button id="filterBtn" class="btn dropbtn dropdown-toggle" type="button">Filter</button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a onclick="sortListAZ()">Sort First Name (A-Z)</a>
-                        <a onclick="sortListZA()">Sort First Name (Z-A)</a>
-                        <a onclick="sortListCity()">Sort by City</a>
+                        <a id="byAZ">Sort First Name (A-Z)</a>
+                        <a id="byZA">Sort First Name (Z-A)</a>
                     </div>
                 </div>
-                <div id="card" class="container row row-cols-1 row-cols-md-2 py-2 px-0">
-                    <div class="col agent">
-                        <img src="src/images/modernhome.jpg" class="float-start agent-picture">
-                        <div class="agent-information float-end">
-                            <h2>Agent Name</h2>
-                            <span>Agent Role</span>
-                            <p>Agent Location</p>
-                            <small>Agent License</small>
-                        </div>
-                    </div>
-                    <div class="col agent">
-                        <img src="src/images/modernhome.jpg" class="float-start agent-picture">
-                        <div class="agent-information float-end">
-                            <h2>Agent Name</h2>
-                            <span>Agent Role</span>
-                            <p>Agent Location</p>
-                            <small>Agent License</small>
-                        </div>
-                    </div>
-                    <div class="col agent">
-                        <img src="src/images/modernhome.jpg" class="float-start agent-picture">
-                        <div class="agent-information float-end">
-                            <h2>Agent Name</h2>
-                            <span>Agent Role</span>
-                            <p>Agent Location</p>
-                            <small>Agent License</small>
-                        </div>
-                    </div>
-                </div>
+                <ul id="card" class="container row row-cols-1 row-cols-md-2 py-2 px-0">
+
+                </ul>
             </div>
         </section>
         <!--End of Agents Section-->
@@ -253,7 +229,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="src/js/nav.js"></script>
 
-    <script src="src/js/agents.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js" integrity="sha512-xQBQYt9UcgblF6aCMrwU1NkVA7HCXaSN2oq0so80KO+y68M+n64FOcqgav4igHe6D5ObBLIf68DWv+gfBowczg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.min.js" integrity="sha512-BMIFH0QGwPdinbGu7AraCzG9T4hKEkcsbbr+Uqv8IY3G5+JTzs7ycfGbz7Xh85ONQsnHYrxZSXgS1Pdo9r7B6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script type="module" src="src/js/agents.js"></script>
 </body>
 
 </html>

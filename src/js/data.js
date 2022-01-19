@@ -10,7 +10,6 @@ const agents = new Array();
 //console.log(school);
 //console.log(glossary);
 
-
 $(function() {
     /* set up XMLHttpRequest */
     var url = "src/data/datasets.xlsx";
