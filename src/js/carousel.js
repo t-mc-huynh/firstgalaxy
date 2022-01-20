@@ -1,5 +1,7 @@
 import { TOKEN } from './app-env.js';
 
+import { result } from "./data.js";
+
 $(document).ready(function() {
     $(".owl-carousel").owlCarousel({
         center: true,
@@ -20,7 +22,9 @@ $(document).ready(function() {
 var IP = "23.240.76.211";
 
 const nearbyCities = new Array();
-nearbyCities.push(["City Name", "State", "Latitude", "Longitude", "Location Code"]);
+nearbyCities.push(["City Name", "State", "Latitude", "Longitude", "Location Code", "Image"]);
+
+console.log(result);
 
 $.getJSON("https://api.ipify.org/?format=json", function(data) {
 
@@ -45,9 +49,34 @@ $.getJSON("http://getnearbycities.geobytes.com/GetNearbyCities?callback=?&radius
             temp.push(data[i][8]);
             temp.push(data[i][10]);
             temp.push(data[i][9]);
+            temp.push("");
             nearbyCities.push(temp);
             break;
         }
     }
     console.log(nearbyCities);
 });
+
+setTimeout(result.push(["City Info", nearbyCities]), 10000);
+
+/*
+for (let i = 0; i < nearbyCities.length; i++) {
+if (nearbyCities[i][5].value == "") {
+    fetch("https://api.unsplash.com/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=2&query=" + nearbyCities[i][1], {
+        headers: {
+            Authorization: TOKEN.UNSPLASH
+        }
+    })
+    .then(resp => {
+        return resp.json()
+    })
+    .then(data => {
+        if (data[0].height > data[1].height) {
+            nearbyCities[i][5] = data[0].urls.full;
+        } else {
+            nearbyCities[i][5] = data[1].urls.full;
+        }
+    })
+}
+}
+*/
