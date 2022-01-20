@@ -511,71 +511,124 @@ form#search-form button i {
 }
 
 
-/* =========== Features Section ================= */
+/* =========== Carousel Section ================= */
 
-.features .card {
-    border-radius: .25rem;
-    overflow: hidden;
-    border: 0;
-    border: 1px solid var(--fg-lgrey);
-    background: #fff;
+.owl-carousel .owl-stage {
     position: relative;
-    transition: 0.3s;
+    color: #1a1a1a;
+    display: flex;
 }
 
-.features .card-body {
-    padding-top: 1.1rem;
+.owl-carousel .owl-item {
     position: relative;
+    height: 240px;
+    width: 360px;
+    border: 1px solid grey;
+    margin: 1rem .5rem;
 }
 
-.features .card-body i {
-    font-size: 7rem;
-    color: var(--fg-beige);
-    text-align: center;
+.owl-carousel .owl-item img {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: 1;
-}
-
-.features .card-title {
-    font-weight: 700;
-    position: relative;
-    z-index: 2;
-}
-
-.features .card-title a {
-    color: var(--fg-black);
-    transition: 0.3s;
-}
-
-.features .card-text {
-    position: relative;
-    z-index: 2;
-    color: var(--fg-black);
-}
-
-.features .card:hover {
-    box-shadow: 0rem .1rem 0.8rem rgba(0, 0, 0, 0.1);
-    background: #fff;
-}
-
-.features .card:hover .card-title a {
-    color: var(--fg-blue);
-}
-
-.features .card-img-top {
-    height: 20rem;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
-@media (max-width: 1024px) {
-    .features {
-        background-attachment: scroll;
+.owl-carousel .owl-item button {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    bottom: 0;
+    font-size: 1rem;
+    background-color: #ebebeb;
+}
+
+.owl-carousel .owl-item button:hover {
+    color: var(--fg-red);
+    background-color: #dfdfdf;
+}
+
+@media (max-width: 768px) {
+    .owl-carousel .owl-item {
+        height: 180px;
     }
-    .features .card-img-top {
-        height: 14rem;
+}
+
+
+/* =========== Who Are We Section ================= */
+
+.team-members {
+    transform: rotate(-45deg);
+    list-style: none;
+}
+
+.team-members li>div {
+    float: left;
+    width: 20%;
+}
+
+.team-members li:nth-child(2)>div:first-child {
+    margin-left: 20%;
+}
+
+.team-members li:last-child>div:first-child {
+    margin-left: 40%;
+}
+
+.member-details>div {
+    background-color: var(--fg-lgrey);
+    border-style: double;
+    border-width: .45rem;
+    border-color: var(--fg-black);
+    margin: .25rem;
+}
+
+.member-details img {
+    transform: rotate(45deg) translate(0, 0.8rem) scale(1.2);
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.member-details>div {
+    position: relative;
+    overflow: hidden;
+}
+
+.member-details>div:after {
+    content: "";
+    background-image: linear-gradient( 45deg, rgba(228, 82, 69, 0.8) 50%, transparent 50%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 30rem) {
+    .team-members li {
+        text-align: center;
+    }
+    .team-members li>div {
+        float: none;
+        display: inline-block;
+        width: 30%;
+        margin: 0 !important;
+    }
+    .team-members {
+        transform: rotate(0);
+    }
+    .member-details img {
+        transform: rotate(0) translate(0, 0);
+    }
+}
+
+@media only screen and (max-width: 399px) {
+    .team-members li>div {
+        width: 48%;
     }
 }
 
@@ -1566,148 +1619,5 @@ form#search-form button i {
 @keyframes bookFadeOut {
     50% {
         border: 1px dashed rgba(255, 255, 255, 0.1);
-    }
-}
-
-
-/* =========== Agents Header ================= */
-
-
-/*  Team Starts */
-
-.team-members {
-    transform: rotate(-45deg);
-    list-style: none;
-}
-
-.team-members li>div {
-    float: left;
-    width: 20%;
-}
-
-.team-members li:nth-child(2)>div:first-child {
-    margin-left: 20%;
-}
-
-.team-members li:last-child>div:first-child {
-    margin-left: 40%;
-}
-
-.member-details>div {
-    background-color: var(--fg-lgrey);
-    border-style: double;
-    border-width: .45rem;
-    border-color: var(--fg-black);
-    margin: .25rem;
-}
-
-.member-details img {
-    transform: rotate(45deg) translate(0, 0.8rem) scale(1.2);
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.member-details>div {
-    position: relative;
-    overflow: hidden;
-}
-
-.member-details>div:after {
-    content: "";
-    background-image: linear-gradient( 45deg, rgba(228, 82, 69, 0.8) 50%, transparent 50%);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-/* Team overview */
-
-.team-overview {
-    padding-right: 0.8rem;
-}
-
-.team-overview h2 {
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: .25rem;
-}
-
-.team-overview>a {
-    margin-bottom: 1.7rem;
-    display: block;
-}
-
-.team-overview>a:before {
-    content: "";
-    width: 0.6rem;
-    height: .1rem;
-    position: relative;
-    top: -.2rem;
-    margin-right: .25rem;
-    background-color: #ccc;
-    display: inline-block;
-}
-
-
-/* For centering elements - optional - Can use table,tablecell instead */
-
-.flex-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-center>div:first-child {
-    order: 2;
-}
-
-
-/* RESPONSIVE */
-
-@media only screen and (max-width: 992px) {
-    .sm-no-flex {
-        display: block;
-    }
-    .sm-no-float {
-        float: none !important;
-    }
-    .sm-text-center {
-        text-align: center;
-    }
-}
-
-@media only screen and (max-width: 30rem) {
-    .team-members li {
-        text-align: center;
-    }
-    .team-members li>div {
-        float: none;
-        display: inline-block;
-        width: 30%;
-        margin: 0 !important;
-    }
-    .team-members {
-        transform: rotate(0);
-    }
-    .member-details img {
-        transform: rotate(0) translate(0, 0);
-    }
-    .team-overview {
-        padding: 0.8rem;
-    }
-}
-
-@media only screen and (max-width: 399px) {
-    .team-members li>div {
-        width: 48%;
     }
 }
