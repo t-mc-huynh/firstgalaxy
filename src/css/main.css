@@ -522,7 +522,7 @@ form#search-form button i {
 .owl-carousel .owl-item {
     position: relative;
     height: 240px;
-    width: 360px;
+    min-width: 240px;
     border: 1px solid grey;
     margin: 1rem .5rem;
 }
