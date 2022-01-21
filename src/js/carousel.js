@@ -76,6 +76,8 @@ function createCarousel(data) {
     photo.setAttributeNode(source);
     var button = document.createElement("button");
     button.innerHTML = data[0];
+
+    // button needs an hyperlink to the search page for the corresponding city
     var type = document.createAttribute("type");
     type.value = "button";
     button.setAttributeNode(type);
