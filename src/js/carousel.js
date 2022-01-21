@@ -24,20 +24,20 @@ var IP = "23.240.76.211";
 const nearbyCities = new Array();
 nearbyCities.push(["City Name", "State", "Latitude", "Longitude", "Location Code", "Image"]);
 
-console.log(result);
+// console.log(result);
 
 $.getJSON("https://api.ipify.org/?format=json", function(data) {
 
     // Setting text of element P with id gfg
-    console.log(data.ip);
+    // console.log(data.ip);
     IP = data.ip;
 });
 
 $.getJSON('https://api.techniknews.net/ipgeo/' + IP, function(input) {
 
     // Setting text of element P with id gfg
-    console.log(input);
-    console.log(Object.entries(input).length);
+    // console.log(input);
+    // console.log(Object.entries(input).length);
 });
 
 $.getJSON("http://getnearbycities.geobytes.com/GetNearbyCities?callback=?&radius=100&locationcode=" + IP, function(data) {
@@ -54,29 +54,31 @@ $.getJSON("http://getnearbycities.geobytes.com/GetNearbyCities?callback=?&radius
             break;
         }
     }
-    console.log(nearbyCities);
+    getPictures();
 });
 
-setTimeout(result.push(["City Info", nearbyCities]), 10000);
+setTimeout(result.push(["City Info", nearbyCities]), 5000);
 
-/*
-for (let i = 0; i < nearbyCities.length; i++) {
-if (nearbyCities[i][5].value == "") {
-    fetch("https://api.unsplash.com/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=2&query=" + nearbyCities[i][1], {
-        headers: {
-            Authorization: TOKEN.UNSPLASH
+
+function getPictures() {
+    for (let i = 0; i < nearbyCities.length; i++) {
+        if (!(nearbyCities[i][5].length > 3)) {
+            fetch("https://api.unsplash.com/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=2&query=" + nearbyCities[i][1], {
+                    headers: {
+                        Authorization: TOKEN.UNSPLASH
+                    }
+                })
+                .then(resp => {
+                    return resp.json()
+                })
+                .then(data => {
+                    if (data[0].height > data[1].height) {
+                        nearbyCities[i][5] = data[0].urls.full;
+                    } else {
+                        nearbyCities[i][5] = data[1].urls.full;
+                    }
+                })
         }
-    })
-    .then(resp => {
-        return resp.json()
-    })
-    .then(data => {
-        if (data[0].height > data[1].height) {
-            nearbyCities[i][5] = data[0].urls.full;
-        } else {
-            nearbyCities[i][5] = data[1].urls.full;
-        }
-    })
+    }
+    console.log(nearbyCities);
 }
-}
-*/
