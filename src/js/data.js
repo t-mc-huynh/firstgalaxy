@@ -1,9 +1,10 @@
+import { TOKEN } from './app-env.js';
 "use strict";
 
 const result = new Array();
 const school = new Array();
 const glossary = new Array();
-const cities = new Array();
+var cities = new Array();
 const agents = new Array();
 
 //console.log(result);
@@ -32,24 +33,42 @@ $(function() {
             i++;
         });
 
-        for (let h = 0; h < result[0][1].length; h++) {
-            school.push(result[0][1][h]);
+
+        for (let h = 0; h < result[1][1].length; h++) {
+            school.push(result[1][1][h]);
         }
 
-        for (let k = 0; k < result[1][1].length; k++) {
-            glossary.push(result[1][1][k]);
-        }
-
-        for (let m = 0; m < result[2][1].length; m++) {
-            cities.push(result[2][1][m]);
+        for (let k = 0; k < result[2][1].length; k++) {
+            glossary.push(result[2][1][k]);
         }
 
         for (let j = 0; j < result[3][1].length; j++) {
             agents.push(result[3][1][j]);
         }
-        //console.log(result);
+        // console.log(result);
+
+
     }
     oReq.send();
 });
+
+var headers = new Headers();
+headers.append("X-CSCAPI-KEY", TOKEN.COUNTRYSTATECITY);
+
+var requestOptions = {
+    method: 'GET',
+    headers: headers,
+    redirect: 'follow'
+};
+
+fetch("https://api.countrystatecity.in/v1/countries/US/states/CA/cities", requestOptions)
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+console.log(school);
+console.log(glossary);
+console.log(agents);
+console.log(cities);
 
 export { result, school, glossary, cities, agents };
