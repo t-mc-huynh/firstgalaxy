@@ -7,32 +7,72 @@ var IP = "23.240.76.211";
 const nearbyCities = new Array();
 nearbyCities.push(["City Name", "State", "Latitude", "Longitude", "Location Code", "Image"]);
 
+function processResponse(position) {
+    var crd = position.coords;
+
+    console.log('Your current position is:');
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    console.log(`More or less ${crd.accuracy} meters.`);
+}
+
+function showError(error) {
+    console.warn(`ERROR(${error.code}): ${error.message}`);
+}
+
+function report(state) {
+    console.log('Permission ' + state);
+}
+
+window.onload = function() {
+
+    navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+
+        if (result.state == 'granted') {
+            report(result.state);
+            navigator.geolocation.getCurrentPosition(processResponse, showError);
+        } else if (result.state == 'prompt') {
+            report(result.state);
+        } else if (result.state == 'denied') {
+            report(result.state);
+        }
+        result.onchange = function() {
+            report(result.state)
+        }
+    });
+}
+
+
 // console.log(result);
 
-$.getJSON("https://api.ipify.org/?format=json", function(data) {
+function getNearbyCities(radius = 100) {
 
-    // Setting text of element P with id gfg
-    // console.log(data.ip);
-    IP = data.ip;
-});
+}
 
-$.getJSON("http://getnearbycities.geobytes.com/GetNearbyCities?callback=?&radius=100&locationcode=" + IP, function(data) {
-    for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < data[i].length; j++) {
-            let temp = new Array();
-            temp.push(data[i][1]);
-            temp.push(data[i][2]);
-            temp.push(data[i][8]);
-            temp.push(data[i][10]);
-            temp.push(data[i][9]);
-            temp.push("");
-            nearbyCities.push(temp);
-            break;
-        }
-    }
-    getPictures();
-});
+function distance(lat1, lon1, lat2, lon2) {
+    // convert degrees to radians
+    lon1 = lon1 * Math.PI / 180;
+    lon2 = lon2 * Math.PI / 180;
+    lat1 = lat1 * Math.PI / 180;
+    lat2 = lat2 * Math.PI / 180;
 
+    // Haversine formula
+    let dlon = lon2 - lon1;
+    let dlat = lat2 - lat1;
+
+    let a = Math.pow(Math.sin(dlat / 2), 2) +
+        Math.cos(lat1) * Math.cos(lat2) *
+        Math.pow(Math.sin(dlon / 2), 2);
+
+    let c = 2 * Math.asin(Math.sqrt(a));
+    // radius of earth in miles
+    let r = 3956;
+
+    return (c * r);
+}
+
+// add into function after getting all cities + info
+// getPictures();
 setTimeout(result.push(["City Info", nearbyCities]), 5000);
 
 
@@ -41,7 +81,7 @@ function getPictures() {
         let index = rndIndex();
         console.log(index);
         if (!(nearbyCities[i][5].length > 3)) {
-            fetch("https://api.unsplash.com/collections/461370/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=10", {
+            fetch("https://api.unsplash.com/collections/461370/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=" + nearbyCities.length, {
                     headers: {
                         Authorization: TOKEN.UNSPLASH
                     }
@@ -50,7 +90,6 @@ function getPictures() {
                     return resp.json();
                 })
                 .then(data => {
-                    console.log(data);
                     nearbyCities[i][5] = data[i].urls.full;
                     createCarousel(nearbyCities[i])
                 })
