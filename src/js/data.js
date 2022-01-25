@@ -52,20 +52,6 @@ $(function() {
     oReq.send();
 });
 
-var headers = new Headers();
-headers.append("X-CSCAPI-KEY", TOKEN.COUNTRYSTATECITY);
-
-var requestOptions = {
-    method: 'GET',
-    headers: headers,
-    redirect: 'follow'
-};
-
-fetch("https://api.countrystatecity.in/v1/countries/US/states/CA/cities", requestOptions)
-    .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-
 console.log(school);
 console.log(glossary);
 console.log(agents);
