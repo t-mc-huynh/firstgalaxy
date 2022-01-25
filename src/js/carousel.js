@@ -1,4 +1,4 @@
-import config from './config.js';
+import { default as config } from './config.js';
 
 import { result } from "./data.js";
 

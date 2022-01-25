@@ -1,4 +1,3 @@
-import './config.js';
 "use strict";
 
 const result = new Array();
