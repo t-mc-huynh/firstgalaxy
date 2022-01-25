@@ -1,4 +1,4 @@
-import { TOKEN } from './app-env.js';
+import './config.js';
 "use strict";
 
 const result = new Array();

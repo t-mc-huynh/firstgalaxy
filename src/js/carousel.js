@@ -1,4 +1,4 @@
-import { TOKEN } from './app-env.js';
+import config from './config.js';
 
 import { result } from "./data.js";
 
@@ -56,10 +56,12 @@ function getNearbyCities(position) {
     let lon1 = position.coords.longitude;
     let responseStyle = "short"; // length of the response
     let maxRows = 12; // max # of rows to retrieve
-    let username = TOKEN.GEONAMEUSER; // username of GeoNames account
     let citySize = "cities15000"; // the min # of citizens a city must have
 
-    $.getJSON("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + username, function(data) {
+    let base_url = "http://api.geonames.org/findNearbyPlaceNameJSON?lat=";
+    let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + config.GEONAMEUSER;
+
+    $.getJSON(final_url, function(data) {
 
         for (let i = 0; i < data.geonames.length; i++) {
             nearbyCities.push([data.geonames[i].name, data.geonames[i].distance, ""])
@@ -73,15 +75,18 @@ function getNearbyCities(position) {
 }
 
 function getPictures() {
+    let base_url = "https://api.unsplash.com/collections/461370/photos/?client_id=";
+    let final_url = base_url + config.UNSPLASH + "&page=1&per_page=" + nearbyCities.length;
+
     for (let i = 1; i < nearbyCities.length; i++) {
         let index = rndIndex();
         console.log(index);
         if (nearbyCities[i][2] == "") {
 
             // create table w chosen photos to use in database
-            fetch("https://api.unsplash.com/collections/461370/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=" + nearbyCities.length, {
+            fetch(final_url, {
                     headers: {
-                        Authorization: TOKEN.UNSPLASH
+                        Authorization: config.UNSPLASH
                     }
                 })
                 .then(resp => {
