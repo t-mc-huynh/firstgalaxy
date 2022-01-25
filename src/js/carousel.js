@@ -4,10 +4,10 @@ import { result } from "./data.js";
 
 var IP = "23.240.76.211";
 
-const nearbyCities = new Array(12);
-nearbyCities.push(["City Name", "State", "Latitude", "Longitude", "Location Code", "Image"]);
+const nearbyCities = new Array();
+nearbyCities.push(["City Name", "Distance", "Image"]);
 
-function processResponse(position) {
+function success(position) {
     var crd = position.coords;
 
     console.log('Your current position is:');
@@ -31,20 +31,23 @@ window.onload = function() {
 
         if (result.state == 'granted') {
             report(result.state);
-            navigator.geolocation.getCurrentPosition(processResponse, showError);
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+            navigator.geolocation.getCurrentPosition(success, showError, options);
         } else if (result.state == 'prompt') {
             report(result.state);
         } else if (result.state == 'denied') {
             report(result.state);
         }
         result.onchange = function() {
-            report(result.state)
+            report(result.state);
         }
-    });
+    })
 }
 
-
-// console.log(result);
 
 function getNearbyCities(position) {
     // radius in KM
@@ -56,28 +59,26 @@ function getNearbyCities(position) {
     let username = TOKEN.GEONAMEUSER; // username of GeoNames account
     let citySize = "cities15000"; // the min # of citizens a city must have
 
+    $.getJSON("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + username, function(data) {
 
-    $.getJSON("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + lon1 + responseStyle + citySize + radius + maxRows + username, function(data) {
-        console.log(data);
+        for (let i = 0; i < data.geonames.length; i++) {
+            nearbyCities.push([data.geonames[i].name, data.geonames[i].distance, ""])
+        }
 
-        array.forEach(element => {
-            //do something ???
-        });
-    });
+        console.log(nearbyCities);
+        getPictures();
+    })
+
 
 }
-
-
-// add into function after getting all cities + info
-// getPictures();
-setTimeout(result.push(["City Info", nearbyCities]), 5000);
-
 
 function getPictures() {
     for (let i = 1; i < nearbyCities.length; i++) {
         let index = rndIndex();
         console.log(index);
-        if (!(nearbyCities[i][5].length > 3)) {
+        if (nearbyCities[i][2] == "") {
+
+            // create table w chosen photos to use in database
             fetch("https://api.unsplash.com/collections/461370/photos/?client_id=" + TOKEN.UNSPLASH + "&page=1&per_page=" + nearbyCities.length, {
                     headers: {
                         Authorization: TOKEN.UNSPLASH
@@ -87,8 +88,8 @@ function getPictures() {
                     return resp.json();
                 })
                 .then(data => {
-                    nearbyCities[i][5] = data[i].urls.full;
-                    createCarousel(nearbyCities[i])
+                    nearbyCities[i][2] = data[i].urls.full;
+                    createCarousel(nearbyCities[i]);
                 })
         }
     }
@@ -108,7 +109,7 @@ function createCarousel(data) {
     slide.classList.add("owl-item");
     var photo = document.createElement("img");
     var source = document.createAttribute("src");
-    source.value = data[5];
+    source.value = data[2];
     photo.setAttributeNode(source);
     var button = document.createElement("button");
     button.innerHTML = data[0];
