@@ -51,9 +51,9 @@ $(function() {
     oReq.send();
 });
 
-console.log(school);
-console.log(glossary);
-console.log(agents);
-console.log(cities);
+//console.log(school);
+//console.log(glossary);
+//console.log(agents);
+//console.log(cities);
 
 export { result, school, glossary, cities, agents };
