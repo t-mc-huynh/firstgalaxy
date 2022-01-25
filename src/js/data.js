@@ -33,19 +33,19 @@ $(function() {
             i++;
         });
 
-
-        for (let h = 0; h < result[1][1].length; h++) {
-            school.push(result[1][1][h]);
+        //console.log(result);
+        for (let h = 0; h < result[0][1].length; h++) {
+            school.push(result[0][1][h]);
         }
 
-        for (let k = 0; k < result[2][1].length; k++) {
-            glossary.push(result[2][1][k]);
+        for (let k = 0; k < result[1][1].length; k++) {
+            glossary.push(result[1][1][k]);
         }
 
-        for (let j = 0; j < result[3][1].length; j++) {
-            agents.push(result[3][1][j]);
+        for (let j = 0; j < result[2][1].length; j++) {
+            agents.push(result[2][1][j]);
         }
-        // console.log(result);
+
 
 
     }
