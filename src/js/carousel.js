@@ -4,7 +4,7 @@ import { result } from "./data.js";
 
 var IP = "23.240.76.211";
 
-const nearbyCities = new Array();
+const nearbyCities = new Array(12);
 nearbyCities.push(["City Name", "State", "Latitude", "Longitude", "Location Code", "Image"]);
 
 function processResponse(position) {
@@ -14,6 +14,7 @@ function processResponse(position) {
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
+    getNearbyCities(position);
 }
 
 function showError(error) {
@@ -45,31 +46,27 @@ window.onload = function() {
 
 // console.log(result);
 
-function getNearbyCities(radius = 100) {
+function getNearbyCities(position) {
+    // radius in KM
+    let radius = 25;
+    let lat1 = position.coords.latitude;
+    let lon1 = position.coords.longitude;
+    let responseStyle = "short"; // length of the response
+    let maxRows = 12; // max # of rows to retrieve
+    let username = TOKEN.GEONAMEUSER; // username of GeoNames account
+    let citySize = "cities15000"; // the min # of citizens a city must have
+
+
+    $.getJSON("http://api.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + lon1 + responseStyle + citySize + radius + maxRows + username, function(data) {
+        console.log(data);
+
+        array.forEach(element => {
+            //do something ???
+        });
+    });
 
 }
 
-function distance(lat1, lon1, lat2, lon2) {
-    // convert degrees to radians
-    lon1 = lon1 * Math.PI / 180;
-    lon2 = lon2 * Math.PI / 180;
-    lat1 = lat1 * Math.PI / 180;
-    lat2 = lat2 * Math.PI / 180;
-
-    // Haversine formula
-    let dlon = lon2 - lon1;
-    let dlat = lat2 - lat1;
-
-    let a = Math.pow(Math.sin(dlat / 2), 2) +
-        Math.cos(lat1) * Math.cos(lat2) *
-        Math.pow(Math.sin(dlon / 2), 2);
-
-    let c = 2 * Math.asin(Math.sqrt(a));
-    // radius of earth in miles
-    let r = 3956;
-
-    return (c * r);
-}
 
 // add into function after getting all cities + info
 // getPictures();
