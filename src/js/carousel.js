@@ -1,3 +1,4 @@
+import { config } from "./config.js";
 import { result } from "./data.js";
 
 var IP = "23.240.76.211";
