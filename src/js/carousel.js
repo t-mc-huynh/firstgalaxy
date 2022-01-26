@@ -1,7 +1,4 @@
-import { config } from "./config.js";
 import { result } from "./data.js";
-
-const configuration = config;
 
 var IP = "23.240.76.211";
 
