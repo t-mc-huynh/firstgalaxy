@@ -1,6 +1,8 @@
 import { config } from "./config.js";
 import { result } from "./data.js";
 
+const configuration = config;
+
 var IP = "23.240.76.211";
 
 const nearbyCities = new Array();
@@ -58,7 +60,7 @@ function getNearbyCities(position) {
     let citySize = "cities15000"; // the min # of citizens a city must have
 
     let base_url = "http://api.geonames.org/findNearbyPlaceNameJSON?lat=";
-    let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + config.GEONAMEUSER;
+    let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + configuration.GEONAMEUSER;
 
     $.getJSON(final_url, function(data) {
 
@@ -75,7 +77,7 @@ function getNearbyCities(position) {
 
 function getPictures() {
     let base_url = "https://api.unsplash.com/collections/461370/photos/?client_id=";
-    let final_url = base_url + config.UNSPLASH + "&page=1&per_page=" + nearbyCities.length;
+    let final_url = base_url + configuration.UNSPLASH + "&page=1&per_page=" + nearbyCities.length;
 
     for (let i = 1; i < nearbyCities.length; i++) {
         let index = rndIndex();
@@ -85,7 +87,7 @@ function getPictures() {
             // create table w chosen photos to use in database
             fetch(final_url, {
                     headers: {
-                        Authorization: config.UNSPLASH
+                        Authorization: configuration.UNSPLASH
                     }
                 })
                 .then(resp => {
