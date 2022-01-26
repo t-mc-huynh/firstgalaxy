@@ -54,7 +54,7 @@ function getNearbyCities(position) {
     let maxRows = 12; // max # of rows to retrieve
     let citySize = "cities15000"; // the min # of citizens a city must have
 
-    let base_url = "http://api.geonames.org/findNearbyPlaceNameJSON?lat=";
+    let base_url = "https://api.geonames.org/findNearbyPlaceNameJSON?lat=";
     let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
 
     $.getJSON(final_url, function(data) {
