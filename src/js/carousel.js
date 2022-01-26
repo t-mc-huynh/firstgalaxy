@@ -1,5 +1,3 @@
-var IP = "23.240.76.211";
-
 const nearbyCities = new Array();
 nearbyCities.push(["City Name", "Distance", "Image"]);
 
