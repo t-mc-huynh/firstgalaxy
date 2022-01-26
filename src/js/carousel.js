@@ -60,19 +60,30 @@ function getNearbyCities(position) {
     let citySize = "cities15000"; // the min # of citizens a city must have
 
     let base_url = "http://api.geonames.org/findNearbyPlaceNameJSON?lat=";
-    let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + configuration.GEONAMEUSER;
+    let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
 
     $.getJSON(final_url, function(data) {
 
         for (let i = 0; i < data.geonames.length; i++) {
             nearbyCities.push([data.geonames[i].name, data.geonames[i].distance, ""])
         }
+        //getPictures();
 
         console.log(nearbyCities);
-        getPictures();
+        createAndLoadCarousel();
     })
 
 
+}
+
+
+// Temp functions to bypass photos function
+function createAndLoadCarousel() {
+    for (let i = 1; i < nearbyCities.length; i++) {
+        createCarousel(nearbyCities[i]);
+    }
+
+    loadCarousel();
 }
 
 function getPictures() {
