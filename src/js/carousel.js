@@ -83,6 +83,8 @@ function createAndLoadCarousel() {
     loadCarousel();
 }
 
+/*
+
 function getPictures() {
     let base_url = "https://api.unsplash.com/collections/461370/photos/?client_id=";
     let final_url = base_url + configuration.UNSPLASH + "&page=1&per_page=" + nearbyCities.length;
@@ -114,6 +116,7 @@ function getPictures() {
 function rndIndex() {
     return Math.round(Math.random() * 10);
 }
+*/
 
 function createCarousel(data) {
     var section = document.querySelector(".owl-stage");
