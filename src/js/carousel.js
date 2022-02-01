@@ -2,6 +2,25 @@ var IP = "23.240.76.211";
 
 const nearbyCities = new Array();
 nearbyCities.push(["City Name", "Distance", "Image"]);
+var cityImages = new Object();
+
+
+function imageObject() {
+    var settings = {
+        "url": "https://getpantry.cloud/apiv1/pantry/18c13523-e895-4e43-977d-e30fde678a6b/basket/cityImages",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+    };
+
+    $.ajax(settings).done(function(response) {
+        cityImages = response;
+        console.log(cityImages);
+    })
+}
+
 
 function success(position) {
     var crd = position.coords;
@@ -13,15 +32,19 @@ function success(position) {
     getNearbyCities(position);
 }
 
+
 function showError(error) {
     console.warn(`ERROR(${error.code}): ${error.message}`);
 }
+
 
 function report(state) {
     console.log('Permission ' + state);
 }
 
 window.onload = function() {
+
+    imageObject();
 
     navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
 
@@ -44,7 +67,6 @@ window.onload = function() {
     })
 }
 
-
 function getNearbyCities(position) {
     // radius in KM
     let radius = 25;
@@ -54,7 +76,7 @@ function getNearbyCities(position) {
     let maxRows = 12; // max # of rows to retrieve
     let citySize = "cities15000"; // the min # of citizens a city must have
 
-    let base_url = "https://api.geonames.org/findNearbyPlaceNameJSON?lat=";
+    let base_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=";
     let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
 
     $.getJSON(final_url, function(data) {
@@ -62,17 +84,25 @@ function getNearbyCities(position) {
         for (let i = 0; i < data.geonames.length; i++) {
             nearbyCities.push([data.geonames[i].name, data.geonames[i].distance, ""])
         }
-        //getPictures();
+
+        getImages();
 
         console.log(nearbyCities);
         createAndLoadCarousel();
     })
+}
 
-
+function getImages() {
+    for (let i = 1; i < nearbyCities.length; i++) {
+        for (const [key, value] of Object.entries(cityImages)) {
+            if (nearbyCities[i][0].toString().toLowerCase() == key.toString().toLowerCase()) {
+                nearbyCities[i][2] = value;
+            }
+        }
+    }
 }
 
 
-// Temp functions to bypass photos function
 function createAndLoadCarousel() {
     for (let i = 1; i < nearbyCities.length; i++) {
         createCarousel(nearbyCities[i]);
@@ -81,44 +111,8 @@ function createAndLoadCarousel() {
     loadCarousel();
 }
 
-/*
-
-function getPictures() {
-    let base_url = "https://api.unsplash.com/collections/461370/photos/?client_id=";
-    let final_url = base_url + configuration.UNSPLASH + "&page=1&per_page=" + nearbyCities.length;
-
-    for (let i = 1; i < nearbyCities.length; i++) {
-        let index = rndIndex();
-        console.log(index);
-        if (nearbyCities[i][2] == "") {
-
-            // create table w chosen photos to use in database
-            fetch(final_url, {
-                    headers: {
-                        Authorization: configuration.UNSPLASH
-                    }
-                })
-                .then(resp => {
-                    return resp.json();
-                })
-                .then(data => {
-                    nearbyCities[i][2] = data[i].urls.full;
-                    createCarousel(nearbyCities[i]);
-                })
-        }
-    }
-    loadCarousel();
-    console.log(nearbyCities);
-}
-
-function rndIndex() {
-    return Math.round(Math.random() * 10);
-}
-*/
-
 function createCarousel(data) {
     var section = document.querySelector(".owl-stage");
-
 
     var slide = document.createElement("div");
     slide.classList.add("owl-item");

@@ -17,7 +17,7 @@ $(function() {
     oReq.open("GET", url, true);
     oReq.responseType = "arraybuffer";
 
-    oReq.onload = function(e) {
+    oReq.onload = function() {
         var arraybuffer = oReq.response;
 
         var data = new Uint8Array(arraybuffer);
@@ -44,8 +44,6 @@ $(function() {
         for (let j = 0; j < result[2][1].length; j++) {
             agents.push(result[2][1][j]);
         }
-
-
 
     }
     oReq.send();
