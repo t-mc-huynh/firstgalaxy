@@ -1,5 +1,3 @@
-import { TOKEN } from './config.js';
-
 var IP = "23.240.76.211";
 
 const nearbyCities = new Array();
@@ -9,7 +7,7 @@ var cityImages = new Object();
 
 function imageObject() {
     var settings = {
-        "url": "https://getpantry.cloud/apiv1/pantry/" + TOKEN.PANTRYID + "/basket/cityImages",
+        "url": "https://getpantry.cloud/apiv1/pantry/18c13523-e895-4e43-977d-e30fde678a6b/basket/cityImages",
         "method": "GET",
         "timeout": 0,
         "headers": {
