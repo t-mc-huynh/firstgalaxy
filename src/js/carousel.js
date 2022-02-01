@@ -60,10 +60,34 @@ window.onload = function() {
             report(result.state);
         } else if (result.state == 'denied') {
             report(result.state);
+            defaultCities();
         }
         result.onchange = function() {
             report(result.state);
         }
+    })
+}
+
+function defaultCities() {
+    let radius = 25;
+    let lat1 = 33.7982368;
+    let lon1 = -117.9010208;
+    let responseStyle = "short";
+    let maxRows = 15;
+    let citySize = "cities15000";
+
+    let final_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
+
+    $.getJSON(final_url, function(data) {
+
+        for (let i = 0; i < data.geonames.length; i++) {
+            nearbyCities.push([data.geonames[i].name, data.geonames[i].distance, ""])
+        }
+
+        getImages();
+
+        console.log(nearbyCities);
+        createAndLoadCarousel();
     })
 }
 
@@ -76,8 +100,7 @@ function getNearbyCities(position) {
     let maxRows = 12; // max # of rows to retrieve
     let citySize = "cities15000"; // the min # of citizens a city must have
 
-    let base_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=";
-    let final_url = base_url + +lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
+    let final_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
 
     $.getJSON(final_url, function(data) {
 
