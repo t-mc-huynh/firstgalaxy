@@ -1273,7 +1273,7 @@ form#search-form button i {
 }
 
 .terms_modal .modal .modal-dialog {
-    transform: translateY(125%);
+    transform: translateY(50%);
 }
 
 @media (max-width: 576px) {
