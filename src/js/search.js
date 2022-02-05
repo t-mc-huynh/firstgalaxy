@@ -9,6 +9,16 @@ var icon_section = document.querySelector("#sub-section-links");
 var searching_results = document.querySelector("#searching-links");
 var inputField = document.querySelector(".searchText");
 var user_typing = "";
+
+/**
+ * Removes placeholder text on focus state
+ */
+$(inputField).focus(function() {
+    $(this).attr('placeholder', '');
+}).focusout(function() {
+    $(this).attr('placeholder', 'Search Cities, Addresses, Schools, School Districts, Zip Codes');
+});
+
 inputField.onkeyup = function() {
     user_typing = inputField.value.toLowerCase().trim();
 
