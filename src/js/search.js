@@ -19,9 +19,11 @@ $(inputField).focus(function() {
     $(this).attr('placeholder', 'Search Cities, Addresses, Schools, School Districts, Zip Codes');
 });
 
+/**
+ * Trims "school district" from input
+ */
 inputField.onkeyup = function() {
     user_typing = inputField.value.toLowerCase().trim();
-
     if (user_typing.includes("school district")) {
         user_typing = user_typing.replace("school district", "");
         user_typing = user_typing.trim();
@@ -44,9 +46,7 @@ function handleForm(evt) {
     evt.preventDefault();
 }
 form.addEventListener("submit", handleForm);
-
 form.addEventListener("keydown", runSearches, true);
-
 submitBtn.addEventListener("click", runSearches, true);
 
 function runSearches(e) {
@@ -82,7 +82,11 @@ function runSearches(e) {
             if (e.which == 13 || e.which == 1) {
                 // User submitted intentionally
                 if (data_found.length > 1) {
-                    // User was looking for a city
+
+                    /**
+                     * If user was searching for a city, displays city details and removes search results
+                     * Currently has a display bug
+                     */
                     for (let i = 0; i < data_found[1].length; i++) {
                         if (data_found[1][i].toLowerCase().includes(user_typing)) {
                             // need to pull info from that city for icon_section
@@ -130,12 +134,20 @@ function searchSchoolData(input) {
     }
 }
 
+/**
+ * Returns an array of only unique values
+ * @param {*} a 
+ */
 function uniq(a) {
     return a.sort().filter(function(item, pos, ary) {
         return !pos || item != ary[pos - 1];
     });
 }
 
+/**
+ * Creates the display of results
+ * @param {*} data_array 
+ */
 function populateSearchResults(data_array) {
     let max = 5;
     let header = document.createElement("div");
@@ -143,15 +155,12 @@ function populateSearchResults(data_array) {
     let icon = document.createElement("i");
     let header_label = document.createElement("span");
     if (data_array == data_found[1]) {
-        // console.log("city found");
         icon.classList.add("bi-house");
         header_label.innerHTML = "City";
     } else if (data_array == data_found[2]) {
-        // console.log("School found");
         icon.classList.add("bi-bell");
         header_label.innerHTML = "Schools";
     } else {
-        // console.log("district found");
         icon.classList.add("bi-building");
         header_label.innerHTML = "School Districts";
     }
@@ -164,6 +173,9 @@ function populateSearchResults(data_array) {
     list.classList.add("text-start");
     list.classList.add("list-unstyled");
 
+    /**
+     * Limits the display to 5 per category
+     */
     if (data_array.length < 5) {
         max = data_array.length;
     }
@@ -185,6 +197,10 @@ function populateSearchResults(data_array) {
     searching_results.appendChild(list);
 }
 
+/**
+ * Prevents results from appending onto previous results
+ * @param {*} parent 
+ */
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
