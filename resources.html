@@ -167,16 +167,29 @@
                 <h2>Mortgage Calculator</h2>
                 <span>Mortgage Calculator</span>
                 <p>Enter the price of a home and down payment amount to calculate your estimated mortgage payment. Adjust the loan details as needed.</p>
+                <div class="disclaimer">
+                    <code>Mortgage Calculator by MortgageCalculator.org</code><br>
+                    <code data-bs-toggle="modal" data-bs-target="#calcModal">Calculator Disclaimer</code>
+                </div>
             </div>
             <div>
                 <iframe id="calcframe" src="https://www.mortgagecalculator.org/webmasters/?downpayment=50000&homevalue=300000&loanamount=250000&interestrate=4&loanterm=30&propertytax=2400&pmi=1&homeinsurance=1000&monthlyhoa=0" scrolling="no"></iframe>
-
-            </div>
-            <div class="disclaimer">
-                <a>Javascript Mortgage Calculator</a> by MortgageCalculator.org
             </div>
         </section>
 
+        <div class="modal fade" id="calcModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Calculator Disclaimer</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        The mortgage calculator is intended to be used for educational purposes only. Available rates and payment amounts are subject to market fluctuations and numerous of variables such as geography and loan characteristics.
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Text Section-->
         <section class="text-section container-fluid p-0 row d-block d-lg-flex ">
@@ -250,6 +263,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js " integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
     <script src="src/js/nav.js "></script>
+    <script src="src/js/calc.js "></script>
 </body>
 
 </html>

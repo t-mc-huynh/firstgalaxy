@@ -1314,28 +1314,34 @@ form#search-form button i {
 }
 
 #calcframe {
-    display: flex;
-    position: relative;
     width: 100%;
-    height: 1100px;
+    height: 1300px;
+    overflow: visible;
 }
 
-.disclaimer {
-    height: 36px;
-    top: -36px;
-    padding: 0 8px 0 0;
-    box-sizing: border-box;
-    text-align: right;
-    background: #f6f9f9;
-    border: 1px solid #ccc;
-    color: #868686;
-    line-height: 34px;
+@media (min-width: 768px) {
+    #calcframe {
+        height: 1150px;
+    }
+}
+
+@media (min-width: 1010px) {
+    #calcframe {
+        height: 1100px;
+    }
+}
+
+.disclaimer code {
     font-size: 12px;
-    position: relative;
+    text-decoration: underline;
 }
 
-.disclaimer a {
-    color: #868686;
+.disclaimer code:nth-child(1) {
+    text-decoration: none;
+}
+
+#calcModal {
+    transform: translateY(25%);
 }
 
 .text-section .col {
