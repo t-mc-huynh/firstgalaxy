@@ -1313,35 +1313,9 @@ form#search-form button i {
     }
 }
 
-#calcframe {
+#calculatorframes {
     width: 100%;
-    height: 1300px;
-    overflow: visible;
-}
-
-@media (min-width: 768px) {
-    #calcframe {
-        height: 1150px;
-    }
-}
-
-@media (min-width: 1010px) {
-    #calcframe {
-        height: 1100px;
-    }
-}
-
-.disclaimer code {
-    font-size: 12px;
-    text-decoration: underline;
-}
-
-.disclaimer code:nth-child(1) {
-    text-decoration: none;
-}
-
-#calcModal {
-    transform: translateY(25%);
+    height: 100%;
 }
 
 .text-section .col {
