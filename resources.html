@@ -137,7 +137,7 @@
             </ol>
         </nav>
 
-        <!--Responsive Section-->
+        <!--Glossary Section-->
         <section class="container-fluid p-0">
             <div class="d-flex">
                 <div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 pt-2 pb-5 m-0">
@@ -145,9 +145,12 @@
                         <img src="src/images/fancyhouse.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="1200rem" height="900rem" loading="lazy">
                     </div>
                     <div class="col-sm-12 col-md-5">
-                        <h1 class="display-5 fw-bold lh-1 mb-3">Real Estate Glossary</h1>
-                        <p class="lead">We know how hard it can be to learn about new concepts, especially when it comes to real estate. We created this glossary to help answer some of your most common questions. What is the difference between a condo and a co-op? What
-                            is an REO?</p>
+                        <div class="section-title">
+                            <span>Real Estate Glossary</span>
+                            <h2>Real Estate Glossary</h2>
+                            <p>We know how hard it can be to learn about new concepts, especially when it comes to real estate. We created this glossary to help answer some of your most common questions. What is the difference between a condo and a co-op?
+                                What is an REO?</p>
+                        </div>
                         <div class="d-grid gap-2 d-flex justify-content-center">
                             <a href="/firstgalaxy/glossary.html" class="btn mx-4">View Glossary</a>
                             <a href="src/data/datasets.xlsx" download="First Galaxy Data" class="btn mx-4 disabled">Download Glossary PDF</a>
@@ -156,69 +159,88 @@
                 </div>
             </div>
         </section>
-        <!-- End of Responsive Section -->
+        <!-- End of Glossary Section -->
 
-        <!-- Temp Section-->
-        <section class="glossary-link container-fluid p-0 row d-block d-lg-flex">
-            <section class="col slanted-container">
+        <!--Mortgage Calc Section-->
+        <section class="container-fluid p-0">
+            <div class="section-title">
+                <h2>Mortgage Calculator</h2>
+                <span>Mortgage Calculator</span>
+                <p>Enter the price of a home and down payment amount to calculate your estimated mortgage payment. Adjust the loan details as needed.</p>
+            </div>
+            <div>
+                <iframe id="calcframe" src="https://www.mortgagecalculator.org/webmasters/?downpayment=50000&homevalue=300000&loanamount=250000&interestrate=4&loanterm=30&propertytax=2400&pmi=1&homeinsurance=1000&monthlyhoa=0" scrolling="no"></iframe>
+
+            </div>
+            <div class="disclaimer">
+                <a>Javascript Mortgage Calculator</a> by MortgageCalculator.org
+            </div>
+        </section>
+
+
+        <!-- Text Section-->
+        <section class="text-section container-fluid p-0 row d-block d-lg-flex ">
+            <section class="col slanted-container ">
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </section>
-            <section class="col slanted-container-next">
+            <section class="col slanted-container-next ">
                 <div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </section>
         </section>
-        <!-- End of Temp Section-->
+        <!-- End of Text Section-->
 
-        <button class="btn" onclick="topFunction()" id="backToTop" title="Go to top"><i class="bi-arrow-up-circle-fill"></i></button>
+
+
+        <button class="btn " onclick="topFunction() " id="backToTop " title="Go to top "><i class="bi-arrow-up-circle-fill "></i></button>
     </main>
 
 
     <!--FOOTER-->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                <div class="col">
+    <footer class="site-footer ">
+        <div class="container ">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+                <div class="col ">
                     <h6>Begin New</h6>
-                    <ul class="footer-links">
-                        <li><a href="/firstgalaxy/buy.html">Buy a Home</a></li>
-                        <li><a href="/firstgalaxy/sell.html">Sell a House</a></li>
-                        <li><a href="/firstgalaxy/agents.html">Find Your Agent</a></li>
-                        <li><a href="/firstgalaxy/">Contact Us</a></li>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy/buy.html ">Buy a Home</a></li>
+                        <li><a href="/firstgalaxy/sell.html ">Sell a House</a></li>
+                        <li><a href="/firstgalaxy/agents.html ">Find Your Agent</a></li>
+                        <li><a href="/firstgalaxy/ ">Contact Us</a></li>
                     </ul>
                 </div>
 
-                <div class="col">
+                <div class="col ">
                     <h6>Information</h6>
-                    <ul class="footer-links">
-                        <li><a href="/firstgalaxy/about.html">About First Galaxy Inc.</a></li>
-                        <li><a href="/firstgalaxy/services.html">Services</a></li>
-                        <li><a href="/firstgalaxy/resources.html">Resources</a></li>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy/about.html ">About First Galaxy Inc.</a></li>
+                        <li><a href="/firstgalaxy/services.html ">Services</a></li>
+                        <li><a href="/firstgalaxy/resources.html ">Resources</a></li>
                     </ul>
                 </div>
 
-                <div class="col">
+                <div class="col ">
                     <h6>Join Our Team</h6>
-                    <ul class="footer-links">
-                        <li><a href="/firstgalaxy/">Get Your Real Estate License</a></li>
-                        <li><a href="/firstgalaxy/">Real Estate Manual</a></li>
-                        <li><a href="/firstgalaxy/">Frequently Asked Questions</a></li>
+                    <ul class="footer-links ">
+                        <li><a href="/firstgalaxy/ ">Get Your Real Estate License</a></li>
+                        <li><a href="/firstgalaxy/ ">Real Estate Manual</a></li>
+                        <li><a href="/firstgalaxy/ ">Frequently Asked Questions</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
         </div>
-        <div class="container">
-            <div class="row row-cols-10">
-                <div class="col">
-                    <p class="copyright-text">
+        <div class="container ">
+            <div class="row row-cols-10 ">
+                <div class="col ">
+                    <p class="copyright-text ">
                         Copyright &copy; 2021 All Rights Reserved by
-                        <a href="/firstgalaxy/">FirstGalaxy inc.</a>
+                        <a href="/firstgalaxy/ ">FirstGalaxy inc.</a>
                     </p>
                 </div>
             </div>
@@ -226,9 +248,9 @@
     </footer>
     <!--END OF FOOTER-->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="src/js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js " integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script src="src/js/nav.js "></script>
 </body>
 
 </html>

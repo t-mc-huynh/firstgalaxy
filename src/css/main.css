@@ -1062,11 +1062,104 @@ form#search-form button i {
 
 /* =========== Agents Page ================= */
 
-.agent-head-bg {
-    z-index: 2;
-    padding: 100px 0;
-    background: linear-gradient(95deg, #f0abab, var(--fg-dred));
+#agent-head {
+    width: 100%;
+    height: 55vh;
+    background: url("../images/modernhome.jpg") center;
+    background-size: cover;
     position: relative;
+}
+
+#agent-head:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#agent-head .container {
+    position: relative;
+    padding-top: 15px;
+    text-align: center;
+}
+
+#agent-head h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+#agent-head h1 span {
+    color: var(--fg-blue);
+}
+
+#agent-head h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+}
+
+#agent-head .icon-box {
+    padding: 30px 10px;
+    transition: ease-in-out 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100%;
+    text-align: center;
+    border-radius: 25px;
+}
+
+#agent-head .icon-box i {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--fg-lblue);
+}
+
+#agent-head .icon-box h3 {
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+#agent-head .icon-box h3 a {
+    color: #fff;
+    transition: ease-in-out 0.3s;
+}
+
+#agent-head .icon-box h3 a:hover {
+    text-decoration: none;
+}
+
+#agent-head .icon-box:hover {
+    border-color: var(--fg-red);
+}
+
+@media (min-width: 1024px) {
+    #agent-head {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    #agent-head {
+        height: auto;
+    }
+    #agent-head h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    #agent-head h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
 #card {
@@ -1220,7 +1313,32 @@ form#search-form button i {
     }
 }
 
-.glossary-link .col {
+#calcframe {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 1100px;
+}
+
+.disclaimer {
+    height: 36px;
+    top: -36px;
+    padding: 0 8px 0 0;
+    box-sizing: border-box;
+    text-align: right;
+    background: #f6f9f9;
+    border: 1px solid #ccc;
+    color: #868686;
+    line-height: 34px;
+    font-size: 12px;
+    position: relative;
+}
+
+.disclaimer a {
+    color: #868686;
+}
+
+.text-section .col {
     padding: 4rem 3rem;
     font-size: 1.5rem;
     line-height: 1.5;
