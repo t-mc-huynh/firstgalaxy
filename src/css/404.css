@@ -1,0 +1,266 @@
+/* =========== 404 Page ================= */
+
+#error {
+    position: relative;
+    margin: 0;
+    padding: 1.8rem;
+    background-color: #446072;
+    font-family: monospace;
+    color: #fff;
+    overflow: hidden;
+}
+
+#error404 {
+    margin-top: 1.8rem;
+    text-align: center;
+}
+
+.shelf {
+    position: relative;
+    width: 70%;
+    min-width: 8.5rem;
+    max-width: 35.5rem;
+    min-height: 20rem;
+    max-height: 31rem;
+    margin: 0 auto;
+    border: 0.5rem solid #374d5b;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    perspective: 130rem;
+    box-shadow: inset 0 0 2rem rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.shelf a {
+    text-decoration: none;
+}
+
+.shelf a:hover {
+    color: var(--fg-red);
+}
+
+.door {
+    position: absolute;
+    width: 50%;
+    min-height: 20rem;
+    max-height: 31rem;
+    display: flex;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: #374d5b;
+    align-items: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    outline: 1px solid transparent;
+}
+
+.door::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    content: "";
+}
+
+.door.left {
+    border-radius: 0 0.75rem 0.75rem 0;
+    justify-content: flex-end;
+    -webkit-animation: leftDoorOpen 3.5s ease-out forwards 1s, leftDoorFlap 15s linear infinite forwards 9s;
+    animation: leftDoorOpen 3.5s ease-out forwards 1s, leftDoorFlap 15s linear infinite forwards 9s;
+    transform-origin: 0 0 0;
+}
+
+.door.right {
+    right: 0;
+    border-radius: 0.75rem 0 0 0.75rem;
+    -webkit-animation: rightDoorOpen 3s ease-out forwards 1.5s, rightDoorFlap 10s linear infinite forwards 8s;
+    animation: rightDoorOpen 3s ease-out forwards 1.5s, rightDoorFlap 10s linear infinite forwards 8s;
+    transform-origin: 100% 0 0;
+}
+
+.book {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 0.8rem 10% 0.8rem;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 0.75rem rgba(255, 255, 255, 0.1);
+}
+
+.book.home-page {
+    right: 0.5rem;
+    bottom: 226px;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.book.about-us {
+    right: 2rem;
+    bottom: 112px;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.book.contact {
+    right: 2rem;
+    bottom: 0.2rem;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.book.faq {
+    right: 0.5rem;
+    bottom: 3.6rem;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.book.not-found {
+    width: 45%;
+    height: 3.5rem;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+    cursor: default;
+    right: 4rem;
+    bottom: 9rem;
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.book:hover:not(.not-found) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@-webkit-keyframes leftDoorOpen {
+    60% {
+        transform: rotateY(-115deg)
+    }
+    100% {
+        transform: rotateY(-110deg)
+    }
+}
+
+@keyframes leftDoorOpen {
+    60% {
+        transform: rotateY(-115deg)
+    }
+    100% {
+        transform: rotateY(-110deg)
+    }
+}
+
+@-webkit-keyframes rightDoorOpen {
+    60% {
+        transform: rotateY(125deg)
+    }
+    100% {
+        transform: rotateY(120deg)
+    }
+}
+
+@keyframes rightDoorOpen {
+    60% {
+        transform: rotateY(125deg)
+    }
+    100% {
+        transform: rotateY(120deg)
+    }
+}
+
+@-webkit-keyframes rightDoorFlap {
+    0% {
+        transform: rotateY(120deg)
+    }
+    5% {
+        transform: rotateY(125deg)
+    }
+    15% {
+        transform: rotateY(117deg)
+    }
+    25% {
+        transform: rotateY(123deg)
+    }
+    30% {
+        transform: rotateY(120deg)
+    }
+    100% {
+        transform: rotateY(120deg)
+    }
+}
+
+@keyframes rightDoorFlap {
+    0% {
+        transform: rotateY(120deg)
+    }
+    5% {
+        transform: rotateY(125deg)
+    }
+    15% {
+        transform: rotateY(117deg)
+    }
+    25% {
+        transform: rotateY(123deg)
+    }
+    30% {
+        transform: rotateY(120deg)
+    }
+    100% {
+        transform: rotateY(120deg)
+    }
+}
+
+@-webkit-keyframes leftDoorFlap {
+    0% {
+        transform: rotateY(-110deg)
+    }
+    5% {
+        transform: rotateY(-115deg)
+    }
+    15% {
+        transform: rotateY(-107deg)
+    }
+    25% {
+        transform: rotateY(-113deg)
+    }
+    30% {
+        transform: rotateY(-110deg)
+    }
+    100% {
+        transform: rotateY(-110deg)
+    }
+}
+
+@keyframes leftDoorFlap {
+    0% {
+        transform: rotateY(-110deg)
+    }
+    5% {
+        transform: rotateY(-115deg)
+    }
+    15% {
+        transform: rotateY(-107deg)
+    }
+    25% {
+        transform: rotateY(-113deg)
+    }
+    30% {
+        transform: rotateY(-110deg)
+    }
+    100% {
+        transform: rotateY(-110deg)
+    }
+}
+
+@-webkit-keyframes bookFadeOut {
+    50% {
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+}
+
+@keyframes bookFadeOut {
+    50% {
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+}
