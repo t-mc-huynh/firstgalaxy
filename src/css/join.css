@@ -483,87 +483,108 @@
     }
 }
 
-.steps,
- :before {
-    box-sizing: border-box;
+
+/* =========== FAQs Section ================= */
+
+.accordian {
+    max-width: 34rem;
+    width: 100%;
+    color: var(--fg-lgrey);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-weight: 100;
+    letter-spacing: 0.035em;
+    font-size: 0.75rem;
+    margin: 0 auto;
+}
+
+.accordian ul>li {
+    margin-bottom: 0.5rem;
+}
+
+.accordian ul>li:first-child h3 {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordian h3 {
+    cursor: pointer;
+    background-color: #fff;
+    padding: 1.2rem 1rem 1rem 1.2rem;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    display: block;
+    font-weight: 100;
+    letter-spacing: 0.035em;
+    position: relative;
+    font-size: 1rem;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 1px .1rem rgba(0, 0, 0, 0.24);
+    border-radius: 0.2rem;
+}
+
+.accordian h3:hover,
+.accordian h3.closed {
+    color: var(--fg-dgrey);
+    background-color: #fff;
+}
+
+.accordian h3:hover .arrow {
+    border-top: .1rem solid var(--fg-dgrey);
+    border-right: .1rem solid var(--fg-dgrey);
+}
+
+.accordian ul {
     margin: 0;
     padding: 0;
 }
 
-.steps {
-    --i: var(--wide, 1);
-    --j: calc(1 - var(--i));
-    --k: calc(1 - var(--narr, 0));
+.accordian ul li {
+    list-style: none;
+    padding: 0;
+}
+
+.accordian ul ul {
+    display: none;
     height: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/kreator_rockharz_july_2018.jpg) 50%/cover fixed;
+    margin-bottom: -.3rem;
 }
 
-@media (max-width: 44.25rem) {
-    .steps {
-        --wide: 0;
-    }
+.accordian ul ul li {
+    background-color: #fff;
+    padding: 1rem 1.8rem;
+    color: var(--fg-dgrey);
+    box-shadow: none;
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
 }
 
-@media (max-width: 350px) {
-    .steps {
-        --narr: 1;
-    }
+.accordian ul ul li p {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translatey(-1.1rem);
 }
 
-@media (max-width: 240px) {
-    .steps {
-        font-size: 0.75em;
-    }
+.accordian ul ul.open p {
+    opacity: 1;
+    transform: translatey(0rem);
 }
 
-.steps article {
-    --p: var(--parity, 0);
-    --q: calc(1 - var(--p));
-    --s: calc(1 - 2*var(--p));
-    display: grid;
-    grid-template: calc(var(--i)*3.375rem + var(--j)*4.5rem) calc(var(--i)*6.5rem + var(--j)*3rem) minmax(0, auto)/calc(var(--i)*calc(var(--q)*17.5rem + var(--p)*14.375rem) + var(--j)*100%) calc(var(--i)*calc(var(--q)*14.375rem + var(--p)*17.5rem));
-    grid-gap: 0 calc(var(--i)*2rem);
-    grid-auto-flow: column dense;
-    width: calc(var(--i)*42.25rem + var(--j)*100%);
-    border-radius: calc(var(--i)*9.125rem);
-    box-shadow: calc(var(--i)*1em + var(--j)*0.375em) calc(var(--i)*1em + var(--j)*0.375em) calc(3*calc(var(--i)*1em + var(--j)*0.375em)) rgba(0, 0, 0, 0.5);
-    background: linear-gradient(calc(var(--s)*90deg), #e6e6e6, #ececec) padding-box, linear-gradient(to right bottom, #fff, #c8c8c8) border-box;
-    counter-increment: idx;
-    margin: calc(var(--i)*3.375rem + var(--j)*1em) 3rem;
-    border: solid calc(var(--i)*0.1875rem) transparent;
-    padding: calc(var(--i)*0.75rem + var(--j)*2vw) calc(var(--i)*4rem + var(--j)*2vw);
+.accordian .arrow {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-top: .1rem solid var(--fg-lgrey);
+    border-right: .1rem solid var(--fg-lgrey);
+    transform: rotate(135deg);
+    transform-origin: center;
+    float: right;
+    margin-right: 0.5rem;
+    transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
-article:nth-child(2n) {
-    --parity: 1;
-}
-
-.steps h3 {
-    grid-column: calc(1 + var(--i)*var(--q));
-    grid-row: 1/span calc(1 + 2*var(--i));
-    margin: calc(var(--i)*-2.25rem) 0;
-    border: solid calc(var(--i)*0.1875rem) transparent;
-    padding: calc(var(--i)*2.25rem) calc(var(--i)*2.25rem);
-    border-radius: calc(var(--i)*calc(var(--q)*50%)) calc(var(--i)*calc(var(--p)*50%));
-    box-shadow: inherit;
-    background: linear-gradient(calc(var(--s)*45deg), #ee8c35, #ad4716) padding-box, linear-gradient(calc(var(--s)*-45deg), #ee8c35, #ad4716) border-box;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: calc(var(--i) + var(--j)*3);
-    text-align: center;
-}
-
-.steps h3:before {
-    font-size: calc(calc(var(--i)*4 + var(--j)*1)*1.1em);
-    font-weight: 900;
-    text-shadow: -2px -1px #999;
-    content: counter(idx, decimal-leading-zero) " ";
-}
-
-.steps p {
-    transform: translateY(50%);
-    padding: 0.75rem 0;
-    padding-left: calc(var(--k)*2.5em);
-    text-indent: calc(var(--k)*2em);
+.accordian .arrow.closed {
+    margin-top: 0.2rem;
+    transform: rotate(-45deg);
+    border-top: .1rem solid var(--fg-dgrey);
+    border-right: .1rem solid var(--fg-dgrey);
 }
