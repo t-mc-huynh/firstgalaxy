@@ -77,57 +77,117 @@
     }
 }
 
-.text-section .col {
-    padding: 4rem 3rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    max-height: fit-content;
-    overflow: hidden;
+
+/* =========== Circle sec ================= */
+
+#circle-nav {
+    width: 100%;
+    height: 480px;
 }
 
-.slanted-container {
-    color: #1c1c1c;
-    position: relative;
-    background: #ccc;
-    overflow: visible;
-    z-index: 1;
-    clip-path: polygon(0 0, 50% 0, 80% 100%, 0 100%);
-    margin-right: -55%;
+#learn-more {
+    fill-opacity: 0;
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 2;
+    border-radius: 5px;
+    stroke-linejoin: round;
+    transition: all 250ms ease-in;
+    cursor: pointer;
 }
 
-.slanted-container div {
-    max-width: 55%;
+#learn-more:hover {
+    fill-opacity: 1;
 }
 
-.slanted-container-next {
-    color: #fff;
-    background: #222;
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 50% 100%);
+#learn-more:hover~.learn-more-text {
+    fill: #005fa4;
 }
 
-.slanted-container-next div {
-    float: right;
-    max-width: 55%;
-    text-align: right;
+.learn-more-text {
+    font-family: "Roboto";
+    fill: #fff;
+    pointer-events: none;
+    font-size: 14px;
+    transition: all 250ms ease-in;
 }
 
-@media (max-width: 991px) {
-    .slanted-container,
-    .slanted-container-next {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    .slanted-container {
-        margin-right: 0;
-    }
-    .slanted-container div,
-    .slanted-container-next div {
-        max-width: 100%;
-    }
+.center {
+    fill: #005fa4;
 }
 
-@media (min-width: 992px) {
-    .slanted-container div p,
-    .slanted-container-next div p {
-        max-width: unset;
-    }
+.pointer {
+    fill: #fff;
+    stroke: #3b8fc0;
+    stroke-width: 2;
+}
+
+.nav-copy {
+    font-family: "Roboto";
+    fill: #fff;
+    fill-opacity: 1;
+    transition: all 250ms ease-in;
+}
+
+.nav-copy.changing {
+    fill-opacity: 0;
+}
+
+.service {
+    cursor: pointer;
+}
+
+.service text {
+    font-size: 14px;
+    font-family: "Roboto";
+    text-anchor: middle;
+}
+
+.service .icon-wrapper {
+    transform-origin: 50% 50%;
+}
+
+.service .icon-wrapper,
+.service .icon-wrapper>* {
+    transition: all 250ms ease-in;
+}
+
+.service circle {
+    fill: #005fa4;
+}
+
+.service circle.shadow {
+    fill-opacity: 0;
+    filter: url(#service-shadow);
+}
+
+.service use {
+    fill: #fff;
+}
+
+.service text {
+    fill: #4d4d4d;
+}
+
+.service.active .icon-wrapper,
+.service:hover .icon-wrapper {
+    transform: scale(1.15) translateY(-5px);
+}
+
+.service.active .icon-wrapper,
+.service.active .icon-wrapper>*,
+.service:hover .icon-wrapper,
+.service:hover .icon-wrapper>* {
+    transition: all 250ms ease-out;
+}
+
+.service.active .icon-wrapper circle.shadow,
+.service:hover .icon-wrapper circle.shadow {
+    fill-opacity: 0.4;
+}
+
+.service.active text,
+.service:hover text {
+    fill: #005fa4;
+    font-weight: bold;
 }
