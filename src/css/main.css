@@ -633,46 +633,6 @@ form#search-form button i {
 }
 
 
-/* =========== Tabs Section ================= */
-
-.tabs .nav-item {
-    border-style: outset;
-}
-
-.tabs .nav-item a {
-    border-style: hidden;
-}
-
-.tabs .nav-item,
-.tabs .nav-item a {
-    background-color: #fff;
-    color: var(--fg-black);
-    font-size: 1rem;
-}
-
-.tabs .nav-link {
-    padding: 0.5rem;
-    margin: 1rem;
-}
-
-.tabs .nav-link.active {
-    background-color: #fff;
-    color: var(--fg-lred);
-    border: none;
-}
-
-.tabs .tab-content {
-    margin: 1.3rem 0.5rem;
-}
-
-@media (max-width: 576px) {
-    .tabs .nav-link {
-        text-orientation: upright;
-        padding: .005rem;
-    }
-}
-
-
 /* =========== FAQs Section ================= */
 
 .accordian {
@@ -1311,11 +1271,6 @@ form#search-form button i {
     #hero {
         height: 120vh;
     }
-}
-
-#calculatorframes {
-    width: 100%;
-    height: 100%;
 }
 
 .text-section .col {
