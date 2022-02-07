@@ -1,0 +1,72 @@
+/* =========== Agents Page ================= */
+
+#card {
+    justify-content: center;
+}
+
+.agent {
+    display: flex;
+    border: 1px solid #1a1a1a;
+    height: 240px;
+    border-radius: .5rem;
+    padding: 0;
+    margin: 0.25rem;
+    max-width: 90%;
+}
+
+@media (min-width: 768px) {
+    #card {
+        justify-content: space-between;
+    }
+    .agent {
+        margin: 0;
+    }
+}
+
+.agent img {
+    max-width: 45%;
+    object-fit: cover;
+}
+
+.agent .agent-information {
+    margin-left: 1rem;
+    align-self: center;
+    line-height: 2rem;
+}
+
+.agent-information i {
+    margin-right: 0.5rem;
+}
+
+.dropdown2 {
+    float: left;
+    margin-left: 3.75rem;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .dropdown2 {
+        margin-left: 0.8rem;
+    }
+}
+
+.dropdown2 .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: max-content;
+    overflow: auto;
+    border: 1px solid #fff;
+    z-index: 99;
+}
+
+.dropdown2 .dropdown-content a {
+    color: black;
+    padding: 0.5rem 0.8rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown2 .dropdown-content a:hover {
+    background-color: #fff;
+}
