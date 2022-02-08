@@ -121,49 +121,102 @@
             </ol>
         </nav>
 
-        <!-- Agents Section-->
-        <section class="container-fluid p-0">
-            <div>
+        <!-- ======= Our Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container">
+
                 <div class="section-title">
-                    <span>Agents</span>
-                    <h2>Agents</h2>
+                    <span>Our Agents</span>
+                    <h2>Our Agents</h2>
                     <p>If you're looking for an agent who understands your needs, we've got your back! Whether you want someone who is experienced in negotiating or someone who can help you find a great deal on a new house, we've got the perfect agent for
                         you!
                     </p>
                 </div>
-                <div class="row row-cols-1 container py-2 px-0 justify-content-center">
-                    <li class="col agent" style="width: 45rem">
-                        <img src="src/images/fancyhouse.jpg" class="float-start agent-picture">
-                        <div class="agent-information float-end">
-                            <h2>Sam Huynh</h2>
-                            <p>Broker / Owner</p>
-                            <p style="margin: 0px;" href="tel:7149435648">
-                                <i class="bi-telephone-fill"></i> (714) 943 - 5648
-                            </p>
-                            <p href="mailto:9435648@gmail.com">
-                                <i class="bi-inbox-fill"></i> 9435648@gmail.com
-                            </p>
-                            <small>BRE #: 01402750</small>
-                        </div>
-                    </li>
-                </div>
-                <hr>
                 <div class="container dropdown2 pb-4">
                     <button id="filterBtn" class="btn dropbtn dropdown-toggle" type="button">Filter</button>
                     <div id="myDropdown" class="dropdown-content">
-                        <a id="byAZ">Sort First Name (A-Z)</a>
-                        <a id="byZA">Sort First Name (Z-A)</a>
+                        <a id="fname">Sort First Name</a>
+                        <a id="lname">Sort Last Name</a>
                     </div>
                 </div>
-                <div>
-                    <ul id="card" class="container row row-cols-1 row-cols-md-2 py-2 px-0">
+                <div id="agent-container" class="row">
 
-                    </ul>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="src/images/placeholder.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi-envelope-fill"></i></a>
+                                    <a href=""><i class="bi-telephone-fill"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+                                <code>BRE# 256879</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="src/images/placeholder.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Sarah Jhonson</h4>
+                                <span>Product Manager</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-img">
+                                <img src="src/images/placeholder.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>William Anderson</h4>
+                                <span>CTO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="300">
+                            <div class="member-img">
+                                <img src="src/images/placeholder.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Amanda Jepson</h4>
+                                <span>Accountant</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
         </section>
-        <!--End of Agents Section-->
+        <!-- End Our Team Section -->
 
         <button class="btn" onclick="topFunction()" id="backToTop" title="Go to top"><i class="bi-arrow-up-circle-fill"></i></button>
     </main>

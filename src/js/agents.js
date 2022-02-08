@@ -1,188 +1,186 @@
 import { agents } from './data.js';
 
-console.log(agents);
-
 "use strict";
-var list = document.getElementById("card");
 
-setTimeout(function() {
-    for (let i = 1; i < agents.length; i++) {
-        var agent = document.createElement("li");
-        agent.classList.add("col");
-        agent.classList.add("agent");
-        var image = document.createElement("img");
-        var source = document.createAttribute("src");
-        source.value = "src/images/placeholder.jpg";
-        image.setAttributeNode(source);
-        image.classList.add("float-start");
-        image.classList.add("agent-picture");
-        agent.appendChild(image);
-        var info = document.createElement("div");
-        info.classList.add("agent-information");
-        info.classList.add("float-end");
-        agent.appendChild(info);
-        var name = document.createElement("h2");
-        name.innerHTML = agents[i][0];
-        info.appendChild(name);
-        var role = document.createElement("p");
-        role.innerHTML = agents[i][1];
-        info.appendChild(role);
-        var cell = document.createElement("p");
-        var areaCode = agents[i][2].toString().substring(0, 3);
-        var firstNums = agents[i][2].toString().substring(3, 6);
-        var lastNums = agents[i][2].toString().substring(6, 10);
-        cell.innerHTML = "<i class=\"bi-telephone-fill\"></i>" + "(" + areaCode + ") " + firstNums + " - " + lastNums;
-        cell.style.margin = "0";
-        var hyperlinkToCall = document.createAttribute("href");
-        hyperlinkToCall.value = "tel:" + agents[i][2];
-        cell.setAttributeNode(hyperlinkToCall);
-        info.appendChild(cell);
-        var mail = document.createElement("p");
-        mail.innerHTML = "<i class=\"bi-inbox-fill\"></i>" + agents[i][6];
-        var hyperlinkToMail = document.createAttribute("href");
-        hyperlinkToMail.value = "mailto:" + agents[i][6];
-        mail.setAttributeNode(hyperlinkToMail);
-        info.appendChild(mail);
-        var lic = document.createElement("small");
-        lic.innerHTML = "BRE #: " + agents[i][3];
-        info.appendChild(lic);
-        console.log(agent);
-        list.appendChild(agent);
-    }
-}, 1000);
+var filterOptions = document.getElementById("myDropdown");
 
-var filterBtn = document.querySelector("#filterBtn");
-filterBtn.onclick = function() {
-    document.getElementById("myDropdown").classList.toggle("show");
-};
+/**
+ * Shows filter selection
+ */
+var filterBtn = document.getElementById("filterBtn");
+filterBtn.addEventListener("click", function() {
+    filterOptions.classList.toggle("show");
+});
 
-var filterAZ = document.querySelector("#byAZ");
+var fnameFilter = document.getElementById("fname");
+var lnameFilter = document.getElementById("lname");
 
-filterAZ.onclick = function() {
-    var i, switching, a, b, shouldSwitch, dir, switchcount = 0;
-    switching = true;
-    // Set the sorting direction to ascending:
-    dir = "asc";
-    // Make a loop that will continue until no switching has been done:
+
+/**
+ * Filters by first name A-Z
+ */
+fnameFilter.addEventListener("click", function() {
+    let i, cards, name, approve, switching = true;
+
     while (switching) {
-        // start by saying: no switching is done:
+
+        cards = document.querySelectorAll("#agent-container > div");
+        name = document.querySelectorAll("div > div > div > h4");
+
+        // by default, the loop only executes once
         switching = false;
-        a = list.getElementsByTagName("li");
-        b = list.getElementsByTagName("h2");
-        // Loop through all list-items:
-        for (i = 0; i < (a.length - 1); i++) {
-            //start by saying there should be no switching:
-            shouldSwitch = false;
-            /* check if the next item should switch place with the current item,
-            based on the sorting direction (asc or desc): */
-            if (dir == "asc") {
-                if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-                    /* if next item is alphabetically lower than current item,
-                    mark as a switch and break the loop: */
-                    shouldSwitch = true;
-                    break;
-                }
-            } else if (dir == "desc") {
-                if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
-                    /* if next item is alphabetically higher than current item,
-                    mark as a switch and break the loop: */
-                    shouldSwitch = true;
-                    break;
-                }
+        approve = false;
+        // all cards get looked through
+        for (i = 0; i < (cards.length - 1); i++) {
+
+            console.log(cards);
+            // Checks if the first letter of the first name holds a greater value
+            if (name[i].innerHTML.toLowerCase() > name[i + 1].innerHTML.toLowerCase()) {
+                // if so, it is earlier on in the alphabet and the switch gets approved
+                approve = true;
+                break;
             }
         }
-        if (shouldSwitch) {
-            /* If a switch has been marked, make the switch
-            and mark that a switch has been done: */
-            a[i].parentNode.insertBefore(a[i + 1], a[i]);
+
+        if (approve) {
+            // The cards get switched and all the cards get checked again
+            cards[i].parentElement.insertBefore(cards[i + 1], cards[i]);
             switching = true;
-            // Each time a switch is done, increase switchcount by 1:
-            switchcount++;
         } else {
-            /* If no switching has been done AND the direction is "asc",
-            set the direction to "desc" and run the while loop again. */
-            if (switchcount == 0 && dir == "asc") {
-                dir = "desc";
-                switching = false;
-            }
+            // if the cards did not move, all changes have finished
+            switching = false;
         }
     }
-    toggle();
-};
 
-var filterZA = document.querySelector("#byZA");
+    toggleFilterMenu();
+});
 
-filterZA.onclick = function() {
-    var i, switching, a, b, shouldSwitch, dir, switchcount = 0;
-    switching = true;
-    // Set the sorting direction to ascending:
-    dir = "desc";
-    // Make a loop that will continue until no switching has been done:
+
+/**
+ * Filters by last name A-Z
+ */
+lnameFilter.addEventListener("click", function() {
+    let i, cards, name, approve, switching = true;
+    let lastName = new Array();
+
     while (switching) {
-        // start by saying: no switching is done:
+
+        cards = document.querySelectorAll("#agent-container > div");
+        name = document.querySelectorAll("div > div > div > h4");
+
+        lastName = [];
+        name.forEach(function(items) {
+            lastName.push(items.innerHTML.split(" ")[1]);
+        })
+        console.log(lastName);
         switching = false;
-        a = list.getElementsByTagName("li");
-        b = list.getElementsByTagName("h2");
-        // Loop through all list-items:
-        for (i = 0; i < (a.length - 1); i++) {
-            //start by saying there should be no switching:
-            shouldSwitch = false;
-            /* check if the next item should switch place with the current item,
-            based on the sorting direction (asc or desc): */
-            if (dir == "asc") {
-                if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-                    /* if next item is alphabetically lower than current item,
-                    mark as a switch and break the loop: */
-                    shouldSwitch = true;
-                    break;
-                }
-            } else if (dir == "desc") {
-                if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
-                    /* if next item is alphabetically higher than current item,
-                    mark as a switch and break the loop: */
-                    shouldSwitch = true;
-                    break;
-                }
+
+        for (i = 0; i < (cards.length - 1); i++) {
+            approve = false;
+
+            if (lastName[i].toLowerCase() > lastName[i + 1].toLowerCase()) {
+                approve = true;
+                break;
             }
         }
-        if (shouldSwitch) {
-            /* If a switch has been marked, make the switch
-            and mark that a switch has been done: */
-            a[i].parentNode.insertBefore(a[i + 1], a[i]);
+
+        if (approve) {
+            cards[i].parentElement.insertBefore(cards[i + 1], cards[i]);
             switching = true;
-            // Each time a switch is done, increase switchcount by 1:
-            switchcount++;
         } else {
-            /* If no switching has been done AND the direction is "asc",
-            set the direction to "desc" and run the while loop again. */
-            if (switchcount == 0 && dir == "desc") {
-                dir = "desc";
-                switching = false;
-            }
+            switching = false;
         }
     }
-    toggle();
-};
+    toggleFilterMenu();
+});
 
-function toggle() {
-    document.getElementById("myDropdown").classList.toggle("show");
+/**
+ * Shows and hides the filter menu
+ */
+function toggleFilterMenu() {
+    filterOptions.classList.toggle("show");
 }
 
+/**
+ * Hides filter options when clicked outside
+ */
 document.addEventListener("click", (evt) => {
-    const options = document.getElementById("myDropdown");
-    let targetElement = evt.target; // clicked element
+    let userClick = evt.target;
 
     do {
-        if (targetElement == options || targetElement == filterBtn) {
-            // This is a click inside. Do nothing, just return.
+        if (userClick == filterOptions || userClick == filterBtn) {
             return;
         }
-        // Go up the DOM
-        targetElement = targetElement.parentNode;
-    } while (targetElement);
+        userClick = userClick.parentNode;
 
-    // This is a click outside.
-    if (options.classList.contains("show")) {
-        options.classList.toggle("show");
+    } while (userClick);
+    if (filterOptions.classList.contains("show")) {
+        filterOptions.classList.toggle("show");
     }
 });
+
+/**
+ * Dynamically create agent cards
+ */
+setTimeout(function() {
+    var agent_display = document.getElementById("agent-container");
+    for (let i = 1; i < agents.length; i++) {
+        var card = document.createElement("div");
+        card.classList.add("col-lg-3");
+        card.classList.add("col-md-6");
+        card.classList.add("d-flex");
+        card.classList.add("align-items-stretch");
+
+        var member = document.createElement("div");
+        member.classList.add("member");
+        card.appendChild(member);
+
+        var image = document.createElement("div");
+        image.classList.add("member-img");
+        member.appendChild(image);
+
+        var picture = document.createElement("img");
+        var source = document.createAttribute("src");
+        source.value = "src/images/placeholder.jpg";
+        picture.setAttributeNode(source);
+        picture.classList.add("img-fluid");
+        image.appendChild(picture);
+
+        var socials = document.createElement("div");
+        socials.classList.add("social");
+
+        var mail_link = document.createElement("a");
+        mail_link.innerHTML = "<i class=\"bi-envelope-fill\"></i>";
+        var hyperlinkToMail = document.createAttribute("href");
+        hyperlinkToMail.value = "mailto:" + agents[i][6];
+        mail_link.setAttributeNode(hyperlinkToMail);
+        socials.appendChild(mail_link);
+
+        var phone_link = document.createElement("a");
+        phone_link.innerHTML = "<i class=\"bi-telephone-fill\"></i>";
+        var hyperlinkToCall = document.createAttribute("href");
+        hyperlinkToCall.value = "tel:" + agents[i][2];
+        phone_link.setAttributeNode(hyperlinkToCall);
+        socials.appendChild(phone_link);
+
+        image.appendChild(socials);
+
+        var info = document.createElement("div");
+        info.classList.add("member-info");
+        var name = document.createElement("h4");
+        name.innerHTML = agents[i][0];
+        info.appendChild(name);
+
+        var role = document.createElement("span");
+        role.innerHTML = agents[i][1];
+        info.appendChild(role);
+
+        var license = document.createElement("code");
+        license.innerHTML = "BRE # " + agents[i][3];
+        info.appendChild(license);
+
+        member.appendChild(info);
+
+        agent_display.appendChild(card);
+    }
+}, 500);
