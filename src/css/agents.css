@@ -97,12 +97,13 @@
     display: block;
     font-size: 13px;
     font-weight: 400;
-    color: #b4aca8;
+    color: #2560bf;
 }
 
 .team .member .member-info code {
     font-size: 13px;
     margin: 0;
+    color: #f00000;
 }
 
 .team .member .member-info p {
