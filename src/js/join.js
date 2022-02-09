@@ -1,4 +1,8 @@
-// FAQ accordian
+"use strict";
+
+/**
+ * Accordian functionality
+ */
 $(function() {
     $('.accordian li').on('click', function() {
         if ($(this).find('ul').hasClass('open')) {
@@ -15,5 +19,3 @@ $(function() {
     // Active class starts one open
     $('.accordian li.active ul').slideDown().addClass('open');
 });
-
-// End
