@@ -143,12 +143,14 @@ function createCarousel(data) {
     var source = document.createAttribute("src");
     source.value = data[2];
     photo.setAttributeNode(source);
+
     var button = document.createElement("button");
     button.innerHTML = data[0];
-
     // button needs an hyperlink to the search page for the corresponding city
     var type = document.createAttribute("type");
     type.value = "button";
+    button.style.fontFamily = "'Libre Baskerville', serif";
+
     button.setAttributeNode(type);
     slide.appendChild(photo);
     slide.appendChild(button);
