@@ -149,7 +149,6 @@ function createCarousel(data) {
     // button needs an hyperlink to the search page for the corresponding city
     var type = document.createAttribute("type");
     type.value = "button";
-    button.style.fontFamily = "'Libre Baskerville', serif";
 
     button.setAttributeNode(type);
     slide.appendChild(photo);

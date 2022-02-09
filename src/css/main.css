@@ -2,7 +2,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 @import url("https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css");
 @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&family=Fjord+One&family=Libre+Baskerville&family=Spartan:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 :root {
     scroll-behavior: smooth;
     --fg-dred: #aa0000;
@@ -18,7 +18,7 @@
     --fg-grey: #a9a3a2;
     --fg-dgrey: #363636;
     --fg-lgrey: #c9c9c5;
-    --font-family: 'Spartan', sans-serif;
+    --font-family: "Kadwa", serif;
     --hover-transition: all 500ms ease;
 }
 
@@ -32,7 +32,6 @@ body {
 
 p {
     margin-bottom: 1rem;
-    font-family: 'Fjord One', serif;
 }
 
 img {
@@ -227,7 +226,6 @@ section {
     color: var(--fg-dred);
     position: relative;
     z-index: 2;
-    font-family: 'Spartan', sans-serif;
 }
 
 .section-title span {
@@ -242,7 +240,6 @@ section {
     font-size: 3rem;
     text-transform: uppercase;
     line-height: 0;
-    font-family: 'Spartan', sans-serif;
 }
 
 .section-title p {
