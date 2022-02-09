@@ -261,6 +261,38 @@ section {
 }
 
 
+/* =========== Page Banners ================= */
+
+.main-banner {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../images/banner-bg.jpg);
+    padding: 10rem 0 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-banner .top-text {
+    text-align: left;
+}
+
+.main-banner .top-text h5 {
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.main-banner .top-text h2 {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-top: 15px;
+    margin-bottom: 36px;
+}
+
+
 /* =========== Footer ================= */
 
 .site-footer {
@@ -285,7 +317,6 @@ section {
     /* ul element itself */
     padding-left: 0;
     list-style: none;
-    font-family: 'Fira Sans', sans-serif;
 }
 
 .footer-links li {
