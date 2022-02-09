@@ -124,6 +124,27 @@ fg-black {
     background: #fff;
 }
 
+.btn:focus {
+    box-shadow: unset;
+    transform: translateY(-5px);
+}
+
+.btn.btn-outline {
+    color: var(--fg-red);
+    background-color: #fff;
+}
+
+.btn.btn-float {
+    border: none;
+    background-color: transparent;
+    color: var(--fg-red);
+}
+
+.btn.btn-outline:hover,
+.btn.btn.btn-float:hover {
+    background-color: #e03a3d18;
+}
+
 
 /* ======= Navigation bar =============*/
 
@@ -267,7 +288,6 @@ section {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-image: url(../images/banner-bg.jpg);
     padding: 10rem 0 5rem 0;
     position: relative;
     overflow: hidden;
