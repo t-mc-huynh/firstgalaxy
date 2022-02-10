@@ -596,6 +596,119 @@
     }
 }
 
+.service h4 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 1rem 0 0.6rem;
+}
+
+.service code {
+    font-size: 10px;
+    color: #363636;
+}
+
+.services-grid {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+.service {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    flex: 1;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #e7e7e7;
+    transition: all 0.3s ease;
+}
+
+.service:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.service i {
+    font-size: 3.45rem;
+    margin: 1rem 0;
+}
+
+.service1 i,
+.service1 h4,
+.service1 .cta {
+    color: var(--color-4);
+}
+
+.service1:hover {
+    border: 2px solid var(--color-4);
+}
+
+.service2 i,
+.service2 h4,
+.service2 .cta {
+    color: var(--color-2);
+}
+
+.service2:hover {
+    border: 2px solid var(--color-2);
+}
+
+.service3 i,
+.service3 h4,
+.service3 .cta {
+    color: var(--color-4);
+}
+
+.service3:hover {
+    border: 2px solid var(--color-4);
+}
+
+.service4 i,
+.service4 h4,
+.service4 .cta {
+    color: var(--color-3);
+}
+
+.service4:hover {
+    border: 2px solid var(--color-3);
+}
+
+.service5 i,
+.service5 h4,
+.service5 .cta {
+    color: var(--color-5);
+}
+
+.service5:hover {
+    border: 2px solid var(--color-5);
+}
+
+.service6 i,
+.service6 h4,
+.service6 .cta {
+    color: var(--color-2);
+}
+
+.service6:hover {
+    border: 2px solid var(--color-2);
+}
+
+.service>* {
+    flex: 1 1 100%;
+}
+
+@media (max-width: 880px) {
+    .graphic-container {
+        display: none;
+    }
+    .services-grid {
+        display: flex;
+    }
+}
+
 
 /* =========== FAQs Section ================= */
 
