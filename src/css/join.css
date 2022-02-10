@@ -55,6 +55,12 @@
 
 .icon i {
     font-size: 3rem;
+    color: rgb(0, 0, 0);
+}
+
+.two i,
+.four i {
+    font-size: 2.5rem;
 }
 
 .content-container {
@@ -141,12 +147,6 @@
 .four {
     width: var(--circle-size-small);
     height: var(--circle-size-small);
-}
-
-.two i,
-.four i {
-    color: #fff;
-    font-size: 2.5rem;
 }
 
 .one .content-container {
