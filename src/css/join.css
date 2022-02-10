@@ -710,6 +710,13 @@
     }
 }
 
+@media (max-width:576px) {
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 /* =========== FAQs Section ================= */
 
