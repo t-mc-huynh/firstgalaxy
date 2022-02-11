@@ -939,7 +939,7 @@
 .accordian {
     max-width: 34rem;
     width: 100%;
-    color: var(--fg-lgrey);
+    color: var(--fg-grey);
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-weight: 100;
     letter-spacing: 0.035em;
@@ -973,7 +973,7 @@
 
 .accordian h3:hover,
 .accordian h3.closed {
-    color: var(--fg-dgrey);
+    color: var(--color-2);
     background-color: #fff;
 }
 
