@@ -6,14 +6,23 @@
 }
 
 #RE_trees {
-    height: 2550px;
+    display: none;
 }
 
 #RE_title {
     float: left;
-    width: 70%;
-    margin: 25px 40px;
+    width: 750px;
+    margin: 9px 40px;
     padding-bottom: 0;
+    position: sticky;
+    left: 192px;
+}
+
+@media (min-width: 1200px) {
+    #RE_trees {
+        display: block;
+        height: 2550px;
+    }
 }
 
 
@@ -37,9 +46,21 @@
 .tree {
     width: 100%;
     position: relative;
-    top: -335px;
+    top: -225px;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+@media (min-width: 1200px) {
+    .tree {
+        top: -314px;
+    }
+}
+
+@media (min-width: 1516px) {
+    .tree {
+        top: -210px;
+    }
 }
 
 #second-tree {
@@ -144,23 +165,49 @@
 }
 
 .thought {
-    top: -50px;
-    left: 844px;
+    top: 68px;
+    left: -5px;
     background-color: var(--color-1);
     width: 330px;
 }
 
 .thought2 {
-    top: -762px;
+    top: -648px;
     left: 601px;
     background-color: var(--color-2);
 }
 
 .thought3 {
-    top: -439px;
+    top: -329px;
     left: -437px;
     background-color: var(--color-4);
     width: 251px;
+}
+
+@media (min-width: 1200px) {
+    .thought {
+        top: -20px;
+        left: 805px;
+    }
+    .thought2 {
+        top: -735px;
+    }
+    .thought3 {
+        top: -408px;
+    }
+}
+
+@media (min-width: 1516px) {
+    .thought {
+        top: 70px;
+        left: -18px;
+    }
+    .thought2 {
+        top: -634px;
+    }
+    .thought3 {
+        top: -305px;
+    }
 }
 
 .thought:before,
