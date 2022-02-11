@@ -1,5 +1,12 @@
-body {
-    font-family: Calibri, Segoe, "Segoe UI", "Gill Sans", "Gill Sans MT", sans-serif;
+:root {
+    --color-1: #aa0000;
+    --color-2: #2561c1;
+    --color-3: #363636;
+    --color-4: #da2020;
+}
+
+#RE_trees {
+    height: 2550px;
 }
 
 #RE_title {
@@ -30,13 +37,13 @@ body {
 .tree {
     width: 100%;
     position: relative;
-    top: -36px;
+    top: -335px;
     margin-bottom: 0;
     padding-bottom: 0;
 }
 
 #second-tree {
-    top: -249px;
+    top: -409px;
     position: relative;
 }
 
@@ -50,7 +57,7 @@ body {
 /* _________ */
 
 .tree li:before {
-    outline: solid 1px #666;
+    outline: solid 1px var(--color-3);
     content: "";
     left: 0;
     position: absolute;
@@ -67,7 +74,7 @@ body {
 }
 
 .tree span {
-    border: solid .1rem #666;
+    border: solid .1rem var(--color-3);
     border-radius: .2rem;
     display: inline-block;
     margin: 0 1rem 1rem;
@@ -82,7 +89,7 @@ body {
 
 .tree ul:before,
 .tree span:before {
-    outline: solid 1px #666;
+    outline: solid 1px var(--color-3);
     content: "";
     height: 1rem;
     left: 50%;
@@ -112,89 +119,116 @@ body {
 
 .tree li span:hover,
 .tree li span:hover+ul li span {
-    border: .1rem solid #aa0000;
+    border: .1rem solid var(--color-2);
 }
 
 
 /* =========== Speech Bubble ================= */
 
 .thought,
-.thought2 {
+.thought2,
+.thought3 {
     display: inline-block;
     padding: 20px;
     border-radius: 30px;
-    min-width: 40px;
-    max-width: 220px;
+    min-width: 120px;
+    max-width: 420px;
     min-height: 40px;
     margin: 20px;
+    color: #fff;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     height: auto;
-    width: 200px;
 }
 
 .thought {
-    top: 99px;
-    left: -274px;
-    background-color: rgb(163, 255, 170);
+    top: -50px;
+    left: 844px;
+    background-color: var(--color-1);
+    width: 330px;
 }
 
 .thought2 {
-    top: -122px;
-    left: 843px;
-    background-color: rgb(101, 255, 206);
+    top: -762px;
+    left: 601px;
+    background-color: var(--color-2);
+}
+
+.thought3 {
+    top: -439px;
+    left: -437px;
+    background-color: var(--color-4);
+    width: 251px;
+}
+
+.thought:before,
+.thought:after,
+.thought2:before,
+.thought2:after,
+.thought3:before,
+.thought3:after {
+    content: "";
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    z-index: -1;
 }
 
 .thought:before,
 .thought:after {
-    content: "";
-    background-color: rgb(147, 255, 163);
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    z-index: -1;
+    background-color: var(--color-1);
 }
 
 .thought2:before,
 .thought2:after {
-    content: "";
-    background-color: rgb(101, 255, 206);
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    z-index: -1;
+    background-color: var(--color-2);
+}
+
+.thought3:before,
+.thought3:after {
+    background-color: var(--color-4);
+}
+
+.thought:before,
+.thought2:before,
+.thought3:before {
+    width: 44px;
+    height: 44px;
+    top: -12px;
+    left: 28px;
+}
+
+.thought:after,
+.thought2:after,
+.thought3:after {
+    bottom: -10px;
+    right: 26px;
+    width: 30px;
+    height: 30px;
 }
 
 .thought:before {
-    width: 44px;
-    height: 44px;
-    top: -12px;
-    left: 28px;
-    box-shadow: -50px 30px 0 -12px rgb(147, 255, 163);
+    box-shadow: -50px 30px 0 -12px var(--color-1);
 }
 
 .thought:after {
-    bottom: -10px;
-    right: 26px;
-    width: 30px;
-    height: 30px;
-    box-shadow: 40px -34px 0 0 rgb(147, 255, 163), -28px -6px 0 -2px rgb(147, 255, 163), -24px 17px 0 -6px rgb(147, 255, 163), -5px 25px 0 -10px rgb(147, 255, 163);
+    box-shadow: 40px -34px 0 0 var(--color-1), -28px -6px 0 -2px var(--color-1), -24px 17px 0 -6px var(--color-1), -5px 25px 0 -10px var(--color-1);
 }
 
 .thought2:before {
-    width: 44px;
-    height: 44px;
-    top: -12px;
-    left: 28px;
-    box-shadow: -50px 30px 0 -12px rgb(101, 255, 206);
+    box-shadow: -50px 30px 0 -12px var(--color-2);
 }
 
 .thought2:after {
-    bottom: -10px;
-    right: 26px;
-    width: 30px;
-    height: 30px;
-    box-shadow: 40px -34px 0 0 rgb(101, 255, 206), -28px -6px 0 -2px rgb(101, 255, 206), -24px 17px 0 -6px rgb(101, 255, 206), -5px 25px 0 -10px rgb(101, 255, 206);
+    box-shadow: 40px -34px 0 0 var(--color-2), -28px -6px 0 -2px var(--color-2), -24px 17px 0 -6px var(--color-2), -5px 25px 0 -10px var(--color-2);
+}
+
+.thought3:before {
+    box-shadow: -50px 30px 0 -12px var(--color-4);
+}
+
+.thought3:after {
+    box-shadow: 40px -34px 0 0 var(--color-4), -28px -6px 0 -2px var(--color-4), -24px 17px 0 -6px var(--color-4), -5px 25px 0 -10px var(--color-4);
 }
