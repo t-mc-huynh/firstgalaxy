@@ -100,3 +100,8 @@ body {
 .tree>li>span:before {
     outline: none;
 }
+
+.tree li span:hover,
+.tree li span:hover+ul li span {
+    border: .1rem solid #aa0000;
+}
