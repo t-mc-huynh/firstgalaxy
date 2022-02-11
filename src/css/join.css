@@ -10,6 +10,58 @@
     --color-6: #aa0000c2;
 }
 
+
+/* =========== RE Licese Section ================= */
+
+#RE_License {
+    height: 100%;
+}
+
+#FAQ_Section1 {
+    height: 820px;
+}
+
+@media (min-width: 768px) {
+    #RE_License {
+        height: 1780px;
+    }
+}
+
+@media (min-width: 992px) {
+    #RE_License {
+        height: 1050px;
+    }
+    #FAQ_Section1 {
+        height: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #RE_License {
+        height: 910px;
+    }
+}
+
+#RE_Buttons {
+    display: flex;
+}
+
+#RE_Buttons a {
+    justify-content: center;
+}
+
+@media (max-width: 768px),
+(min-width:992px) and (max-width: 1460px) {
+    #RE_Buttons {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+
+/* =========== Circles Section ================= */
+
 .graphic-container {
     width: 100%;
     min-height: 100vh;
@@ -475,18 +527,15 @@
     .single,
     .double {
         flex-wrap: wrap;
-        flex-direction: column;
-        align-content: left;
         margin-left: 50px;
     }
     .single:nth-child(even),
     .double:nth-child(even) {
         flex-direction: column;
-        align-content: left;
         margin-left: 50px;
     }
     .one {
-        transform: translate(200px, 0px);
+        transform: translate(304px, -33px);
     }
     .one .content-container {
         left: 302px;
@@ -502,7 +551,7 @@
         box-shadow: 29px 172px 0 1px var(--color-1), 210px -104px 0 9px var(--color-2);
     }
     .two {
-        transform: translate(-15px, 0px);
+        transform: translate(61px, -48px);
     }
     .two .content-container {
         top: 46px;
@@ -515,7 +564,7 @@
         left: -102px;
     }
     .three {
-        transform: translate(579px, -101px);
+        transform: translate(605px, -101px);
     }
     .three .content-container {
         top: 164px;
@@ -528,7 +577,7 @@
         left: 210px;
     }
     .four {
-        transform: translate(662px, -54px);
+        transform: translate(729px, -101px);
     }
     .four .content-container {
         top: 219px;
@@ -544,7 +593,7 @@
         box-shadow: -307px 124px 0 10px var(--color-3), 91px -397px 0 0px var(--color-2);
     }
     .five {
-        transform: translate(87px, -56px);
+        transform: translate(87px, -129px);
     }
     .five .content-container {
         top: -182px;
@@ -574,7 +623,7 @@
         height: 2px;
     }
     .six {
-        transform: translate(274px, -86px);
+        transform: translate(354px, -110px);
     }
     .six .content-container {
         top: 81px;
@@ -595,6 +644,9 @@
         box-shadow: 256px -95px 0 25px var(--color-5), 242px 329px 0 7px var(--color-3);
     }
 }
+
+
+/* =========== Grid Section ================= */
 
 .service h4 {
     font-weight: 600;
@@ -701,7 +753,7 @@
     flex: 1 1 100%;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 940px) {
     .graphic-container {
         display: none;
     }
@@ -849,9 +901,6 @@
 .direction-r .desc {
     margin: 1em 0 0 0.75em;
 }
-
-
-/* ================ Timeline Media Queries ================ */
 
 @media screen and (max-width: 660px) {
     .timeline {
