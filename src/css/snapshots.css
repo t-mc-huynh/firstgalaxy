@@ -1,0 +1,13 @@
+.nar-images {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nar-images img {
+    height: 700px;
+    margin-top: 10px;
+    margin-bottom: 45px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
