@@ -136,8 +136,33 @@
                 <li class="breadcrumb-item active" aria-current="page">Resources</li>
             </ol>
         </nav>
-        <!--Cards Section-->
+
+        <!--Glossary Section-->
         <section class="container-fluid p-0">
+            <div class="d-flex">
+                <div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 pt-2 pb-5 m-0">
+                    <div class="col col-sm-9 col-md-5 mt-0">
+                        <img src="src/images/fancyhouse.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="1200rem" height="900rem" loading="lazy">
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="section-title">
+                            <span>Glossary</span>
+                            <h2>Real Estate Glossary</h2>
+                            <p>We know how hard it can be to learn about new concepts, especially when it comes to real estate. We created this glossary to help answer some of your most common questions. What is the difference between a condo and a co-op?
+                                What is an REO?</p>
+                        </div>
+                        <div class="d-grid gap-2 d-flex justify-content-center">
+                            <a href="/firstgalaxy/glossary.html" class="btn mx-4">View Glossary</a>
+                            <a href="src/data/datasets.xlsx" download="First Galaxy Data" class="btn mx-4 disabled">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of Glossary Section -->
+
+        <!--Cards Section-->
+        <section class="container-fluid py-4">
             <div class="section-title pb-0">
                 <span>Available Statistics</span>
                 <h2>Available Statistics</h2>
@@ -145,6 +170,47 @@
             </div>
 
             <div id="cards-container" class="justify-content-center">
+                <!-- flip-card-container -->
+                <div class="flip-card-container" style="--hue: 220">
+                    <div class="flip-card">
+
+                        <div class="card-front">
+                            <figure>
+                                <div class="img-bg"></div>
+                                <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                                <figcaption>Housing Snapshots</figcaption>
+                            </figure>
+
+                            <ul>
+                                <li>Existing-Home Sales</li>
+                                <li>Pending Home Sales</li>
+                            </ul>
+                        </div>
+
+                        <div class="card-back">
+                            <figure>
+                                <div class="img-bg"></div>
+                                <img src="https://images.unsplash.com/photo-1486162928267-e6274cb3106f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Brohm Lake">
+                            </figure>
+
+                            <button>View Snapshots</button>
+
+                            <div class="design-container">
+                                <span class="design design--1"></span>
+                                <span class="design design--2"></span>
+                                <span class="design design--3"></span>
+                                <span class="design design--4"></span>
+                                <span class="design design--5"></span>
+                                <span class="design design--6"></span>
+                                <span class="design design--7"></span>
+                                <span class="design design--8"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /flip-card-container -->
+
                 <!-- flip-card-container -->
                 <div class="flip-card-container" style="--hue: 220">
                     <div class="flip-card">
@@ -201,8 +267,6 @@
                                 <li>Detail 1</li>
                                 <li>Detail 2</li>
                                 <li>Detail 3</li>
-                                <li>Detail 4</li>
-                                <li>Detail 5</li>
                             </ul>
                         </div>
 
@@ -245,8 +309,6 @@
                                 <li>Detail 1</li>
                                 <li>Detail 2</li>
                                 <li>Detail 3</li>
-                                <li>Detail 4</li>
-                                <li>Detail 5</li>
                             </ul>
                         </div>
 
@@ -279,30 +341,6 @@
             </div>
         </section>
         <!-- End of Cards Section -->
-
-        <!--Glossary Section-->
-        <section class="container-fluid p-0">
-            <div class="d-flex">
-                <div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 pt-2 pb-5 m-0">
-                    <div class="col col-sm-9 col-md-5 mt-0">
-                        <img src="src/images/fancyhouse.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="1200rem" height="900rem" loading="lazy">
-                    </div>
-                    <div class="col-sm-12 col-md-5">
-                        <div class="section-title">
-                            <span>Glossary</span>
-                            <h2>Real Estate Glossary</h2>
-                            <p>We know how hard it can be to learn about new concepts, especially when it comes to real estate. We created this glossary to help answer some of your most common questions. What is the difference between a condo and a co-op?
-                                What is an REO?</p>
-                        </div>
-                        <div class="d-grid gap-2 d-flex justify-content-center">
-                            <a href="/firstgalaxy/glossary.html" class="btn mx-4">View Glossary</a>
-                            <a href="src/data/datasets.xlsx" download="First Galaxy Data" class="btn mx-4 disabled">Download PDF</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End of Glossary Section -->
 
         <!--Calculators Section-->
         <section class="container-fluid p-0">
