@@ -18,7 +18,7 @@
     left: 192px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1220px) {
     #RE_trees {
         display: block;
         height: 2550px;
@@ -53,7 +53,7 @@
 
 @media (min-width: 1200px) {
     .tree {
-        top: -314px;
+        top: -229px;
     }
 }
 
@@ -186,14 +186,14 @@
 
 @media (min-width: 1200px) {
     .thought {
-        top: -20px;
-        left: 805px;
+        top: 64px;
+        left: -1px;
     }
     .thought2 {
-        top: -735px;
+        top: -657px;
     }
     .thought3 {
-        top: -408px;
+        top: -313px;
     }
 }
 
