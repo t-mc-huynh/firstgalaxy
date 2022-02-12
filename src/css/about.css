@@ -68,7 +68,7 @@ img {
     .section-heading {
         position: absolute;
         transform-origin: bottom;
-        transform: rotate(-90deg) translateX(-100%);
+        transform: rotate(-90deg) translateX(-25%) translateY(-135%);
     }
     .intro {
         padding: 1rem;
