@@ -47,6 +47,10 @@
     width: 100%;
 }
 
+.about .text-end {
+    text-align: start !important;
+}
+
 .about {
     padding: .5rem 0;
 }
@@ -68,7 +72,7 @@
     .section-heading {
         position: absolute;
         transform-origin: bottom;
-        transform: rotate(-90deg) translateX(-35%) translateY(-115%);
+        transform: rotate(-90deg) translateX(-35%) translateY(-155%);
     }
     .intro {
         padding: 1rem;
@@ -79,5 +83,8 @@
     .about img {
         height: 700px;
         width: 750px;
+    }
+    .about .text-end {
+        text-align: end !important;
     }
 }
