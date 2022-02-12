@@ -1,7 +1,7 @@
 .about .container {
     margin: auto;
     padding: 0 1rem;
-    max-width: 80rem;
+    max-width: 90rem;
     width: 100%;
 }
 
@@ -31,7 +31,7 @@
     }
 }
 
-blockquote {
+.about blockquote {
     font-style: italic;
     text-align: center;
     width: 90%;
@@ -59,8 +59,8 @@ blockquote {
     transform: rotate(0) translateX(0);
 }
 
-img {
-    width: 100%;
+.about img {
+    height: 100%;
     object-fit: cover;
 }
 
@@ -68,12 +68,16 @@ img {
     .section-heading {
         position: absolute;
         transform-origin: bottom;
-        transform: rotate(-90deg) translateX(-25%) translateY(-135%);
+        transform: rotate(-90deg) translateX(-35%) translateY(-115%);
     }
     .intro {
         padding: 1rem;
     }
-    blockquote {
+    .about blockquote {
         width: 30rem;
+    }
+    .about img {
+        height: 700px;
+        width: 750px;
     }
 }
