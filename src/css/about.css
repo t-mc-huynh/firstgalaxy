@@ -35,9 +35,9 @@ blockquote {
     font-style: italic;
     text-align: center;
     width: 90%;
-    height: auto;
+    height: fit-content;
     margin: auto;
-    display: flex;
+    display: block;
     align-items: center;
 }
 
@@ -75,6 +75,5 @@ img {
     }
     blockquote {
         width: 30rem;
-        height: 40rem;
     }
 }
