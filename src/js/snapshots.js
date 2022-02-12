@@ -30,6 +30,9 @@ function myFuntion(xml) {
 
 console.log(filePaths);
 
+/**
+ * Uploads to NAR Section
+ */
 function uploadImage() {
     for (let i = 0; i < filePaths.length; i++) {
         var filePath = filePaths[i].toString();
