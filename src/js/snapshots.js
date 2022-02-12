@@ -8,7 +8,7 @@ xhttp.onreadystatechange = function() {
         myFuntion(this);
     }
 };
-xhttp.open("GET", "src/data/snapshots/", true);
+xhttp.open("GET", "src/data/snapshots", true);
 xhttp.send();
 
 const filePaths = new Array();
