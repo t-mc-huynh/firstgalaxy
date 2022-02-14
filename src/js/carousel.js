@@ -159,14 +159,20 @@ function createCarousel(data) {
 function loadCarousel() {
     $(".owl-carousel").owlCarousel({
         center: true,
-        items: 2,
+        items: 1,
         loop: true,
         margin: 10,
         autoplay: true,
         autoplayTimeout: 1000,
         autoplayHoverPause: true,
         responsive: {
-            600: {
+            576: {
+                items: 2
+            },
+            992: {
+                items: 3
+            },
+            1200: {
                 items: 4
             }
         }
