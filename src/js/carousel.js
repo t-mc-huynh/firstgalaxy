@@ -163,9 +163,12 @@ function loadCarousel() {
         loop: true,
         margin: 10,
         autoplay: true,
-        autoplayTimeout: 1000,
+        autoplayTimeout: 2000,
         autoplayHoverPause: true,
         responsive: {
+            240: {
+                items: 1
+            },
             576: {
                 items: 2
             },
