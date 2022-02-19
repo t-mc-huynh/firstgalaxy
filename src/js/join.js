@@ -30,6 +30,7 @@ function spanTitle() {
     if ($(window).width() < 420) {
         span.innerHTML = "Start Today";
         span.nextSibling.nextSibling.innerHTML = span.innerHTML;
+        document.querySelector(".graphic-container").previousElementSibling.firstChild.nextSibling.innerHTML = "First Galaxy Inc";
     } else if ($(window).width() >= 975 && $(window).width() < 1118) {
         span.innerHTML = "Start Today";
     } else if ($(window).width() > 1500 || $(window).width() < 975) {
