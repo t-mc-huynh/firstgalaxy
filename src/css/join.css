@@ -18,26 +18,16 @@
 }
 
 #FAQ_Section1 {
-    height: 820px;
+    height: 100%;
 }
 
 #FAQ_Section2 {
-    height: 870px;
-}
-
-@media (min-width: 768px) {
-    #RE_License {
-        height: 1780px;
-    }
+    height: 100%;
 }
 
 @media (min-width: 992px) {
     #RE_License {
         height: 1050px;
-    }
-    #FAQ_Section1,
-    #FAQ_Section2 {
-        height: 100%;
     }
 }
 
@@ -874,8 +864,8 @@
 /* =========== FAQs Section ================= */
 
 .accordian {
-    max-width: 34rem;
-    width: 100%;
+    max-width: 32rem;
+    width: 95%;
     color: var(--fg-grey);
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-weight: 100;
@@ -888,13 +878,10 @@
     margin-bottom: 0.5rem;
 }
 
-.accordian ul>li:first-child h3 {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 .accordian h3 {
     cursor: pointer;
-    background-color: #fff;
+    color: rgb(35, 35, 35);
+    background-color: rgb(228, 228, 228);
     padding: 1.2rem 1rem 1rem 1.2rem;
     margin: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
@@ -904,14 +891,14 @@
     position: relative;
     font-size: 1rem;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 1px .1rem rgba(0, 0, 0, 0.24);
+    box-shadow: 0 2px .3rem rgba(0, 0, 0, 0.24);
     border-radius: 0.2rem;
 }
 
 .accordian h3:hover,
 .accordian h3.closed {
     color: var(--color-2);
-    background-color: #fff;
+    background-color: rgb(238, 238, 238);
 }
 
 .accordian h3:hover .arrow {
@@ -960,18 +947,18 @@
     display: inline-block;
     width: 0.5rem;
     height: 0.5rem;
-    border-top: .1rem solid var(--fg-lgrey);
-    border-right: .1rem solid var(--fg-lgrey);
+    border-top: .1rem solid var(--color-2);
+    border-right: .1rem solid var(--color-2);
     transform: rotate(135deg);
     transform-origin: center;
     float: right;
     margin-right: 0.5rem;
+    margin-left: 15px;
     transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
 .accordian .arrow.closed {
     margin-top: 0.2rem;
     transform: rotate(-45deg);
-    border-top: .1rem solid var(--fg-dgrey);
     border-right: .1rem solid var(--fg-dgrey);
 }
