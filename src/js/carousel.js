@@ -1,3 +1,5 @@
+"use strict";
+
 var IP = "23.240.76.211";
 
 const nearbyCities = new Array();
