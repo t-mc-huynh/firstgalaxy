@@ -35,6 +35,7 @@ function success(position) {
 
 function showError(error) {
     console.warn(`ERROR(${error.code}): ${error.message}`);
+    defaultCities();
 }
 
 
@@ -46,26 +47,34 @@ window.onload = function() {
 
     imageObject();
 
-    navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
 
-        if (result.state == 'granted') {
-            report(result.state);
-            var options = {
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
-            };
-            navigator.geolocation.getCurrentPosition(success, showError, options);
-        } else if (result.state == 'prompt') {
-            report(result.state);
-        } else if (result.state == 'denied') {
-            report(result.state);
-            defaultCities();
-        }
-        result.onchange = function() {
-            report(result.state);
-        }
-    })
+    var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
+    navigator.geolocation.getCurrentPosition(success, showError, options);
+
+    // navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
+
+    //     if (result.state == 'granted') {
+    //         report(result.state);
+    //         var options = {
+    //             enableHighAccuracy: true,
+    //             timeout: 5000,
+    //             maximumAge: 0
+    //         };
+    //         navigator.geolocation.getCurrentPosition(success, showError, options);
+    //     } else if (result.state == 'prompt') {
+    //         report(result.state);
+    //     } else if (result.state == 'denied') {
+    //         report(result.state);
+    //         defaultCities();
+    //     }
+    //     result.onchange = function() {
+    //         report(result.state);
+    //     }
+    // })
 }
 
 function defaultCities() {
