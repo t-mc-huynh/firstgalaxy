@@ -45,10 +45,7 @@ function report(state) {
 
 window.onload = function() {
 
-    if ($(window).width() < 583) {
-        span = document.querySelector(".owl-carousel .section-title span");
-        span.innerHTML = "Communities";
-    }
+    spanTitle();
 
     imageObject();
 
@@ -58,6 +55,15 @@ window.onload = function() {
         maximumAge: 0
     };
     navigator.geolocation.getCurrentPosition(success, showError, options);
+}
+
+$(window).resize(spanTitle);
+
+function spanTitle() {
+    if ($(window).width() < 583) {
+        var span = document.querySelector(".owl-carousel .section-title span");
+        span.innerHTML = "Communities";
+    }
 }
 
 function defaultCities() {

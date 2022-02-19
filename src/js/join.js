@@ -19,3 +19,22 @@ $(function() {
     // Active class starts one open
     $('.accordian li.active ul').slideDown().addClass('open');
 });
+
+window.onload = spanTitle();
+
+$(window).resize(spanTitle);
+
+function spanTitle() {
+    console.log($(window).width());
+    var span = document.getElementById("timeline-span");
+    if ($(window).width() < 420) {
+        span.innerHTML = "Start Today";
+        span.nextSibling.nextSibling.innerHTML = span.innerHTML;
+    } else if ($(window).width() >= 975 && $(window).width() < 1118) {
+        span.innerHTML = "Start Today";
+    } else if ($(window).width() > 1500 || $(window).width() < 975) {
+        span.innerHTML = "Change Your Life Today";
+    } else {
+        span.innerHTML = "Change Your Life";
+    }
+}
