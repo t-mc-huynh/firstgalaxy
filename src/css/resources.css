@@ -316,7 +316,6 @@
     border: 1px solid rgb(240, 240, 240);
     border-radius: 1000px;
     background: rgb(101, 101, 101, 0.7);
-    transition: .3s;
     cursor: pointer;
     display: none;
 }
