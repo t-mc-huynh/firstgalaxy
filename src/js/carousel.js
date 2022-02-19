@@ -45,8 +45,12 @@ function report(state) {
 
 window.onload = function() {
 
-    imageObject();
+    if ($(window).width() < 583) {
+        span = document.querySelector(".owl-carousel .section-title span");
+        span.innerHTML = "Communities";
+    }
 
+    imageObject();
 
     var options = {
         enableHighAccuracy: true,
@@ -54,27 +58,6 @@ window.onload = function() {
         maximumAge: 0
     };
     navigator.geolocation.getCurrentPosition(success, showError, options);
-
-    // navigator.permissions.query({ name: 'geolocation' }).then(function(result) {
-
-    //     if (result.state == 'granted') {
-    //         report(result.state);
-    //         var options = {
-    //             enableHighAccuracy: true,
-    //             timeout: 5000,
-    //             maximumAge: 0
-    //         };
-    //         navigator.geolocation.getCurrentPosition(success, showError, options);
-    //     } else if (result.state == 'prompt') {
-    //         report(result.state);
-    //     } else if (result.state == 'denied') {
-    //         report(result.state);
-    //         defaultCities();
-    //     }
-    //     result.onchange = function() {
-    //         report(result.state);
-    //     }
-    // })
 }
 
 function defaultCities() {
@@ -178,14 +161,14 @@ function loadCarousel() {
             240: {
                 items: 1
             },
-            576: {
-                items: 2
-            },
             992: {
                 items: 3
             },
             1200: {
-                items: 4
+                items: 5
+            },
+            2400: {
+                items: 7
             }
         }
     });
