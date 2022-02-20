@@ -72,18 +72,14 @@ function success(position) {
 
     geo_location.push(coord);
 
-    fetch("https://api.myptv.com/geocoding/v1/locations/by-position/" + `${crd.latitude}` + "/" + `${crd.longitude}` + "?language=en", {
-            method: "GET",
-            headers: { apiKey: ptv_key, "Content-Type": "application/json" },
-        })
+    fetch("https://geocode.xyz/" + `${crd.latitude}` + "," + `${crd.longitude}` + "?geoit=json")
         .then(response => response.json())
         .then(result => {
-            let location = result.locations[0].address;
-            let zip = Object.values(location)[3].split("-");
-            geo_location.push(zip[0]);
-            geo_location.push(Object.values(location)[4]);
-            geo_location.push(Object.values(location)[7]);
-            geo_location.push(Object.values(location)[1]);
+            // console.log(Object.values(result));
+            geo_location.push(Object.values(result)[18]);
+            geo_location.push(Object.values(result)[6]);
+            geo_location.push(Object.values(result)[4]);
+            geo_location.push(Object.values(result)[13]);
         });
     getNearbyCities(position);
 }
@@ -161,6 +157,9 @@ function createAndLoadCarousel() {
     loadCarousel();
 
     // console.log(geo_location);
+    // for (let i = 0; i < geo_location.length; i++) {
+    //     console.log(geo_location[i]);
+    // }
 }
 
 function createCarousel(data) {
