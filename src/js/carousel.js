@@ -56,30 +56,37 @@ function imageObject() {
 
     $.ajax(settings).done(function(response) {
         cityImages = response;
-        console.log(cityImages);
+        // console.log(cityImages);
     })
 }
 
 function success(position) {
     var crd = position.coords;
     var ptv_key = TOKEN.PTV_DEV;
-    console.log(position);
+    // console.log(position);
 
-    console.log('Your current position is:');
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
+    // console.log('Your current position is:');
+    // console.log(`Latitude : ${crd.latitude}`);
+    // console.log(`Longitude: ${crd.longitude}`);
+    // console.log(`More or less ${crd.accuracy} meters.`);
 
     var coord = (`${crd.latitude}, ${crd.longitude}`);
 
     geo_location.push(coord);
 
-    fetch("https://api.myptv.com/geocoding/v1/locations/by-position/33.8362368/-117.8206208?language=en", {
+    fetch("https://api.myptv.com/geocoding/v1/locations/by-position/" + `${crd.latitude}` + "/" + `${crd.longitude}` + "?language=en", {
             method: "GET",
             headers: { apiKey: ptv_key, "Content-Type": "application/json" },
         })
         .then(response => response.json())
-        .then(result => console.log(result));
+        .then(result => {
+            let location = result.locations[0].address;
+            let zip = Object.values(location)[3].split("-");
+            geo_location.push(zip[0]);
+            geo_location.push(Object.values(location)[4]);
+            geo_location.push(Object.values(location)[7]);
+            geo_location.push(Object.values(location)[1]);
+        });
     getNearbyCities(position);
 }
 
@@ -132,7 +139,7 @@ function getNearbyCities(position) {
 
         getImages();
 
-        console.log(nearbyCities);
+        // console.log(nearbyCities);
         createAndLoadCarousel();
     })
 }
@@ -155,7 +162,7 @@ function createAndLoadCarousel() {
 
     loadCarousel();
 
-    console.log(ip_location, geo_location);
+    // console.log(ip_location, geo_location);
 }
 
 function createCarousel(data) {
