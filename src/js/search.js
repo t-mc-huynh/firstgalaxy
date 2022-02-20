@@ -1,4 +1,5 @@
 import { school, cities } from "./data.js";
+import { geo_location, geoloc } from "./carousel.js";
 
 "use strict";
 
@@ -10,11 +11,29 @@ var searching_results = document.querySelector("#searching-links");
 var inputField = document.querySelector(".searchText");
 var user_typing = "";
 
+var ip_location = new Array();
+
+if (geoloc) {
+
+} else {
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+        ip_location.push(data.ip);
+        $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(response) {
+            var city = response.city + ", " + response.region_code;
+            ip_location.push(city);
+        })
+    })
+}
+
+
+console.log(ip_location);
+
 /**
  * Removes placeholder text on focus state
  */
 $(inputField).focus(function() {
     $(this).attr('placeholder', '');
+    $(this).attr('value', 'test');
 }).focusout(function() {
     $(this).attr('placeholder', 'Search Cities, Addresses, Schools, School Districts, Zip Codes');
 });
@@ -206,3 +225,5 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+export { ip_location };
