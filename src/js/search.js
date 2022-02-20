@@ -12,21 +12,33 @@ var inputField = document.querySelector(".searchText");
 var user_typing = "";
 
 var ip_location = new Array();
+var city = new Array();
 
-if (geoloc) {
-
-} else {
-    $.getJSON("https://api.ipify.org?format=json", function(data) {
-        ip_location.push(data.ip);
-        $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(response) {
-            var city = response.city + ", " + response.region_code;
-            ip_location.push(city);
+setTimeout(function precision() {
+    if (geoloc) {
+        var zip = geo_location[1];
+        $.getJSON("https://ziptasticapi.com/" + zip, function(data) {
+            city.push(geo_location[2] + ", " + data.state);
+            geo_location.splice(4, 4, data.state);
         })
-    })
-}
+
+    } else {
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            ip_location.push(data.ip);
+            $.getJSON("https://ipapi.co/" + data.ip + "/json/", function(response) {
+                city = response.city + ", " + response.region_code;
+                ip_location.push(city);
+            })
+        })
+    }
+
+    console.log(city);
+    console.log("GEO: ", geo_location);
+    console.log("IP: ", ip_location);
+}, 7000);
 
 
-console.log(ip_location);
+
 
 /**
  * Removes placeholder text on focus state
