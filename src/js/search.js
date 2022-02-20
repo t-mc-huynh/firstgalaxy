@@ -45,6 +45,7 @@ $(inputField).focus(function() {
     if (user_typing.length > 3) {
         inputField.value = user_typing;
     } else {
+        user_typing = "";
         inputField.value = city[0];
         initalSearch(city[0]);
     }
