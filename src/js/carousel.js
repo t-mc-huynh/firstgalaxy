@@ -1,11 +1,48 @@
-"use strict";
+import { ip_location } from "./search.js";
 
-var IP = "23.240.76.211";
+"use strict";
 
 const nearbyCities = new Array();
 nearbyCities.push(["City Name", "Distance", "Image"]);
 var cityImages = new Object();
 
+var geoloc = new Boolean(false);
+var geo_location = new Array();
+
+window.onload = function() {
+
+    spanTitle();
+
+    imageObject();
+
+    var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
+    navigator.geolocation.getCurrentPosition(success, showError, options);
+
+
+    navigator.permissions.query({ name: 'geolocation' }).then(function geoState(result) {
+        if (result.state == 'granted') {
+            geoloc = true;
+        } else if (result.state == 'denied') {
+            geoloc = false;
+        }
+        result.onchange = function() {
+            console.log(result.state);
+        }
+    });
+}
+
+$(window).resize(spanTitle);
+
+function spanTitle() {
+    if ($(window).width() < 583) {
+        var span = document.querySelector(".owl-carousel .section-title span");
+        span.innerHTML = "Communities";
+    }
+}
 
 function imageObject() {
     var settings = {
@@ -23,49 +60,34 @@ function imageObject() {
     })
 }
 
-
 function success(position) {
     var crd = position.coords;
+    var ptv_key = TOKEN.PTV_DEV;
+    console.log(position);
 
     console.log('Your current position is:');
     console.log(`Latitude : ${crd.latitude}`);
     console.log(`Longitude: ${crd.longitude}`);
     console.log(`More or less ${crd.accuracy} meters.`);
+
+    var coord = (`${crd.latitude}, ${crd.longitude}`);
+
+    geo_location.push(coord);
+
+    fetch("https://api.myptv.com/geocoding/v1/locations/by-position/33.8362368/-117.8206208?language=en", {
+            method: "GET",
+            headers: { apiKey: ptv_key, "Content-Type": "application/json" },
+        })
+        .then(response => response.json())
+        .then(result => console.log(result));
     getNearbyCities(position);
 }
+
 
 
 function showError(error) {
     console.warn(`ERROR(${error.code}): ${error.message}`);
     defaultCities();
-}
-
-
-function report(state) {
-    console.log('Permission ' + state);
-}
-
-window.onload = function() {
-
-    spanTitle();
-
-    imageObject();
-
-    var options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-    };
-    navigator.geolocation.getCurrentPosition(success, showError, options);
-}
-
-$(window).resize(spanTitle);
-
-function spanTitle() {
-    if ($(window).width() < 583) {
-        var span = document.querySelector(".owl-carousel .section-title span");
-        span.innerHTML = "Communities";
-    }
 }
 
 function defaultCities() {
@@ -97,7 +119,7 @@ function getNearbyCities(position) {
     let lat1 = position.coords.latitude;
     let lon1 = position.coords.longitude;
     let responseStyle = "short"; // length of the response
-    let maxRows = 12; // max # of rows to retrieve
+    let maxRows = 13; // max # of rows to retrieve
     let citySize = "cities15000"; // the min # of citizens a city must have
 
     let final_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
@@ -132,6 +154,8 @@ function createAndLoadCarousel() {
     }
 
     loadCarousel();
+
+    console.log(ip_location, geo_location);
 }
 
 function createCarousel(data) {
@@ -181,3 +205,5 @@ function loadCarousel() {
         }
     });
 }
+
+export { geo_location, ip_location, geoloc };
