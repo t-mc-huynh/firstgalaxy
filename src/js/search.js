@@ -97,20 +97,22 @@ function runSearches(e) {
         inputField.value = "";
     }
 
-    if (user_typing.length < 2 || found == false || icon_section.classList.contains("d-none") == false) {
+    if (user_typing.length <= 1 || found == false || icon_section.classList.contains("d-none") == false) {
         searching_results.classList.add("d-none");
     }
 
     tooltip.classList.remove("show");
     if (window.event) {
-
-        if (user_typing.length > 0) {
+        if (user_typing.length <= 1) {
+            searching_results.classList.add("d-none");
+        } else if (user_typing.length > 0) {
             reset();
 
             searchCity(user_typing);
             searchSchoolData(user_typing);
             console.log(user_typing);
-            console.log(data_found);
+            console.log(inputField.value.length);
+            // console.log(data_found);
 
             for (let i = 1; i < data_found.length; i++) {
                 // User searching
@@ -123,7 +125,6 @@ function runSearches(e) {
 
             if (e.which == 13 || e.which == 1) {
                 // User submitted intentionally
-
 
                 if (data_found.length > 1) {
                     for (let i = 1; i < data_found[1].length; i++) {
