@@ -1,5 +1,3 @@
-import { ip_location } from "./search.js";
-
 "use strict";
 
 const nearbyCities = new Array();
@@ -162,7 +160,7 @@ function createAndLoadCarousel() {
 
     loadCarousel();
 
-    // console.log(ip_location, geo_location);
+    // console.log(geo_location);
 }
 
 function createCarousel(data) {
@@ -213,4 +211,4 @@ function loadCarousel() {
     });
 }
 
-export { geo_location, ip_location, geoloc };
+export { geo_location, geoloc };
