@@ -32,22 +32,28 @@ setTimeout(function precision() {
         })
     }
 
-    console.log(city);
-    console.log("GEO: ", geo_location);
-    console.log("IP: ", ip_location);
+    // console.log(city);
+    // console.log("GEO: ", geo_location);
+    // console.log("IP: ", ip_location);
 }, 7000);
-
-
-
 
 /**
  * Removes placeholder text on focus state
  */
 $(inputField).focus(function() {
-    $(this).attr('placeholder', '');
-    $(this).attr('value', 'test');
+    inputField.placeholder = '';
+    if (user_typing.length > 3) {
+        inputField.value = user_typing;
+    } else {
+        inputField.value = city[0];
+        initalSearch(city[0]);
+    }
+
 }).focusout(function() {
-    $(this).attr('placeholder', 'Search Cities, Addresses, Schools, School Districts, Zip Codes');
+    inputField.value = "";
+    inputField.placeholder = 'Search Cities, Addresses, Schools, School Districts, Zip Codes';
+    reset();
+    searching_results.classList.add("d-none");
 });
 
 /**
@@ -86,15 +92,20 @@ function runSearches(e) {
     ];
     removeAllChildNodes(searching_results);
 
-    if (e.which == 8) {
-        icon_section.classList.add("d-none");
+    if (e.which == 8 && inputField.value == city[0]) {
+        reset();
+        inputField.value = "";
     }
-    if (user_typing.length == 0 || found == false || icon_section.classList.contains("d-none") == false) {
+
+    if (user_typing.length < 2 || found == false || icon_section.classList.contains("d-none") == false) {
         searching_results.classList.add("d-none");
     }
+
     tooltip.classList.remove("show");
     if (window.event) {
+
         if (user_typing.length > 0) {
+            reset();
 
             searchCity(user_typing);
             searchSchoolData(user_typing);
@@ -102,23 +113,20 @@ function runSearches(e) {
             console.log(data_found);
 
             for (let i = 1; i < data_found.length; i++) {
-                if (data_found[i].length > 0) {
-                    // User searching
-                    populateSearchResults(data_found[i]);
-                    searching_results.classList.remove("d-none");
-                }
-                found = false;
+                // User searching
+                populateSearchResults(data_found[i]);
+                searching_results.classList.remove("d-none");
+            }
+            if (e.which == 8) {
+                reset();
             }
 
             if (e.which == 13 || e.which == 1) {
                 // User submitted intentionally
-                if (data_found.length > 1) {
 
-                    /**
-                     * If user was searching for a city, displays city details and removes search results
-                     * Currently has a display bug
-                     */
-                    for (let i = 0; i < data_found[1].length; i++) {
+
+                if (data_found.length > 1) {
+                    for (let i = 1; i < data_found[1].length; i++) {
                         if (data_found[1][i].toLowerCase().includes(user_typing)) {
                             // need to pull info from that city for icon_section
                             searching_results.classList.add("d-none");
@@ -131,6 +139,21 @@ function runSearches(e) {
             }
         }
     }
+}
+
+function reset() {
+    icon_section.classList.add("d-none");
+}
+
+function initalSearch(input) {
+    console.log(input);
+
+    removeAllChildNodes(searching_results);
+    searching_results.classList.add("d-none");
+
+    searchCity(input);
+
+    icon_section.classList.remove("d-none");
 }
 
 function searchCity(input) {
