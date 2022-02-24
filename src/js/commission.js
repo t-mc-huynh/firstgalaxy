@@ -24,10 +24,6 @@ salePrice.oninput = function() {
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail(brokeragePercent));
 
     takes_home_elsewhere.innerHTML = "Your commission | " + "$" + numberWithCommas(agent_takes_home);
-
-    commissionSplit = new Array();
-    commissionSplit.push(parseFloat(brokeragePercent));
-    commissionSplit.push(100 - parseFloat(brokeragePercent));
 }
 
 var agentCommission, brokeragePercent;
@@ -48,6 +44,12 @@ function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePer
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail(brokeragePercent));
 
     takes_home_elsewhere.innerHTML = "Your commission | " + "$" + numberWithCommas(agent_takes_home);
+
+    commissionSplit = new Array();
+    commissionSplit.push(parseFloat(brokeragePercent));
+    commissionSplit.push(100 - parseFloat(brokeragePercent));
+
+    updateConfig(second);
 }
 
 function numberWithCommas(x) {
@@ -119,3 +121,15 @@ var second = new Chart(document.getElementById("them_chart"), {
         }
     }
 });
+
+
+function updateConfig(chart) {
+    chart.data = {
+        datasets: [{
+            backgroundColor: ["#aa0000", "#303031"],
+            data: commissionSplit
+        }],
+        labels: ["Your Commission", "Brokerage Commission"]
+    }
+    chart.update();
+}
