@@ -1,3 +1,9 @@
+:root {
+    --red: #aa0000;
+    --blue: #2561c1;
+    --grey: #363636;
+}
+
 #threeD-carousel body {
     margin: 0;
     padding: 0;
@@ -37,13 +43,17 @@
     --rotateX: calc( 1deg * var(--rotateDegrees) * calc(var(--day_idx) - var(--currentDay)));
     transform: rotateX(var(--rotateX)) translateZ(192px) translateX(-50%) scale(var(--scale, 1));
     --hue: calc(var(--rotateDegrees) * var(--day_idx));
-    background-color: hsl(var(--hue), 50%, var(--lightness, 50%));
+    background-color: var(--red);
     width: 90%;
     color: white;
     display: grid;
     grid-template-columns: 2.5rem auto;
     height: 10rem;
     transition: transform 500ms ease, background-color 500ms ease;
+}
+
+#threeD-carousel ul>li:nth-child(2n) {
+    background-color: var(--grey);
 }
 
 #threeD-carousel ul>li.active {
