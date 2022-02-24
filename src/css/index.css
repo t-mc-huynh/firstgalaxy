@@ -99,3 +99,10 @@
 #commissionRange_Label {
     font-size: 1.5rem;
 }
+
+#commissions-section canvas {
+    max-width: 24rem;
+    max-height: 24rem;
+    justify-content: center;
+    margin: auto;
+}
