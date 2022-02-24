@@ -117,7 +117,6 @@
         </div>
     </header>
 
-
     <main>
         <!--Search Section -->
         <section class="main-banner" style="background-image: url(src/images/banner-bg.jpg);">
@@ -212,8 +211,6 @@
 
         <!-- End Prof Rep. Section -->
 
-
-
         <!--Carousel Section-->
         <section class="owl-carousel owl-theme owl-loaded owl-drag pb-0">
             <section class="section-title">
@@ -228,6 +225,50 @@
         </section>
         <!--End of Carousel Section-->
 
+        <!--Commission Section -->
+        <section id="commissions-section" class="container-fluid p-0">
+            <div class="section-title">
+                <span>Want to Earn More?</span>
+                <h2>Want to Earn More?</h2>
+            </div>
+            <div class="d-flex">
+                <div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 pt-2 pb-5 m-0">
+                    <div class="col col-sm-7 col-md-5 col-lg-4 mt-0">
+                        <img src="https://www.ravepubs.com/wp-content/uploads/2021/03/Glossary-Article-Header.png" class="d-flex img-fluid" alt="Bootstrap Themes" width="1200rem" height="900rem" loading="lazy">
+                    </div>
+                    <div class="col-sm-12 col-md-7 col-lg-6">
+                        <div class="d-block justify-content-between">
+                            <div>
+                                <label for="customRange" class="form-label">$1,000,000 | Property sale price</label>
+                                <input id="commissionRange" type="range" class="form-range" min="150000" max="5000000" step="50000" id="customRange">
+                            </div>
+                            <div>
+                                <label class="form-label">Your agent commision %</label>
+                                <select id="agentCommission" class="form-select" aria-label="Default select">
+                                    <option selected value="2">2%</option>
+                                    <option value="3">3%</option>
+                                    <option value="4">4%</option>
+                                    <option value="5">5%</option>
+                                  </select>
+                            </div>
+                            <div>
+                                <label class="form-label">What % does your brokerage take?</label>
+                                <select id="brokeragePercent" class="form-select" aria-label="Default percent">
+                                    <option selected value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                    <option value="25">25%</option>
+                                    <option value="30">30%</option>
+                                    <option value="35">35%</option>
+                                    <option value="40">40%</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Commission Section -->
 
         <button class="btn" onclick="topFunction()" id="backToTop" title="Go to top"><i class="bi-arrow-up-circle-fill"></i></button>
     </main>
@@ -302,6 +343,7 @@
             once: false,
         });
     </script>
+    <script type="module" src="src/js/commission.js"></script>
 </body>
 
 </html>

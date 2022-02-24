@@ -88,3 +88,14 @@
         height: 180px;
     }
 }
+
+
+/* =========== Commission Section ================= */
+
+#commissions-section label {
+    padding-top: 1.5rem;
+}
+
+#commissionRange_Label {
+    font-size: 1.5rem;
+}
