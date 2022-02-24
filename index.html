@@ -233,10 +233,15 @@
             </div>
             <div class="d-flex">
                 <div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 pt-2 pb-5 m-0">
-                    <div class="col col-sm-7 col-md-5 col-lg-4 mt-0">
-                        <img src="https://www.ravepubs.com/wp-content/uploads/2021/03/Glossary-Article-Header.png" class="d-flex img-fluid" alt="Bootstrap Themes" width="1200rem" height="900rem" loading="lazy">
+                    <div class="d-flex justify-content-between col col-sm-7 col-md-5 col-lg-6 mt-0">
+                        <div>
+                            <canvas id="chart1"></canvas>
+                        </div>
+                        <div>
+                            <canvas id="chart2"></canvas>
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-7 col-lg-6">
+                    <div class="col-sm-12 col-md-7 col-lg-4 mt-0">
                         <div class="d-block justify-content-between">
                             <div>
                                 <label for="customRange" class="form-label">$1,000,000 | Property sale price</label>
@@ -343,6 +348,7 @@
             once: false,
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
     <script type="module" src="src/js/commission.js"></script>
 </body>
 
