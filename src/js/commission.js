@@ -1,7 +1,7 @@
 "use strict";
 
 var salePrice = document.getElementById("commissionRange");
-var salePriceLabel = salePrice.previousElementSibling.previousElementSibling;
+var salePriceLabel = salePrice.previousElementSibling;
 var text = salePriceLabel.innerHTML.split(" | ");
 var dollarAmount = text[0];
 var agentSelect = document.getElementById("agentCommission");
@@ -23,7 +23,11 @@ salePrice.oninput = function() {
 
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail(brokeragePercent));
 
-    takes_home_elsewhere.innerHTML = "Your commission | " + "$" + numberWithCommas(agent_takes_home);
+    takes_home_elsewhere.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
+
+    agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail('3%'));
+
+    takes_home_with_us.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
 }
 
 var agentCommission, brokeragePercent;
@@ -43,7 +47,11 @@ function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePer
 
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail(brokeragePercent));
 
-    takes_home_elsewhere.innerHTML = "Your commission | " + "$" + numberWithCommas(agent_takes_home);
+    takes_home_elsewhere.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
+
+    agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail('3%'));
+
+    takes_home_with_us.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
 
     commissionSplit = new Array();
     commissionSplit.push(parseFloat(brokeragePercent));
@@ -71,11 +79,13 @@ new Chart(document.getElementById("FG_chart"), {
     data: {
         datasets: [{
             backgroundColor: ["#aa0000", "#303031"],
-            data: [80, 20]
+            data: [97, 3],
+            borderWidth: 0
         }],
         labels: ["Your Commission", "Brokerage Commission"]
     },
     options: {
+        cutout: '85%',
         title: {
             display: false,
         },
@@ -99,11 +109,13 @@ var second = new Chart(document.getElementById("them_chart"), {
     data: {
         datasets: [{
             backgroundColor: ["#aa0000", "#303031"],
-            data: commissionSplit
+            data: commissionSplit,
+            borderWidth: 0
         }],
         labels: ["Your Commission", "Brokerage Commission"]
     },
     options: {
+        cutout: '85%',
         title: {
             display: false,
         },
@@ -126,11 +138,13 @@ function updateConfig(chart) {
     chart.data = {
         datasets: [{
             backgroundColor: ["#aa0000", "#303031"],
-            data: commissionSplit
+            data: commissionSplit,
+            borderWidth: 0
         }],
         labels: ["Your Commission", "Brokerage Commission"]
     }
     chart.options = {
+        cutout: '85%',
         title: {
             display: false,
         },
