@@ -106,3 +106,11 @@
     justify-content: center;
     margin: auto;
 }
+
+.chart-legend .dark {
+    background-color: #303031;
+}
+
+.chart-legend .red {
+    background-color: #aa0000;
+}
