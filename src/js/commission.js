@@ -108,8 +108,7 @@ var second = new Chart(document.getElementById("them_chart"), {
             display: false,
         },
         animation: {
-            duration: 1000,
-            easing: 'easeInOutCubic'
+            duration: 0
         },
         plugins: {
             legend: {
@@ -130,6 +129,22 @@ function updateConfig(chart) {
             data: commissionSplit
         }],
         labels: ["Your Commission", "Brokerage Commission"]
+    }
+    chart.options = {
+        title: {
+            display: false,
+        },
+        animation: {
+            duration: 0,
+        },
+        plugins: {
+            legend: {
+                display: false,
+            },
+            tooltip: {
+                enabled: false,
+            },
+        }
     }
     chart.update();
 }
