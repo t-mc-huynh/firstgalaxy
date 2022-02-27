@@ -101,8 +101,8 @@
 }
 
 #commissions-section canvas {
-    max-width: 24rem;
-    max-height: 24rem;
+    max-width: 20em;
+    max-height: 20em;
     justify-content: center;
     margin: auto;
 }
@@ -110,9 +110,8 @@
 #withUs,
 #withThem {
     text-align: center;
-    position: absolute;
-    top: 128px;
-    left: 108px;
+    position: relative;
+    top: -180px;
 }
 
 .chart-legend {
@@ -121,8 +120,10 @@
 
 .chart-legend .dark {
     background-color: #303031;
+    margin: 2rem;
 }
 
 .chart-legend .red {
     background-color: #aa0000;
+    margin: 0 2rem;
 }
