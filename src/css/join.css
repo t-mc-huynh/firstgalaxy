@@ -9,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
+
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -28,6 +29,7 @@
 /* holidays */
 
 #threeD-carousel ul {
+    min-width: 19rem;
     list-style: none;
     width: 90%;
     height: 90%;
@@ -82,7 +84,7 @@
 #threeD-carousel .controls {
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: -10%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
