@@ -23,11 +23,11 @@ salePrice.oninput = function() {
 
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail(brokeragePercent));
 
-    takes_home_elsewhere.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
+    takes_home_elsewhere.innerHTML = "Your commission<br>elsewhere<br>" + "$" + numberWithCommas(agent_takes_home);
 
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail('3%'));
 
-    takes_home_with_us.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
+    takes_home_with_us.innerHTML = "Your commission<br>at First Galaxy<br>" + "$" + numberWithCommas(agent_takes_home);
 }
 
 var agentCommission, brokeragePercent;
@@ -47,11 +47,11 @@ function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePer
 
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail(brokeragePercent));
 
-    takes_home_elsewhere.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
+    takes_home_elsewhere.innerHTML = "Your commission<br>elsewhere<br>" + "$" + numberWithCommas(agent_takes_home);
 
     agent_takes_home = commission_from_sale - (commission_from_sale * percentToDecimail('3%'));
 
-    takes_home_with_us.innerHTML = "Your commission<br>" + "$" + numberWithCommas(agent_takes_home);
+    takes_home_with_us.innerHTML = "Your commission<br>at First Galaxy<br>" + "$" + numberWithCommas(agent_takes_home);
 
     commissionSplit = new Array();
     commissionSplit.push(parseFloat(brokeragePercent));
