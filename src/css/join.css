@@ -6,7 +6,9 @@
 }
 
 .features-inner {
-    padding: 2rem;
+    padding: 3rem;
+    margin: 0;
+    width: 100%;
     align-items: center;
 }
 
@@ -34,7 +36,7 @@
 @media (min-width: 900px) {
     .features-inner {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 1000px;
+        max-width: 1450px;
         margin: 0 auto;
     }
 }
