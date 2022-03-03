@@ -1,11 +1,8 @@
 /* =========== Features Banner ================= */
 
 #features {
-    background: linear-gradient(rgba(204, 208, 212, 0.7), rgba(52, 74, 87, 0.5)), url(https://source.unsplash.com/random);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 3rem 0;
+    background: linear-gradient(rgba(204, 208, 212, 0.7), rgba(41, 72, 90, 0.5));
+    padding: 1rem 0;
 }
 
 .features-inner {
