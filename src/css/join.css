@@ -125,19 +125,46 @@
 
 #imageContainer {
     position: relative;
-    height: 40rem;
+    height: 42rem;
+}
+
+#imageContainer img {
     width: 100%;
-    margin: 0;
+    height: 100%;
+    object-fit: cover;
 }
 
 
 /* =========== Join section ================= */
 
-#joinTeam {
-    width: 30rem;
+#joinTeam,
+#ourTeam {
     position: absolute;
-    top: 80rem;
-    right: 4rem;
     z-index: 5;
-    background: rgb(255, 255, 255, 0.7)
+    width: 30rem;
+    margin-top: -39rem;
+    margin-left: 3rem;
+    padding: 2rem;
+    background: rgb(255, 255, 255);
+}
+
+#ourTeam {
+    margin-top: -16rem;
+}
+
+@media (min-width: 1080px) {
+    #joinTeam,
+    #ourTeam {
+        background: rgb(255, 255, 255, 0.85)
+    }
+    #joinTeam {
+        width: 32rem;
+        margin-top: -39rem;
+        margin-left: 3rem;
+    }
+    #ourTeam {
+        width: 25rem;
+        margin-top: -14rem;
+        margin-left: calc(100% - 28rem);
+    }
 }
