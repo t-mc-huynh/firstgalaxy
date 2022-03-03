@@ -25,6 +25,10 @@
     background: rgb(255, 255, 255);
 }
 
+#joinTeam .section-title {
+    padding: 0rem 0 1.75rem 0;
+}
+
 #ourTeam {
     margin-top: -16rem;
 }
@@ -41,7 +45,7 @@
     }
     #ourTeam {
         width: 25rem;
-        margin-top: -14rem;
+        margin-top: -18rem;
         margin-left: calc(100% - 28rem);
     }
 }
