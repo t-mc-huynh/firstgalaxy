@@ -101,14 +101,17 @@
 
 .feature img {
     width: 100%;
+
+    min-height: 20rem;
+    max-width: unset;
+    align-self:stretch;
     height: 100%;
-    display: block;
+    object-fit: cover;
 }
 
 .feature {
     color: rgb(0, 0, 0);
-    height: 37rem;
-    align-items: stretch;
+    align-items: center;
     align-content: stretch;
     padding: 0;
     margin: 0;
@@ -117,18 +120,15 @@
 
 .feature ul {
     text-align: right;
-    margin-top: 1rem;
-    max-width: 65%;
-    position: absolute;
-    right: 21px;
+    margin-top: 2rem;
     direction: rtl;
 }
 
-@media (min-width: 950px) {
-    .feature {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-    }
+.feature h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: var(--fg-dred);
+    padding-bottom: 1rem;
 }
 
 @media (min-width: 950px) {
@@ -137,90 +137,6 @@
         clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
     }
 }
-
-.feature .section-title {
-    text-align: left;
-    position: absolute;
-    max-width: 50%;
-    left: 803px;
-    padding: 1.5rem;
-}
-
-@media (min-width: 950px) {
-    .section-title {
-        padding: 0 1rem 0 0;
-        margin-left: -3vw;
-    }
-}
-
-@media (min-width: 1300px) {
-    .section-title {
-        padding: 0 3rem 0 0;
-    }
-}
-
-.section-title h2 {
-    margin-top: 0;
-}
-
-@media (min-width: 950px) {
-    .section-title h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 1250px) {
-    .section-title h2 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (min-width: 2000px) {
-    .section-title h2 {
-        font-size: 2.5vw;
-    }
-}
-
-.section-title p {
-    line-height: 1.25;
-}
-
-@media (min-width: 1500px) {
-    .section-title p {
-        line-height: 1.5;
-        font-size: 1.2rem;
-    }
-}
-
-@media (min-width: 2000px) {
-    .section-title p {
-        font-size: 1.2vw;
-    }
-}
-
-.button button {
-    background-color: #289469;
-    border: 0;
-    padding: 1rem 2rem;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-    border-radius: 3px;
-    margin: 1rem 0 0;
-    transition: background-color 200ms ease;
-}
-
-.button button:hover {
-    cursor: pointer;
-    background-color: rgba(40, 148, 105, 0.8);
-}
-
-@media (min-width: 2000px) {
-    .button button {
-        font-size: 1.2vw;
-    }
-}
-
 
 /* =========== Image section ================= */
 
