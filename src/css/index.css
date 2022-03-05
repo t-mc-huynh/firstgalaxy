@@ -3,6 +3,7 @@
     @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
     .carousel {
         width: 100%;
+        display: inline-block;
     }
     
     .property {
@@ -29,6 +30,7 @@
     .property .profile-image {
         display: inline-flex;
         width: 80%;
+        height: 10rem;
         z-index: 1;
         position: relative;
         padding: 10px;
@@ -39,7 +41,7 @@
     
     .property .profile-image img {
         max-width: 100%;
-        /* vertical-align: top; */
+        vertical-align: top;
     }
     
     .property figcaption {
@@ -95,6 +97,7 @@
         -webkit-transition: all 0.35s ease;
         transition: all 0.35s ease;
     }
+    
     /* =========== Prof. Rep Section ================= */
     /* Column Grids End */
     
