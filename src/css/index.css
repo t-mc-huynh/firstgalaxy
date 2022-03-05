@@ -9,9 +9,9 @@
         position: relative;
         margin: 25px;
         min-width: 230px;
-        max-width: 315px;
+        max-width: 300px;
         width: 30%;
-        display: block;
+        display: inline-block;
         color: #000001;
         flex-wrap: wrap;
         text-align: center;
