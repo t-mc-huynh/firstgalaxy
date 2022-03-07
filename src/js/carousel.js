@@ -60,7 +60,6 @@ function imageObject() {
 
 function success(position) {
     var crd = position.coords;
-    var ptv_key = TOKEN.PTV_DEV;
     // console.log(position);
 
     // console.log('Your current position is:');
@@ -210,4 +209,4 @@ function loadCarousel() {
     });
 }
 
-export { geo_location, geoloc };
+export { geo_location, geoloc, nearbyCities };
