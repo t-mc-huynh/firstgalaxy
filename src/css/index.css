@@ -100,8 +100,8 @@
 }
 
 #commissions-section canvas {
-  max-width: 20em;
-  max-height: 20em;
+  max-width: 20rem;
+  max-height: 20rem;
   justify-content: center;
   margin: auto;
 }
