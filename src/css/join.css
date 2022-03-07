@@ -97,6 +97,44 @@
 }
 
 
+/* =========== Commission section ================= */
+#commissions-section label {
+    padding-top: 1.5rem;
+  }
+  
+  #commissionRange_Label {
+    font-size: 1.5rem;
+  }
+  
+  #commissions-section canvas {
+    max-width: 20rem;
+    max-height: 20rem;
+    justify-content: center;
+    margin: auto;
+  }
+  
+  #withUs,
+  #withThem {
+    text-align: left;
+    position: relative;
+    /* top: -180px; */
+    left: 175px;
+  }
+  
+  .chart-legend {
+    font-size: 1.5rem;
+  }
+  
+  .chart-legend .dark {
+    background-color: #303031;
+    margin: 2rem;
+  }
+  
+  .chart-legend .red {
+    background-color: #aa0000;
+    margin: 0 2rem;
+  }
+
 /* =========== Reasons section ================= */
 
 .feature img {
