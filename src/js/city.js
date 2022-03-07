@@ -1,1 +1,0 @@
-import { nearbyCities } from "./carousel.js"
