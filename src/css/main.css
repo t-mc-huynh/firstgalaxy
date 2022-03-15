@@ -4,7 +4,6 @@
 @import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
-@import url("https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css");
 :root {
     scroll-behavior: smooth;
     --fg-dred: #aa0000;
@@ -153,9 +152,21 @@ fg-black {
     margin-bottom: 0;
 }
 
-.navbar {
+.navbar,
+.navbar .container-fluid,
+.navbar-nav {
     padding-bottom: 0;
     padding-top: 0;
+    height: 6rem;
+
+}
+
+.navbar img {
+    height: 5rem;
+}
+
+.navbar img {
+    height: 5rem;
 }
 
 .navbar a,
@@ -167,16 +178,28 @@ fg-black {
     padding: 15px;
 }
 
-.navbar li {
-    padding-bottom: 2rem;
+.navbar ul ul {
+    padding: 0;
 }
 
-/* .navbar .megamenu {
-    padding: 1rem;
-} */
+.navbar ul ul li {
+    padding: 0;
+    padding-bottom: 0.5rem;
+}
+
+.navbar .nav-item {
+    padding-bottom: 4.5rem;
+}
 
 nav .navbar-brand {
     max-height: 4.5rem;
+}
+
+.navbar .megamenu {
+    padding: 1rem;
+    border: unset;
+    border-radius: unset;
+    border-top: 1px solid #1a1a1a;
 }
 
 .megamenu .title {
@@ -184,22 +207,18 @@ nav .navbar-brand {
 }
 
 @media all and (min-width: 992px) {
-
     .navbar .has-megamenu {
         position: static !important;
     }
-
     .navbar .megamenu {
         left: 0;
         right: 0;
         width: 100%;
         margin-top: 0;
     }
-
 }
 
 @media(max-width: 991px) {
-
     .navbar.fixed-top .navbar-collapse,
     .navbar.sticky-top .navbar-collapse {
         overflow-y: auto;
