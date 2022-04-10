@@ -20,87 +20,54 @@
 <body>
 
     <header id="navigation">
-        <nav class="navbar navbar-expand-lg pb-0">
-            <div class="container-fluid row">
+        <nav class="navbar navbar-expand-lg bg-white">
+			<div class="container-fluid">
+				<img src="src/images/logo.png">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="main_nav">
+					<ul class="navbar-nav">
+						<li class="nav-item hvr-underline-from-center active"> <a class="nav-link" href="#">Home </a> </li>
+						<li class="nav-item hvr-underline-from-center"><a class="nav-link" href="/firstgalaxy/about.html"> About </a></li>
+						<li class="nav-item hvr-underline-from-center"><a class="nav-link" href="/firstgalaxy/agents.html">Agents</a></li>
+						<li class="nav-item hvr-underline-from-center dropdown has-megamenu">
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Resources </a>
+							<div class="dropdown-menu megamenu" role="menu">
+								<div class="row g-3">
+									<div class="col-lg-3 col-6">
+										<div class="col-megamenu">
+											<h6 class="title">Buying/Selling</h6>
+											<ul class="list-unstyled">
+												<li><a href="/firstgalaxy/calc..html">Real Estate Calculators</a></li>
+												<li><a href="/firstgalaxy/glossary.html">Real Estate Glossary</a></li>
+												<li><a href="/firstgalaxy/statistics.html">Statistics</a></li>
+											</ul>
+										</div> <!-- col-megamenu.// -->
+									</div><!-- end col-3 -->
+									<div class="col-lg-3 col-6">
+										<div class="col-megamenu">
+											<h6 class="title">Joining The Team</h6>
+											<ul class="list-unstyled">
+												<li><a href="#">Steps to Your License</a></li>
+												<li><a href="/firstgalaxy/join.html">Why First Galaxy Inc.?</a></li>
+												<li><a href="/firstgalaxy/getlicense.html">Frequently Asked Questions</a></li>
+											</ul>
+										</div> <!-- col-megamenu.// -->
+									</div><!-- end col-3 -->
+								</div><!-- end row -->
+							</div> <!-- dropdown-mega-menu.// -->
+						</li>
+					</ul>
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item hvr-underline-from-center"><a class="nav-link" href="#"> Contact Us </a></li>
+					</ul>
+				</div> <!-- navbar-collapse.// -->
+			</div> <!-- container-fluid.// -->
+		</nav>
 
-                <div class="container-fluid justify-content-between mb-2 col-md-3 ps-md-5 col-sm-12">
-                    <a href="/firstgalaxy/" class="navbar-brand w-25">
-                        <img src="src/images/logo-transparent.png" alt="FirstGalaxy" />
-                    </a>
 
-                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="offcanvas" data-bs-target="#collapsibleNavbar">
-                        <i class="bi bi-list navbar-toggler-icon pt-2"></i>
-                    </button>
-                </div>
-
-                <div class="container col-md-9 w-75">
-                    <div class="collapse navbar-collapse row pb-2">
-                        <ul class="navbar-nav justify-content-between" autoClose="true">
-                            <li class="nav-item col">
-                                <a class="nav-link" href="/firstgalaxy/about.html">About</a>
-                            </li>
-                            <li class="nav-item col">
-                                <a class="nav-link" href="/firstgalaxy/buy.html">Buy</a>
-                            </li>
-                            <li class="nav-item col">
-                                <a class="nav-link" href="/firstgalaxy/sell.html">Sell</a>
-                            </li>
-                            <li class="nav-item col">
-                                <a class="nav-link" href="/firstgalaxy/resources.html">Resources</a>
-                            </li>
-                            <li class="nav-item col">
-                                <a class="nav-link" href="/firstgalaxy/agents.html">Agents</a>
-                            </li>
-                            <li class="nav-item col">
-                                <a class="nav-link" href="/firstgalaxy/join.html">Join Our Team</a>
-                            </li>
-                            <li class="nav-item col">
-                                <a class="nav-link" href="tel:7149435648"><i class="me-2 fas fa-phone-alt"></i>714 - 943 - 5648</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="collapsibleNavbar" aria-labelledby="offcanvasWithBackdropLabel">
-            <div class="offcanvas-header p-0">
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
-                <a href="/firstgalaxy/" class="navbar-brand text-center">
-                    <img src="src/images/logo-transparent.png" alt="FirstGalaxy" />
-                </a>
-            </div>
-            <hr>
-            <div class="offcanvas-body">
-                <div class="row ps-4 pb-2">
-                    <ul class="navbar-nav me-4 float-lg-end justify-content-between" autoClose="true">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/firstgalaxy/about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/firstgalaxy/buy.html">Buy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/firstgalaxy/sell.html">Sell</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/firstgalaxy/resources.html">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/firstgalaxy/agents.html">Agents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/firstgalaxy/join.html">Join Our Team</a>
-                        </li>
-                        <li class="nav-item col">
-                            <a class="nav-link" href="tel:7149435648"><i class="me-2 fas fa-phone-alt"></i>714 - 943 - 5648</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
     </header>
 
 

@@ -35,9 +35,9 @@ p {
     margin-bottom: 1rem;
 }
 
-img {
+/* img {
     max-width: 100%;
-}
+} */
 
 .fg-red,
 fg-red {
@@ -147,8 +147,44 @@ fg-black {
 }
 
 /* ======= Navigation bar =============*/
+
+.navbar .megamenu {
+    padding: 1rem;
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+    .navbar .has-megamenu {
+        position: static !important;
+    }
+
+    .navbar .megamenu {
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 0;
+    }
+
+}
+
+/* ============ desktop view .end// ============ */
+
+
+/* ============ mobile view ============ */
+@media(max-width: 991px) {
+
+    .navbar.fixed-top .navbar-collapse,
+    .navbar.sticky-top .navbar-collapse {
+        overflow-y: auto;
+        max-height: 90vh;
+        margin-top: 10px;
+    }
+}
+
+/* ============ mobile view .end// ============ */
+
 #navigation {
-    height: 6rem;
     margin-bottom: 0;
 }
 
@@ -157,42 +193,57 @@ fg-black {
 .navbar-nav {
     padding-bottom: 0;
     padding-top: 0;
-    height: 6rem;
-
 }
 
-.navbar img {
-    height: 5rem;
+.navbar>.container-fluid {
+    justify-content: stretch;
+    width: 100vw;
 }
 
-.navbar img {
-    height: 5rem;
-}
-
-.navbar a,
-.navbar ul,
-.navbar li {
+#navigation .nav-link,
+#navigation .list-unstyled a {
     color: black;
     text-decoration: none;
     font-size: 1.15rem;
     padding: 15px;
 }
 
-.navbar ul ul {
-    padding: 0;
+/* #navigation .nav-brand {
+    width:auto;
+    --logo-width: width;
+} */
+
+#navigation .navbar-toggler {
+    position: absolute;
+    right: 1rem;
+    top: 2.25rem;
 }
 
-.navbar ul ul li {
-    padding: 0;
-    padding-bottom: 0.5rem;
+#navigation .navbar-toggler:focus {
+    box-shadow: none;
 }
 
-.navbar .nav-item {
-    padding-bottom: 4.5rem;
+#main_nav {
+    position: relative;
+    display: flex;
+    justify-content: stretch;
+    width: 300%;
 }
 
-nav .navbar-brand {
-    max-height: 4.5rem;
+#main_nav .dropdown-menu {
+    position: absolute;
+    left: -19rem;
+    top: 5rem;
+    width: 200%;
+}
+
+#main_nav .col-megamenu li {
+    width: 150%;
+}
+
+#mini-nav {
+    display: flex;
+    width: 100vw;
 }
 
 .navbar .megamenu {
