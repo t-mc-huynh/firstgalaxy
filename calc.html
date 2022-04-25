@@ -19,17 +19,20 @@
     <header id="navigation">
         <nav class="navbar navbar-expand-lg bg-white">
 			<div class="container-fluid">
-				<img src="src/images/logo.png">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+                <div class="mini-nav">
+                    <img class="nav-brand" src="src/images/logo.png">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-controls="main_nav"
+                        aria-expanded="false" aria-label=" navigation">
+                        <i class="bi bi-list navbar-toggler-icon "></i>
+                    </button>
+                </div>
+				
 				<div class="collapse navbar-collapse" id="main_nav">
-					<ul class="navbar-nav">
-						<li class="nav-item hvr-underline-from-center active"> <a class="nav-link" href="#">Home </a> </li>
-						<li class="nav-item hvr-underline-from-center"><a class="nav-link" href="/firstgalaxy/about.html"> About </a></li>
-						<li class="nav-item hvr-underline-from-center"><a class="nav-link" href="/firstgalaxy/agents.html">Agents</a></li>
-						<li class="nav-item hvr-underline-from-center dropdown has-megamenu">
+					<ul id="nav-left" class="navbar-nav">
+						<li class="nav-item  active"> <a class="nav-link" href="#">Home </a> </li>
+						<li class="nav-item "><a class="nav-link" href="/firstgalaxy/about.html"> About </a></li>
+						<li class="nav-item "><a class="nav-link" href="/firstgalaxy/agents.html">Agents</a></li>
+						<li class="nav-item  dropdown has-megamenu">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Resources </a>
 							<div class="dropdown-menu megamenu" role="menu">
 								<div class="row g-3">
@@ -39,7 +42,6 @@
 											<ul class="list-unstyled">
 												<li><a href="/firstgalaxy/calc..html">Real Estate Calculators</a></li>
 												<li><a href="/firstgalaxy/glossary.html">Real Estate Glossary</a></li>
-												<li><a href="/firstgalaxy/statistics.html">Statistics</a></li>
 											</ul>
 										</div> <!-- col-megamenu.// -->
 									</div><!-- end col-3 -->
@@ -57,8 +59,8 @@
 							</div> <!-- dropdown-mega-menu.// -->
 						</li>
 					</ul>
-					<ul class="navbar-nav ms-auto">
-						<li class="nav-item hvr-underline-from-center"><a class="nav-link" href="#"> Contact Us </a></li>
+					<ul id="nav-right" class="navbar-nav ms-auto">
+						<li class="nav-item "><a class="nav-link" href="#"> Contact Us </a></li>
 					</ul>
 				</div> <!-- navbar-collapse.// -->
 			</div> <!-- container-fluid.// -->
@@ -338,20 +340,16 @@
                 <div class="col ">
                     <h6>Begin New</h6>
                     <ul class="footer-links ">
-                        <li><a href="/firstgalaxy/buy.html ">Buy a Home</a></li>
-                        <li><a href="/firstgalaxy/sell.html ">Sell a House</a></li>
+                        <li><a href="/firstgalaxy/about.html ">About Our Company</a></li>
                         <li><a href="/firstgalaxy/agents.html ">Find Your Agent</a></li>
-                        <li><a href="/firstgalaxy/ ">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="col ">
                     <h6>Information</h6>
                     <ul class="footer-links ">
-                        <li><a href="/firstgalaxy/about.html ">About Our Company</a></li>
                         <li><a href="/firstgalaxy/resources.html ">FREE Resources</a></li>
                         <li><a href="/firstgalaxy/glossary.html">Real Estate Glossary</a></li>
-                        <li><a href="/firstgalaxy/statistics.html">Available Statistics</a></li>
                     </ul>
                 </div>
 

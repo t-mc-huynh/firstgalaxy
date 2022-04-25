@@ -19,8 +19,6 @@
   font-size: 1.2rem;
 }
 
-
-
 .about .container {
     margin: auto;
     padding: 0 1rem;
@@ -124,7 +122,7 @@
     }
     .about img {
         height: 700px;
-        width: 750px;
+        width: 460px;
     }
     .about .text-end {
         text-align: end !important;
