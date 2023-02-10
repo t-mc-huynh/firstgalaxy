@@ -17,6 +17,7 @@ $(function() {
     oReq.open("GET", url, true);
     oReq.responseType = "arraybuffer";
 
+    /* A function that is called when the XMLHttpRequest is loaded. */
     oReq.onload = function() {
         var arraybuffer = oReq.response;
 
@@ -25,6 +26,8 @@ $(function() {
         var workbook = XLSX.read(data, { type: 'array' });
         //result.push(workbook.SheetNames);
         let i = 0;
+        /* Iterating through the sheets in the workbook and pushing the sheet name and the sheet data
+        into the result array. */
         workbook.SheetNames.forEach(function(SheetNames) {
             var roa = XLSX.utils.sheet_to_json(workbook.Sheets[SheetNames], { header: 1 });
             // result.push(roa);
@@ -33,6 +36,7 @@ $(function() {
         });
 
         //console.log(result);
+        /* Pushing the data from the excel file into the arrays. */
         for (let h = 0; h < result[0][1].length; h++) {
             school.push(result[0][1][h]);
         }
@@ -48,10 +52,5 @@ $(function() {
     }
     oReq.send();
 });
-
-//console.log(school);
-//console.log(glossary);
-//console.log(agents);
-//console.log(cities);
 
 export { result, school, glossary, cities, agents };

@@ -1,7 +1,11 @@
 "use strict";
 
 
-// Accordian functionality =====================================================================
+/* This is a jQuery function that is being called on the accordian li elements. It is adding a click
+event listener to each li element. When the li element is clicked, it checks to see if the ul
+element has the class 'open'. If it does, it removes the class 'open' and removes the class 'closed'
+from the h3 and h3 span elements. If the ul element does not have the class 'open', it adds the
+class 'open' to the ul element and adds the class 'closed' to the h3 and h3 span elements. */
 $(function() {
     $('.accordian li').on('click', function() {
         if ($(this).find('ul').hasClass('open')) {
@@ -23,6 +27,10 @@ window.onload = spanTitle();
 
 $(window).resize(spanTitle);
 
+/**
+ * The function is called when the window is resized. It checks the width of the window and changes the
+ * text of the span element to match the width of the window
+ */
 function spanTitle() {
     // console.log("window width ", $(window).width());
     var span = document.getElementById("timeline-span");
@@ -46,6 +54,25 @@ function spanTitle() {
   
     $(".info").hide();
   
+    /* This is a jQuery function that is being called on the info-card div elements. It is adding a
+    click
+    event listener to each div element. When the div element is clicked, it checks to see if the
+    open
+    variable is true. If it is, it removes the class 'full' from the siblings of the div element,
+    adds the
+    class 'full' to the div element, removes the class 'side' from the div element, adds the class
+    'side'
+    to the siblings of the div element, hides the fa element, adds the class 'exit' to the div
+    element,
+    adds the class 'exit' to the div element, adds the class 'exit' to the div element, adds the
+    class 'exit'
+    to the div element, shows the info element, and sets the open variable to false. If the open
+    variable
+    is false, it removes the class 'full' from the siblings of the div element, removes the class
+    'full'
+    from the div element, removes the class 'side' from the div element, shows the fa element,
+    removes the
+    class 'side' from the siblings of the div element, removes the class */
     $(function() {
       var open;
       open = true;

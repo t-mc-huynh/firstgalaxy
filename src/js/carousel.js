@@ -21,6 +21,7 @@ window.onload = function() {
     navigator.geolocation.getCurrentPosition(success, showError, options);
 
 
+    /* Checking if the user has granted permission to use their location. */
     navigator.permissions.query({ name: 'geolocation' }).then(function geoState(result) {
         if (result.state == 'granted') {
             geoloc = true;
@@ -35,6 +36,9 @@ window.onload = function() {
 
 $(window).resize(spanTitle);
 
+/**
+ * If the window width is less than 583px, change the text of the span element to "Communities"
+ */
 function spanTitle() {
     if ($(window).width() < 583) {
         var span = document.querySelector(".owl-carousel .section-title span");
@@ -42,7 +46,11 @@ function spanTitle() {
     }
 }
 
+/**
+ * It makes an AJAX call to the Pantry API and stores the response in a variable called cityImages
+ */
 function imageObject() {
+    /* A variable that is used to make an AJAX call to the Pantry API. */
     var settings = {
         "url": "https://getpantry.cloud/apiv1/pantry/18c13523-e895-4e43-977d-e30fde678a6b/basket/cityImages",
         "method": "GET",
@@ -58,19 +66,19 @@ function imageObject() {
     })
 }
 
+/**
+ * The function gets the user's current location, and then makes an AJAX call to the geocode.xyz API to
+ * get the user's city, state, country, and zip code.
+ * @param position - The position object returned by the geolocation API.
+ */
 function success(position) {
     var crd = position.coords;
-    // console.log(position);
-
-    // console.log('Your current position is:');
-    // console.log(`Latitude : ${crd.latitude}`);
-    // console.log(`Longitude: ${crd.longitude}`);
-    // console.log(`More or less ${crd.accuracy} meters.`);
 
     var coord = (`${crd.latitude}, ${crd.longitude}`);
 
     geo_location.push(coord);
 
+    /* Making an AJAX call to the geocode.xyz API. */
     fetch("https://geocode.xyz/" + `${crd.latitude}` + "," + `${crd.longitude}` + "?geoit=json")
         .then(response => response.json())
         .then(result => {
@@ -90,6 +98,10 @@ function showError(error) {
     defaultCities();
 }
 
+/**
+ * It takes the latitude and longitude of the user's location, and uses the geonames API to find nearby
+ * cities
+ */
 function defaultCities() {
     let radius = 25;
     let lat1 = 33.7982368;
@@ -100,6 +112,7 @@ function defaultCities() {
 
     let final_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
 
+    /* Making an AJAX call to the geonames API. */
     $.getJSON(final_url, function(data) {
 
         for (let i = 0; i < data.geonames.length; i++) {
@@ -113,6 +126,11 @@ function defaultCities() {
     })
 }
 
+/**
+ * It takes the user's current location, and uses it to make an AJAX call to the geonames API to get a
+ * list of nearby cities.
+ * @param position - the position object returned by the geolocation API
+ */
 function getNearbyCities(position) {
     // radius in KM
     let radius = 25;
@@ -124,6 +142,7 @@ function getNearbyCities(position) {
 
     let final_url = "https://secure.geonames.org/findNearbyPlaceNameJSON?lat=" + lat1 + "&lng=" + lon1 + "&style=" + responseStyle + "&cities=" + citySize + "&radius=" + radius + "&maxRows=" + maxRows + "&username=" + "tmch";
 
+    /* Making an AJAX call to the geonames API. */
     $.getJSON(final_url, function(data) {
 
         for (let i = 0; i < data.geonames.length; i++) {
@@ -137,6 +156,11 @@ function getNearbyCities(position) {
     })
 }
 
+/**
+ * It loops through the nearbyCities array, and for each city, it loops through the cityImages object,
+ * and if the city name matches the key in the object, it sets the third element in the nearbyCities
+ * array to the value of the key
+ */
 function getImages() {
     for (let i = 1; i < nearbyCities.length; i++) {
         for (const [key, value] of Object.entries(cityImages)) {
@@ -154,11 +178,6 @@ function createAndLoadCarousel() {
     }
 
     loadCarousel();
-
-    // console.log(geo_location);
-    // for (let i = 0; i < geo_location.length; i++) {
-    //     console.log(geo_location[i]);
-    // }
 }
 
 function createCarousel(data) {

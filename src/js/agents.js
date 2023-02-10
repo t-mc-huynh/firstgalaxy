@@ -4,9 +4,8 @@ import { agents } from './data.js';
 
 var filterOptions = document.getElementById("myDropdown");
 
-/**
- * Shows filter selection
- */
+/* This is an event listener that listens for a click on the filter button. When the button is clicked,
+the filter options are shown. */
 var filterBtn = document.getElementById("filterBtn");
 filterBtn.addEventListener("click", function() {
     filterOptions.classList.toggle("show");
@@ -30,7 +29,8 @@ fnameFilter.addEventListener("click", function() {
         // by default, the loop only executes once
         switching = false;
         approve = false;
-        // all cards get looked through
+        /* This is a for loop that checks if the first letter of the first name holds a greater value.
+        If so, it is earlier on in the alphabet and the switch gets approved. */
         for (i = 0; i < (cards.length - 1); i++) {
 
             console.log(cards);
@@ -42,6 +42,9 @@ fnameFilter.addEventListener("click", function() {
             }
         }
 
+        /* This is a conditional statement that checks if the cards have been approved to be switched.
+        If so, the cards get switched and all the cards get checked again. If not, the cards did not
+        move and all changes have finished. */
         if (approve) {
             // The cards get switched and all the cards get checked again
             cards[i].parentElement.insertBefore(cards[i + 1], cards[i]);
@@ -75,6 +78,8 @@ lnameFilter.addEventListener("click", function() {
         console.log(lastName);
         switching = false;
 
+        /* This is a for loop that checks if the first letter of the first name holds a greater value.
+                If so, it is earlier on in the alphabet and the switch gets approved. */
         for (i = 0; i < (cards.length - 1); i++) {
             approve = false;
 
@@ -84,6 +89,10 @@ lnameFilter.addEventListener("click", function() {
             }
         }
 
+        /* This is a conditional statement that checks if the cards have been approved to be switched.
+                If so, the cards get switched and all the cards get checked again. If not, the cards
+        did not
+                move and all changes have finished. */
         if (approve) {
             cards[i].parentElement.insertBefore(cards[i + 1], cards[i]);
             switching = true;
@@ -101,9 +110,8 @@ function toggleFilterMenu() {
     filterOptions.classList.toggle("show");
 }
 
-/**
- * Hides filter options when clicked outside
- */
+/* This is an event listener that listens for a click on the filter button. When the button is clicked,
+the filter options are shown. */
 document.addEventListener("click", (evt) => {
     let userClick = evt.target;
 
@@ -119,9 +127,7 @@ document.addEventListener("click", (evt) => {
     }
 });
 
-/**
- * Dynamically create agent cards
- */
+/* This is a function that creates the agent cards. It is set to run after 500 milliseconds. */
 setTimeout(function() {
     var agent_display = document.getElementById("agent-container");
     for (let i = 1; i < agents.length; i++) {

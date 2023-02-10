@@ -2,6 +2,7 @@ import { glossary } from "./data.js";
 
 "use strict";
 
+/* Waiting for the page to load before running the code. */
 setTimeout(function() {
     var glossary_container = document.getElementById("parent-container");
     var term_container = glossary_container.children;
@@ -19,6 +20,12 @@ setTimeout(function() {
     getLinks();
 }, 1000);
 
+/**
+ * It creates a list item, adds a class to it, creates a link, adds two attributes to the link, and
+ * then appends the link to the list item
+ * @param term - The term to be displayed in the list
+ * @returns A list element with a link inside of it.
+ */
 function createList(term) {
     var list = document.createElement("li");
     list.classList.add("col");
@@ -34,6 +41,10 @@ function createList(term) {
     return list;
 }
 
+/**
+ * The function `getLinks()` is called when the page loads. It finds all the links in the glossary and
+ * adds an event listener to each one. When a link is clicked, the function `infoModal()` is called.
+ */
 function getLinks() {
     var hyperlink = document.querySelectorAll(".glossary-term-container li a");
     hyperlink.forEach(function(clicked) {
@@ -41,6 +52,11 @@ function getLinks() {
     });
 }
 
+/**
+ * It takes the term that was clicked on, and then searches the glossary for that term. If it finds it,
+ * it sets the modal label and body to the term and definition, respectively
+ * @param clicked - the element that was clicked on
+ */
 function infoModal(clicked) {
     var modal_label = document.getElementById("DEFINITION_MODAL_LABEL");
     var modal_body = document.getElementById("DEFINITION_MODAL_BODY");

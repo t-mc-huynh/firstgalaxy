@@ -1,4 +1,16 @@
 
+/* This is a jQuery function that is executed when the document is ready. It is a function that is
+executed when the document is ready. It is a function that is executed when the document is ready.
+It is a function that is executed when the document is ready. It is a function that is executed when
+the document is ready. It is a function that is executed when the document is ready. It is a
+function that is executed when the document is ready. It is a function that is executed when the
+document is ready. It is a function that is executed when the document is ready. It is a function
+that is executed when the document is ready. It is a function that is executed when the document is
+ready. It is a function that is executed when the document is ready. It is a function that is
+executed when the document is ready. It is a function that is executed when the document is ready.
+It is a function that is executed when the document is ready. It is a function that is executed when
+the document is ready. It is a function that is executed when the document is ready. It is a
+function that is executed when the document is ready. It is a function that */
 $(document).ready(function(){
     var mouseX, mouseY;
     var ww = $( window ).width();

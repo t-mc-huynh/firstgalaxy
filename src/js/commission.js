@@ -12,6 +12,7 @@ var takes_home_elsewhere = document.getElementById("withThem");
 var commissionSplit = new Array();
 commissionSplit = [90, 10];
 
+/* Updating the dollar amount and the commission split. */
 salePrice.oninput = function() {
     dollarAmount = "$" + numberWithCommas(salePrice.value);
     salePriceLabel.innerHTML = dollarAmount + " | " + text[1];
@@ -35,6 +36,14 @@ var agentCommission, brokeragePercent;
 agentSelect.addEventListener("change", updateNumbers, true);
 brokerageSelect.addEventListener("change", updateNumbers, true);
 
+/**
+ * It takes the sale price, the agent's commission, and the brokerage's commission, and then calculates
+ * the agent's take home pay at the current brokerage and at First Galaxy
+ * @param e - the event that triggered the function
+ * @param [price] - the price of the property
+ * @param agentCommission - The commission percentage that the agent is getting from the sale.
+ * @param brokeragePercent - The percentage of the commission that the brokerage takes.
+ */
 function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePercent) {
     dollarAmount = "$" + numberWithCommas(salePrice.value);
     salePriceLabel.innerHTML = dollarAmount + " | " + text[1];
@@ -60,10 +69,20 @@ function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePer
     updateConfig(second);
 }
 
+/**
+ * The function takes a string, converts it to a float, divides it by 100, and returns the result.
+ * @param x - The percentage you want to convert to a decimal.
+ * @returns The percentage of the number.
+ */
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+/**
+ * The function takes a string, converts it to a float, divides it by 100, and returns the result
+ * @param x - The percentage you want to convert to a decimal.
+ * @returns The percentage of the number.
+ */
 function percentToDecimail(x) {
     let dec = parseFloat(x);
     console.log(dec);

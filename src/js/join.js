@@ -12,6 +12,9 @@ var takes_home_elsewhere = document.getElementById("withThem");
 var commissionSplit = new Array();
 commissionSplit = [90, 10];
 
+/* This is the function that is called when the user changes the value of the slider. It updates the
+dollar amount label, and then calculates the commission from the sale, and the agent's take home
+pay. */
 salePrice.oninput = function() {
     dollarAmount = "$" + numberWithCommas(salePrice.value);
     salePriceLabel.innerHTML = dollarAmount + " | " + text[1];
@@ -35,6 +38,14 @@ var agentCommission, brokeragePercent;
 agentSelect.addEventListener("change", updateNumbers, true);
 brokerageSelect.addEventListener("change", updateNumbers, true);
 
+/**
+ * It takes the sale price, the agent's commission, and the brokerage's commission and calculates the
+ * agent's take home pay
+ * @param e - the event that triggered the function
+ * @param [price] - The price of the home.
+ * @param agentCommission - The commission percentage that the agent is entitled to.
+ * @param brokeragePercent - The percentage of the commission that the brokerage takes.
+ */
 function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePercent) {
     dollarAmount = "$" + numberWithCommas(salePrice.value);
     salePriceLabel.innerHTML = dollarAmount + " | " + text[1];
@@ -61,10 +72,21 @@ function updateNumbers(e, price = salePrice.value, agentCommission, brokeragePer
     updateConfig(second);
 }
 
+/**
+ * It takes a number, converts it to a string, and then inserts a comma after every third digit from
+ * the right.
+ * @param x - The number you want to format
+ * @returns the number with commas.
+ */
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+/**
+ * The function takes a number, divides it by 100, and returns the result
+ * @param x - The percentage you want to convert to a decimal.
+ * @returns The percentage of the number.
+ */
 function percentToDecimail(x) {
     let dec = parseFloat(x);
     console.log(dec);
