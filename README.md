@@ -2,19 +2,7 @@
 
 > A real estate website for FirstGalaxy.inc to display the benefits of joining the company, helpful resources to start a real estate career, as well as how to get in touch with agents within the company to find listings.
 
-## Installation
+The code is a demonstration of how to filter data. The first line imports the agents object from the ./data.js file. The next line declares that we are using strict mode, which means that all variables must be declared before they are used. The third line gets the element with id myDropdown and sets it as a variable named filterOptions. Next, we create an event listener on the filter button, which listens for when the button is clicked and then calls toggle() on filterOptions to show or hide its classList property depending on whether it's showing or hiding at this time in order to change what content is shown in our drop-down menu.
 
-```sh
-$ npm install --save firstgalaxy
-```
+The code starts by importing the glossary module from a file called data.js, which is in the same directory as this code. The next line of code creates an empty div with id parent-container and sets its children to be an array that contains all of the terms in the glossary. Next, for each term in the glossary, it iterates through all of its children and adds them to another array called term_container. Finally, it loops through all of those arrays (term_container and parent-container) and prints out each one on separate lines so you can see what's going on better.
 
-## Usage
-
-```js
-var firstgalaxy = require('firstgalaxy');
-firstgalaxy();
-```
-
-## License
-
-MIT © [Tina Huynh](https://github.com/tmchuynh)
